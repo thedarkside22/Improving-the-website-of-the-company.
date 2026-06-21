@@ -5,47 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Masarat for Accreditation — Homepage Design Options</title>
 <style>
-  :root{--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+  :root{--navy:#2e3192;--navy-dark:#20225f;--orange:#f7941e;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
   *{box-sizing:border-box}
-  body{margin:0;font-family:var(--font);background:#0c1620;color:#eef3f6;line-height:1.6}
+  body{margin:0;font-family:var(--font);background:var(--navy-dark);color:#eef0fb;line-height:1.6}
   .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
   header{padding:64px 0 30px;text-align:center}
-  .badge{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#22d3ee;border:1px solid rgba(34,211,238,.4);border-radius:999px;padding:6px 16px;margin-bottom:20px}
+  .badge{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);border:1px solid rgba(247,148,30,.5);border-radius:999px;padding:6px 16px;margin-bottom:20px}
   h1{font-size:clamp(2rem,4vw,3rem);margin:0 0 .3em;letter-spacing:-.02em}
-  header p{color:#8aa2b1;max-width:640px;margin:0 auto;font-size:1.08rem}
+  header p{color:#b9bbe0;max-width:640px;margin:0 auto;font-size:1.08rem}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:30px 0 20px}
-  .card{background:#101d29;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;transition:.2s;display:flex;flex-direction:column}
-  .card:hover{transform:translateY(-6px);border-color:rgba(34,211,238,.5)}
+  .card{background:#262a6b;border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;transition:.2s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-6px);border-color:var(--orange)}
   .thumb{height:150px;display:grid;place-items:center;font-weight:800;font-size:1.1rem;letter-spacing:.04em;position:relative;overflow:hidden}
-  .t1{background:linear-gradient(135deg,#0a6b8a,#19b3a6);color:#fff}
-  .t2{background:linear-gradient(135deg,#070d14,#0c4452);color:#22d3ee;border-bottom:2px solid #22d3ee}
-  .t3{background:linear-gradient(135deg,#0f3d33,#13564a);color:#cdae73}
-  .thumb small{position:absolute;top:12px;left:12px;font-size:.62rem;font-weight:700;letter-spacing:.12em;background:rgba(0,0,0,.3);padding:3px 9px;border-radius:6px}
+  .t1{background:linear-gradient(135deg,#5b4ea0,#473c86);color:#fff}
+  .t2{background:linear-gradient(135deg,#0e0f2b,#2a2c6b);color:var(--orange);border-bottom:2px solid var(--orange)}
+  .t3{background:linear-gradient(135deg,#fbfaf7,#f1f1f6);color:var(--navy);border:1px solid #e4e3ee}
+  .thumb small{position:absolute;top:12px;left:12px;font-size:.62rem;font-weight:700;letter-spacing:.12em;background:rgba(0,0,0,.28);padding:3px 9px;border-radius:6px;color:#fff}
+  .t3 small{background:rgba(46,49,146,.12);color:var(--navy)}
   .body{padding:22px;flex:1;display:flex;flex-direction:column}
   .body h2{margin:0 0 6px;font-size:1.25rem}
-  .body .tag{color:#22d3ee;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
-  .body p{color:#8aa2b1;font-size:.95rem;margin:0 0 16px}
-  .body ul{margin:0 0 18px;padding-left:18px;color:#a9bcc7;font-size:.88rem}
+  .body .tag{color:var(--orange);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+  .body p{color:#b9bbe0;font-size:.95rem;margin:0 0 16px}
+  .body ul{margin:0 0 18px;padding-left:18px;color:#c7c9ea;font-size:.88rem}
   .body li{margin-bottom:5px}
-  .open{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:700;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:10px 18px;justify-content:center}
-  .card:hover .open{background:#22d3ee;color:#04141a;border-color:#22d3ee}
-  .note{background:#101d29;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:24px 28px;margin:24px 0 70px}
+  .open{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:700;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:10px 18px;justify-content:center}
+  .card:hover .open{background:var(--orange);color:#241200;border-color:var(--orange)}
+  .note{background:#262a6b;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:24px 28px;margin:24px 0 70px}
   .note h3{margin:0 0 12px;font-size:1.05rem}
-  .note ul{margin:0;padding-left:20px;color:#a9bcc7;font-size:.92rem}
+  .note ul{margin:0;padding-left:20px;color:#c7c9ea;font-size:.92rem}
   .note li{margin-bottom:8px}
-  .note b{color:#eef3f6}
-  .pill{display:inline-block;background:rgba(34,211,238,.12);color:#22d3ee;border-radius:6px;padding:1px 7px;font-size:.82rem;font-weight:600}
+  .note b{color:#fff}
+  .pill{display:inline-block;background:rgba(247,148,30,.16);color:var(--orange);border-radius:6px;padding:1px 7px;font-size:.82rem;font-weight:600}
+  /* brand bar */
+  .brandbar{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:8px}
+  .brandbar .mark{width:46px;height:38px}
+  .brandbar b{font-size:1.3rem;letter-spacing:.03em}
   @media(max-width:820px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <span class="badge">Masarat for Accreditation · Homepage Concepts</span>
+    <div class="brandbar">
+      <svg class="mark" viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 42 L18 6 L26 22 L21 32 L18 24 L9 42 Z" fill="#fff"/>
+        <path d="M30 42 L25 30 L34 10 L52 42 Z" fill="#fff"/>
+        <path d="M3 29 L15 41 L41 9" fill="none" stroke="#f7941e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <b>MASARAT</b>
+    </div>
+    <span class="badge">Homepage Concepts · Navy &amp; Orange brand</span>
     <h1>Three design directions to compare</h1>
-    <p>Front-end-only mockups (no backend) built to visualize the new homepage. Each one tells the
-      company's story — identity, real project &amp; workshop videos, and the team — in a different style.
-      Open each, click around, and tell me which direction feels right.</p>
+    <p>Front-end-only mockups of the new Masarat homepage — now on the real brand (navy + orange logo),
+      with the real identity copy, contact details, project roster (SFDA, KFSHRC, IAU, KFUH…) and your
+      workshop videos. Open each, click around, and tell me which direction feels right.</p>
   </header>
 
   <div class="grid">
@@ -54,12 +67,8 @@
       <div class="body">
         <span class="tag">Trust-forward</span>
         <h2>Clinical Corporate</h2>
-        <p>Light, clean and badge-led — “medical-grade trust.” The safest, most conventional B2B look.</p>
-        <ul>
-          <li>White / blue-teal palette</li>
-          <li>Accreditation badges up top</li>
-          <li>Service cards + stats band</li>
-        </ul>
+        <p>Light and clean with a purple hero (like the live site), navy text and orange CTAs. The safest, most conventional B2B look.</p>
+        <ul><li>Purple hero · white body</li><li>Accreditation badges + stats</li><li>Service &amp; project cards</li></ul>
         <span class="open">Open design →</span>
       </div>
     </a>
@@ -69,12 +78,8 @@
       <div class="body">
         <span class="tag">Video-forward</span>
         <h2>Bold Modern Dark</h2>
-        <p>Dark, confident and modern. The SFDA workshop film plays full-bleed behind the headline.</p>
-        <ul>
-          <li>Dark navy + cyan accent</li>
-          <li>Video hero + lightbox gallery</li>
-          <li>Glass cards, big type</li>
-        </ul>
+        <p>Dark indigo with orange accents. The SFDA workshop film plays full-bleed behind the headline.</p>
+        <ul><li>Deep navy + orange</li><li>Video hero + lightbox gallery</li><li>Glass cards, big type</li></ul>
         <span class="open">Open design →</span>
       </div>
     </a>
@@ -84,30 +89,21 @@
       <div class="body">
         <span class="tag">Premium / established</span>
         <h2>Editorial Premium</h2>
-        <p>Understated and refined — serif headings, whitespace, deep green &amp; gold. Feels long-established.</p>
-        <ul>
-          <li>Warm off-white + green/gold</li>
-          <li>Magazine-style sections</li>
-          <li>Numbered services, team roster</li>
-        </ul>
+        <p>Understated and refined — serif headings, whitespace, navy &amp; orange. Feels long-established.</p>
+        <ul><li>Warm off-white + navy/orange</li><li>Magazine-style sections</li><li>Numbered services, team roster</li></ul>
         <span class="open">Open design →</span>
       </div>
     </a>
   </div>
 
   <div class="note">
-    <h3>Before you judge them — a few notes</h3>
+    <h3>What's real vs. placeholder</h3>
     <ul>
-      <li><b>Videos are real.</b> The 3 clips you sent are embedded and self-hosted. The featured one is
-        currently <span class="pill">workshop-sfda.mp4</span> — tell me which file is the actual SFDA
-        workshop and I'll feature the right one (it's a 1-line swap).</li>
-      <li><b>Team photos &amp; names are placeholders</b> (marked “PHOTO”). Swap in real people when ready —
-        the design carries over unchanged.</li>
-      <li><b>The logo</b> is a simple stand-in “M” mark; we'll drop in the real Masarat logo.</li>
-      <li><b>Everything else is real content</b>: identity, services, accreditation bodies (SFDA, CBAHI,
-        WHO, CAP, CDC…), the MRC partnership, and the BSL-3/4 work.</li>
-      <li><b>These are design blueprints, not the live site.</b> The winning direction gets rebuilt in
-        WordPress — the look transfers 1:1. See <b>WORDPRESS-MAPPING.md</b> for how each section maps.</li>
+      <li><b>Brand, logo, content — real.</b> Navy + orange identity, the "MASARAT — Infection &amp; Contamination Control Solutions" logo, the real menu, contact (+966 1148 70 043 · info@m4acc.com), and the real project list.</li>
+      <li><b>Logo is a faithful SVG re-creation</b> (I couldn't access the exact PNG file). Swapping in the official logo file later is a 1-line change.</li>
+      <li><b>Videos are real</b> and self-hosted; the SFDA workshop is featured. Tell me which clip is the true SFDA one if <span class="pill">workshop-sfda.mp4</span> isn't it.</li>
+      <li><b>Team photos &amp; lab photos are placeholders</b> (marked "PHOTO"). Attach them as files and they drop straight in.</li>
+      <li><b>Design blueprints, not the live site.</b> The chosen direction gets rebuilt in WordPress — the design transfers 1:1. See <b>WORDPRESS-MAPPING.md</b>.</li>
     </ul>
   </div>
 </div>

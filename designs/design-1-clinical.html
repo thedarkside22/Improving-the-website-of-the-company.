@@ -3,31 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Masarat for Accreditation — Biosafety &amp; Cleanroom Solutions</title>
-<meta name="description" content="Masarat for Accreditation — Saudi expertise in biosafety, cleanrooms, testing, certification, consultancy and training. Compliant with SFDA, CBAHI, WHO, CAP and CDC.">
+<title>Masarat for Accreditation — Infection &amp; Contamination Control Solutions</title>
+<meta name="description" content="Masarat for Accreditation — a Saudi company specialized in cleanroom solutions (Cleanrooms & GMP) and high-risk laboratories (BSL-3 & 4). Compliant with SFDA, CBAHI, WHO, CAP and CDC.">
 <!--
-  DESIGN 1 — "CLINICAL CORPORATE"
-  Front-end-only mockup. No backend, no build step. Self-contained.
-  Real content: company identity, services, accreditation bodies, MRC partner, videos.
-  PLACEHOLDERS (swap later): team photos/names, logo, exact stats, contact endpoint.
-  Each <section data-wp="..."> note maps to a WordPress builder section — see WORDPRESS-MAPPING.md
+  DESIGN 1 — "CLINICAL CORPORATE" (rebranded to Masarat navy + orange)
+  Front-end-only mockup. No backend, no build. Self-contained.
+  Real: logo (SVG recreation), brand colors, identity copy, nav, contact, projects, videos.
+  PLACEHOLDER (swap later): team photos, the exact official logo file, hero/lab photos.
+  Each <section data-wp="..."> maps to a WordPress build — see WORDPRESS-MAPPING.md
 -->
 <style>
-  /* ---- Design tokens (edit these to rebrand; paste into child-theme :root) ---- */
   :root{
-    --brand:#0a6b8a; /* primary */
-    --brand-dark:#074d63;
-    --accent:#19b3a6;
-    --ink:#13212b;
-    --muted:#5a6b76;
-    --line:#e3eaee;
+    --navy:#2e3192;        /* logo navy */
+    --navy-dark:#20225f;
+    --orange:#f7941e;      /* logo orange */
+    --orange-dark:#e07d10;
+    --purple:#5b4ea0;      /* hero purple (matches live site) */
+    --purple-2:#473c86;
+    --ink:#1d2147;
+    --muted:#6b7088;
+    --line:#e6e7f1;
     --bg:#ffffff;
-    --bg-soft:#f4f8fa;
-    --bg-band:#eef5f8;
-    --white:#fff;
+    --bg-soft:#f5f6fb;
+    --bg-band:#eef0fa;
     --radius:14px;
-    --shadow:0 10px 30px rgba(10,40,55,.08);
-    --shadow-sm:0 4px 14px rgba(10,40,55,.07);
+    --shadow:0 12px 34px rgba(32,34,95,.12);
+    --shadow-sm:0 5px 16px rgba(32,34,95,.08);
     --maxw:1180px;
     --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
@@ -40,115 +41,133 @@
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
-  .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:.7rem}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:.7rem}
   .section{padding:84px 0}
   .section--soft{background:var(--bg-soft)}
   .center{text-align:center}
   .lead{font-size:1.13rem;color:var(--muted);max-width:680px}
   .center .lead{margin-left:auto;margin-right:auto}
 
-  /* ---- Buttons ---- */
-  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;padding:.85rem 1.5rem;border-radius:999px;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:.18s}
-  .btn-primary{background:var(--brand);color:#fff}
-  .btn-primary:hover{background:var(--brand-dark)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;padding:.85rem 1.5rem;border-radius:999px;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:.18s}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-primary:hover{background:var(--orange-dark)}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-dark)}
   .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
-  .btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
-  .btn-light{background:#fff;color:var(--brand)}
+  .btn-ghost:hover{border-color:var(--navy);color:var(--navy)}
+  .btn-light{background:#fff;color:var(--navy)}
 
-  /* ---- Top bar ---- */
-  .topbar{background:var(--brand-dark);color:#cfe6ee;font-size:.85rem}
-  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;flex-wrap:wrap}
-  .topbar a{color:#eaf6fa}
-  .topbar .tb-right{display:flex;gap:18px;align-items:center}
-  .lang-toggle{border:1px solid rgba(255,255,255,.3);border-radius:6px;padding:1px 8px;font-weight:600}
+  /* Logo (SVG recreation of the real Masarat mark) */
+  .logo{display:flex;align-items:center;gap:11px}
+  .logo .mark{width:46px;height:38px;flex:0 0 auto}
+  .logo-text{font-weight:800;font-size:1.25rem;color:var(--navy);line-height:1;letter-spacing:.02em}
+  .logo-text small{display:block;font-size:.56rem;font-weight:600;letter-spacing:.04em;color:var(--muted);text-transform:none;margin-top:3px}
 
-  /* ---- Header / nav ---- */
-  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.15rem;color:var(--ink)}
-  .logo .mark{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-weight:800}
-  .logo small{display:block;font-size:.62rem;font-weight:600;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
-  nav.menu{display:flex;gap:26px;align-items:center}
-  nav.menu a{font-weight:600;font-size:.95rem;color:var(--ink);padding:6px 0;position:relative}
-  nav.menu a:hover{color:var(--brand)}
-  .nav-cta{display:flex;align-items:center;gap:14px}
+  /* Top bar */
+  .topbar{background:var(--bg-soft);border-bottom:1px solid var(--line);font-size:.9rem}
+  .topbar .wrap{display:flex;justify-content:flex-end;align-items:center;gap:26px;height:44px;flex-wrap:wrap}
+  .topbar a{color:var(--ink);display:inline-flex;align-items:center;gap:8px;font-weight:600}
+  .topbar .ic{color:var(--orange)}
+
+  /* Header / nav */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px}
+  nav.menu{display:flex;gap:20px;align-items:center}
+  nav.menu a{font-weight:600;font-size:.92rem;color:var(--ink);padding:6px 0}
+  nav.menu a:hover,nav.menu a.active{color:var(--orange-dark)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .ar{font-weight:700;color:var(--navy);font-size:.9rem;display:inline-flex;gap:5px;align-items:center}
   .burger{display:none;background:none;border:0;cursor:pointer;width:42px;height:42px}
-  .burger span{display:block;height:2px;background:var(--ink);margin:5px 0;transition:.2s}
+  .burger span{display:block;height:2px;background:var(--navy);margin:5px 0;transition:.2s}
 
-  /* ---- Hero ---- */
-  .hero{position:relative;background:
-      radial-gradient(1100px 500px at 80% -10%,rgba(25,179,166,.12),transparent),
-      linear-gradient(180deg,#f4fafc,#ffffff);overflow:hidden}
-  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:74px 22px 70px}
-  .hero h1{font-size:clamp(2.1rem,4.6vw,3.4rem);font-weight:800}
-  .hero h1 .hl{color:var(--brand)}
-  .hero .lead{font-size:1.17rem}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:1.6rem}
-  .hero-since{margin-top:1.7rem;display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.92rem}
-  .hero-since b{color:var(--ink)}
-  .hero-visual{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:linear-gradient(135deg,#0a6b8a,#19b3a6)}
-  .hero-visual .grid-deco{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);background-size:34px 34px}
-  .hero-visual .hv-text{position:absolute;left:26px;bottom:24px;right:26px;color:#fff}
-  .hero-visual .hv-text b{font-size:1.25rem}
-  .hv-badge{position:absolute;top:22px;right:22px;background:rgba(255,255,255,.95);color:var(--brand-dark);border-radius:12px;padding:10px 14px;font-weight:700;font-size:.82rem;box-shadow:var(--shadow-sm);display:flex;gap:8px;align-items:center}
+  /* Hero — purple, like the live site */
+  .hero{background:linear-gradient(135deg,var(--purple),var(--purple-2));color:#fff;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;opacity:.6}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;padding:72px 22px}
+  .hero h1{font-size:clamp(2.2rem,4.8vw,3.5rem);font-weight:800;line-height:1.08}
+  .hero h1 .or{color:var(--orange)}
+  .hero p{color:#e7e3f7;font-size:1.17rem;max-width:30rem}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:1.7rem}
+  .hero-dots{margin-top:1.8rem;display:flex;gap:8px}
+  .hero-dots span{width:9px;height:9px;border-radius:50%;background:var(--orange);opacity:.5}
+  .hero-dots span:first-child{opacity:1}
+  /* Hero media (uses the real SFDA video as the collage centerpiece) */
+  .hero-media{position:relative}
+  .hero-media .vid{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:#13152e;cursor:pointer}
+  .hero-media .vid video{width:100%;height:100%;object-fit:cover}
+  .hero-media .badge-shield{position:absolute;top:-14px;right:-10px;width:62px;height:62px;border-radius:50%;background:var(--orange);display:grid;place-items:center;color:#fff;font-size:1.6rem;box-shadow:var(--shadow);border:4px solid #fff}
+  .hero-media .play{position:absolute;inset:0;margin:auto;width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;pointer-events:none}
+  .hero-media .play:after{content:"";border-left:18px solid var(--navy);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+  .hero-media .vcap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(transparent,rgba(10,12,34,.82));color:#fff;font-size:.85rem}
+  .hero-media .vcap b{display:block;font-size:.98rem}
 
-  /* ---- Accreditation strip ---- */
-  .accred{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .accred .wrap{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center;padding:22px}
+  /* Accreditation strip */
+  .accred{background:#fff;border-bottom:1px solid var(--line)}
+  .accred .wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;padding:22px}
   .accred .label{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-  .badge{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--brand-dark);border:1.5px solid var(--line);border-radius:10px;padding:9px 14px;background:var(--bg-soft);font-size:.95rem}
-  .badge .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--navy);border:1.5px solid var(--line);border-radius:10px;padding:9px 14px;background:var(--bg-soft);font-size:.95rem}
+  .badge .dot{width:9px;height:9px;border-radius:50%;background:var(--orange)}
 
-  /* ---- Stats ---- */
-  .stats{background:linear-gradient(120deg,var(--brand-dark),var(--brand));color:#fff}
+  /* Stats */
+  .stats{background:linear-gradient(120deg,var(--navy),var(--navy-dark));color:#fff}
   .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:46px 22px}
   .stat{text-align:center}
-  .stat b{display:block;font-size:2.3rem;font-weight:800;letter-spacing:-.02em}
-  .stat span{color:#cdeaf1;font-size:.95rem}
+  .stat b{display:block;font-size:2.3rem;font-weight:800}
+  .stat b .o{color:var(--orange)}
+  .stat span{color:#c9caec;font-size:.95rem}
 
-  /* ---- Services ---- */
+  /* Services */
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm);transition:.2s}
-  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#cfe1e8}
-  .card .ic{width:52px;height:52px;border-radius:12px;background:var(--bg-band);display:grid;place-items:center;margin-bottom:16px;color:var(--brand)}
-  .card h3{font-size:1.18rem}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#cdd0ee}
+  .card .ic{width:52px;height:52px;border-radius:12px;background:var(--bg-band);display:grid;place-items:center;margin-bottom:16px;color:var(--navy);font-size:1.5rem}
+  .card h3{font-size:1.18rem;color:var(--navy)}
   .card p{color:var(--muted);margin:0;font-size:.97rem}
-  .card a.more{display:inline-block;margin-top:14px;color:var(--brand);font-weight:700;font-size:.9rem}
+  .card a.more{display:inline-block;margin-top:14px;color:var(--orange-dark);font-weight:700;font-size:.9rem}
 
-  /* ---- Video showcase ---- */
+  /* Projects (REAL) */
+  .proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .proj{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-sm);transition:.2s}
+  .proj:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .proj .mono{width:46px;height:46px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.95rem;margin-bottom:14px}
+  .proj .type{color:var(--orange-dark);font-weight:800;font-size:1.02rem;margin-bottom:2px}
+  .proj .client{color:var(--ink);font-weight:600}
+  .proj .loc{color:var(--muted);font-size:.86rem}
+
+  /* Video showcase */
   .video-feat{display:grid;grid-template-columns:1.6fr 1fr;gap:22px;margin-top:30px}
-  .vid{position:relative;border-radius:var(--radius);overflow:hidden;background:#06121a;box-shadow:var(--shadow);cursor:pointer}
+  .vid{position:relative;border-radius:var(--radius);overflow:hidden;background:#0d0f24;box-shadow:var(--shadow);cursor:pointer}
   .vid video{width:100%;height:100%;object-fit:cover;display:block}
-  .vid .vcap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(transparent,rgba(2,12,18,.85));color:#fff}
+  .vid .vcap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(transparent,rgba(10,12,34,.85));color:#fff}
   .vid .vcap b{font-size:1.05rem}
-  .vid .vcap span{font-size:.82rem;color:#bfe0e9}
+  .vid .vcap span{font-size:.82rem;color:#d8d3f1}
   .vid .play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;pointer-events:none}
-  .vid .play:after{content:"";border-left:18px solid var(--brand);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+  .vid .play:after{content:"";border-left:18px solid var(--orange);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
   .vid-side{display:grid;grid-template-rows:1fr 1fr;gap:22px}
   .vid-side .vid .play{width:48px;height:48px}
   .vid-side .vid .play:after{border-left-width:13px;border-top-width:8px;border-bottom-width:8px}
 
-  /* ---- Team ---- */
+  /* Team */
   .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
   .member{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-align:center;box-shadow:var(--shadow-sm)}
-  .member .ph{aspect-ratio:1/1;background:linear-gradient(135deg,#dbe9ef,#c4dde6);display:grid;place-items:center;color:#fff;position:relative}
+  .member .ph{aspect-ratio:1/1;background:linear-gradient(135deg,#e4e6f5,#cdd0ee);display:grid;place-items:center;position:relative}
   .member .ph svg{width:70%;height:70%;opacity:.85}
   .member .ph .ph-tag{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.9);color:var(--muted);font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:6px;letter-spacing:.05em}
   .member .info{padding:16px}
-  .member b{display:block;font-size:1.02rem}
-  .member span{color:var(--brand);font-size:.85rem;font-weight:600}
-  .network{margin-top:26px;background:var(--bg-band);border-radius:var(--radius);padding:24px 28px;display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
-  .network b{color:var(--ink)}
+  .member b{display:block;font-size:1.02rem;color:var(--navy)}
+  .member span{color:var(--orange-dark);font-size:.85rem;font-weight:600}
+  .network{margin-top:26px;background:var(--bg-band);border-radius:var(--radius);padding:24px 28px;text-align:center}
+  .network b{color:var(--navy)}
 
-  /* ---- Partner ---- */
+  /* Partner */
   .partner .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:46px;align-items:center}
-  .partner-logo{aspect-ratio:16/10;border-radius:var(--radius);background:linear-gradient(135deg,#10303d,#0a6b8a);display:grid;place-items:center;color:#fff;font-weight:800;font-size:1.4rem;letter-spacing:.05em;box-shadow:var(--shadow)}
+  .partner-logo{aspect-ratio:16/10;border-radius:var(--radius);background:linear-gradient(135deg,var(--navy-dark),var(--navy));display:grid;place-items:center;color:#fff;font-weight:800;font-size:1.4rem;letter-spacing:.05em;box-shadow:var(--shadow)}
   .partner ul{list-style:none;padding:0;margin:14px 0 0}
   .partner li{padding:8px 0 8px 30px;position:relative;color:var(--muted)}
-  .partner li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+  .partner li:before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800}
 
-  /* ---- Contact / CTA ---- */
-  .cta-band{background:linear-gradient(120deg,var(--brand),var(--accent));color:#fff;text-align:center}
+  /* CTA + contact */
+  .cta-band{background:linear-gradient(135deg,var(--purple),var(--purple-2));color:#fff;text-align:center}
   .cta-band h2{color:#fff}
   .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:46px}
   .form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm)}
@@ -156,116 +175,109 @@
   .form label{display:block;font-size:.82rem;font-weight:600;margin:12px 0 5px;color:var(--ink)}
   .form input,.form select,.form textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:9px;font-family:inherit;font-size:.95rem;background:var(--bg-soft)}
   .form textarea{min-height:110px;resize:vertical}
-  .contact-info li{list-style:none;display:flex;gap:13px;align-items:flex-start;margin-bottom:18px}
-  .contact-info .ci-ic{width:42px;height:42px;border-radius:10px;background:var(--bg-band);display:grid;place-items:center;color:var(--brand);flex:0 0 auto}
-  .contact-info b{display:block}
+  .contact-info{list-style:none;padding:0;margin:0}
+  .contact-info li{display:flex;gap:13px;align-items:flex-start;margin-bottom:18px}
+  .contact-info .ci-ic{width:42px;height:42px;border-radius:10px;background:var(--bg-band);display:grid;place-items:center;color:var(--orange);flex:0 0 auto;font-size:1.1rem}
+  .contact-info b{display:block;color:var(--navy)}
   .contact-info span{color:var(--muted)}
 
-  /* ---- Footer ---- */
-  footer{background:#0c1f28;color:#9fb6c0;padding:56px 0 26px;font-size:.92rem}
+  footer{background:var(--navy-dark);color:#b9bbe0;padding:56px 0 26px;font-size:.92rem}
   footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px}
   footer h4{color:#fff;font-size:1rem;margin:0 0 14px}
-  footer a{color:#9fb6c0}footer a:hover{color:#fff}
+  footer a{color:#b9bbe0}footer a:hover{color:#fff}
   footer ul{list-style:none;padding:0;margin:0}
   footer li{margin-bottom:9px}
-  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.85rem}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.85rem}
 
-  /* ---- Floating WhatsApp ---- */
   .wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25);color:#fff}
   .wa svg{width:30px;height:30px}
 
-  /* ---- Lightbox ---- */
-  .lightbox{position:fixed;inset:0;background:rgba(4,12,18,.9);z-index:100;display:none;place-items:center;padding:20px}
+  .lightbox{position:fixed;inset:0;background:rgba(16,12,40,.92);z-index:100;display:none;place-items:center;padding:20px}
   .lightbox.open{display:grid}
   .lightbox video{width:min(960px,94vw);border-radius:12px}
   .lightbox .close{position:absolute;top:20px;right:26px;color:#fff;font-size:2.4rem;cursor:pointer;line-height:1}
 
-  /* ---- Mobile ---- */
+  @media(max-width:980px){.proj-grid,.team-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:900px){
     .hero .wrap,.partner .wrap,.contact .wrap{grid-template-columns:1fr}
-    .grid3,.team-grid{grid-template-columns:repeat(2,1fr)}
+    .grid3{grid-template-columns:repeat(2,1fr)}
     .stats .wrap{grid-template-columns:repeat(2,1fr);gap:30px}
     .video-feat{grid-template-columns:1fr}
     .vid-side{grid-template-rows:auto;grid-template-columns:1fr 1fr}
-    nav.menu,.nav-cta .btn{display:none}
+    nav.menu,.nav-right .btn{display:none}
     .burger{display:block}
-    nav.menu.show{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:#fff;padding:18px 22px;border-bottom:1px solid var(--line);gap:14px}
+    nav.menu.show{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;background:#fff;padding:18px 22px;border-bottom:1px solid var(--line);gap:14px}
   }
-  @media(max-width:560px){
-    .grid3,.team-grid,.vid-side{grid-template-columns:1fr}
-    .form .row{grid-template-columns:1fr}
-  }
+  @media(max-width:560px){.grid3,.team-grid,.proj-grid,.vid-side{grid-template-columns:1fr}.form .row{grid-template-columns:1fr}.topbar .wrap{justify-content:center;gap:16px}}
 </style>
 </head>
 <body>
 
-<!-- ============ TOP BAR ============ -->
-<div class="topbar" data-wp="theme header top-bar (Appearance > Customize or theme options)">
+<!-- TOP BAR -->
+<div class="topbar" data-wp="theme header top bar">
   <div class="wrap">
-    <div>📍 Riyadh, Kingdom of Saudi Arabia</div>
-    <div class="tb-right">
-      <a href="tel:+966000000000">📞 +966 00 000 0000</a>
-      <a href="mailto:info@m4acc.com">✉️ info@m4acc.com</a>
-      <span class="lang-toggle">العربية</span>
-    </div>
+    <a href="tel:+966114870043"><span class="ic">📞</span> +966 1148 70 043</a>
+    <a href="mailto:info@m4acc.com"><span class="ic">✉️</span> info@m4acc.com</a>
   </div>
 </div>
 
-<!-- ============ HEADER / NAV ============ -->
+<!-- HEADER / NAV -->
 <header class="nav" data-wp="theme header / primary menu (Appearance > Menus)">
   <div class="wrap">
-    <a class="logo" href="#">
-      <span class="mark">M</span>
-      <span>Masarat<small>for Accreditation</small></span>
+    <a class="logo" href="#" aria-label="Masarat for Accreditation">
+      <svg class="mark" viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 42 L18 6 L26 22 L21 32 L18 24 L9 42 Z" fill="#2e3192"/>
+        <path d="M30 42 L25 30 L34 10 L52 42 Z" fill="#2e3192"/>
+        <path d="M3 29 L15 41 L41 9" fill="none" stroke="#f7941e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">MASARAT<small>Infection &amp; Contamination Control Solutions</small></span>
     </a>
     <nav class="menu" id="menu">
+      <a href="#" class="active">Home</a>
+      <a href="#about">About us</a>
       <a href="#services">Services</a>
-      <a href="#work">Projects</a>
-      <a href="#videos">In Action</a>
-      <a href="#team">Our Team</a>
-      <a href="#partner">Partner</a>
-      <a href="#contact">Contact</a>
+      <a href="#services">Products</a>
+      <a href="#services">Solutions</a>
+      <a href="#services">Training</a>
+      <a href="#services">Consultancy</a>
+      <a href="#projects">Our Projects</a>
     </nav>
-    <div class="nav-cta">
-      <a href="#contact" class="btn btn-primary">Request a Quote</a>
+    <div class="nav-right">
+      <span class="ar">🇸🇦 AR</span>
+      <a href="#contact" class="btn btn-primary">Contact us</a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero" data-wp="page-builder hero section (2 columns: text + media)">
+<!-- HERO -->
+<section class="hero" data-wp="page-builder hero (2 columns: text + media collage)">
   <div class="wrap">
     <div>
-      <span class="eyebrow">Biosafety &amp; Cleanroom Specialists · Since 2016</span>
-      <h1>Helping you meet the <span class="hl">highest standards</span> in contamination &amp; infection control</h1>
-      <p class="lead">Masarat for Accreditation was founded by Saudi expertise to deliver
-        end-to-end biosafety and cleanroom solutions — consultancy, testing, certification,
-        construction and training — built to satisfy SFDA, CBAHI, WHO, CAP and CDC requirements.</p>
+      <h1><span class="or">MASARAT</span> FOR ACCREDITATION</h1>
+      <p>A Saudi company specialized in providing cleanroom solutions
+        (Cleanrooms &amp; GMP) and high-risk laboratories (BSL-3 &amp; 4).</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-primary">Request a Quote →</a>
-        <a href="#videos" class="btn btn-ghost">▶ Watch our work</a>
+        <a href="#videos" class="btn btn-light">▶ Watch our work</a>
       </div>
-      <div class="hero-since">
-        <b>SFDA</b><span>·</span><b>CBAHI</b><span>·</span><b>WHO</b><span>·</span><b>CAP</b><span>·</span><b>CDC</b>
-        <span style="margin-left:6px">compliance, end to end</span>
-      </div>
+      <div class="hero-dots"><span></span><span></span><span></span></div>
     </div>
-    <div class="hero-visual">
-      <div class="grid-deco"></div>
-      <div class="hv-badge"><span class="dot" style="width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block"></span> ISO-grade testing</div>
-      <div class="hv-text">
-        <b>Cleanrooms · Biosafety Labs · BSL-3/4</b>
-        <div style="font-size:.88rem;color:#d6f1f7">Designed, built, tested &amp; certified to international standards</div>
+    <div class="hero-media">
+      <div class="badge-shield">🛡️</div>
+      <div class="vid" data-video="assets/videos/workshop-sfda.mp4">
+        <video src="assets/videos/workshop-sfda.mp4" muted loop playsinline preload="metadata"></video>
+        <div class="play"></div>
+        <div class="vcap"><b>Biosafety &amp; Biosecurity Workshop — SFDA</b><span>Real project &amp; workshop footage</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ ACCREDITATION STRIP ============ -->
-<section class="accred" data-wp="logo/badge strip — image row or 'logo carousel' widget">
+<!-- ACCREDITATION STRIP -->
+<section class="accred" data-wp="logo/badge strip">
   <div class="wrap">
-    <span class="label">Aligned with the requirements of</span>
+    <span class="label">Aligned with</span>
     <span class="badge"><span class="dot"></span>SFDA</span>
     <span class="badge"><span class="dot"></span>CBAHI</span>
     <span class="badge"><span class="dot"></span>WHO</span>
@@ -276,74 +288,66 @@
   </div>
 </section>
 
-<!-- ============ STATS ============ -->
-<section class="stats" data-wp="counter widgets row (4 columns)">
+<!-- STATS -->
+<section class="stats" data-wp="counter widgets row">
   <div class="wrap">
     <div class="stat"><b>2016</b><span>Founded by Saudi expertise</span></div>
-    <div class="stat"><b>20+</b><span>Engineers &amp; specialists</span></div>
-    <div class="stat"><b>7+</b><span>Accreditation frameworks</span></div>
-    <div class="stat"><b>35yrs</b><span>Partner cleanroom heritage</span></div>
+    <div class="stat"><b>20<span class="o">+</span></b><span>Engineers &amp; specialists</span></div>
+    <div class="stat"><b>8</b><span>Accreditation frameworks</span></div>
+    <div class="stat"><b>35<span class="o">yr</span></b><span>Partner cleanroom heritage</span></div>
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="section" id="services" data-wp="services grid — repeater or 3x2 columns of icon boxes">
+<!-- ABOUT / SERVICES -->
+<section class="section" id="services" data-wp="services grid">
   <div class="wrap">
-    <div class="center" style="max-width:720px;margin:0 auto 42px">
+    <div class="center" style="max-width:740px;margin:0 auto 42px" id="about">
       <span class="eyebrow">What we do</span>
-      <h2>End-to-end solutions, under one accountable partner</h2>
-      <p class="lead">From the first consultation to final certification and team training, Masarat
-        covers the full lifecycle of a controlled environment.</p>
+      <h2>End-to-end biosafety &amp; cleanroom solutions</h2>
+      <p class="lead">From consultancy to construction, testing, certification and training — Masarat
+        covers the full lifecycle of a controlled environment, to international standards.</p>
     </div>
     <div class="grid3">
-      <div class="card">
-        <div class="ic">🧪</div>
-        <h3>Biosafety Consultancy</h3>
-        <p>Expert guidance on biosafety, infection and contamination control — delivered by our engineers and a wide network of national &amp; international experts.</p>
-        <a class="more" href="#contact">Learn more →</a>
-      </div>
-      <div class="card">
-        <div class="ic">🌀</div>
-        <h3>Cleanroom Testing &amp; Qualification</h3>
-        <p>Pioneers in testing and maintaining cleanrooms and controlled environments to international standards — measurement, validation and re-certification.</p>
-        <a class="more" href="#contact">Learn more →</a>
-      </div>
-      <div class="card">
-        <div class="ic">🛡️</div>
-        <h3>Biosafety Laboratories (BSL-3/4)</h3>
-        <p>Design, construction, commissioning and certification of biocontainment labs in accordance with WHO, CDC, NIH and BMBL.</p>
-        <a class="more" href="#contact">Learn more →</a>
-      </div>
-      <div class="card">
-        <div class="ic">💨</div>
-        <h3>Cabinet &amp; Hood Certification</h3>
-        <p>Testing and certification of biological safety cabinets, horizontal laminar airflow cabinets, isolators and fume hoods.</p>
-        <a class="more" href="#contact">Learn more →</a>
-      </div>
-      <div class="card">
-        <div class="ic">🏗️</div>
-        <h3>Cleanroom Construction</h3>
-        <p>Durable, cost-effective, chemical-resistant cleanrooms delivered with our international partner MRC Solutions (35+ years of expertise).</p>
-        <a class="more" href="#partner">Learn more →</a>
-      </div>
-      <div class="card">
-        <div class="ic">🎓</div>
-        <h3>Training Packages</h3>
-        <p>Comprehensive training so your team gets the best from their equipment and technologies — while keeping a healthy, safe working environment.</p>
-        <a class="more" href="#contact">Learn more →</a>
-      </div>
+      <div class="card"><div class="ic">🧪</div><h3>Consultancy</h3><p>Biosafety, infection and contamination control guidance from our engineers and a wide network of national &amp; international experts.</p><a class="more" href="#contact">Learn more →</a></div>
+      <div class="card"><div class="ic">🌀</div><h3>Cleanroom Testing &amp; Qualification</h3><p>Pioneers in testing and maintaining cleanrooms and controlled environments — measurement, validation and re-certification.</p><a class="more" href="#contact">Learn more →</a></div>
+      <div class="card"><div class="ic">🛡️</div><h3>High-risk Labs (BSL-3 &amp; 4)</h3><p>Design, construction, commissioning and certification of biocontainment labs per WHO, CDC, NIH and BMBL.</p><a class="more" href="#contact">Learn more →</a></div>
+      <div class="card"><div class="ic">💨</div><h3>Cabinet &amp; Hood Certification</h3><p>Biological safety cabinets, horizontal laminar airflow cabinets, isolators and fume hoods — tested and certified.</p><a class="more" href="#contact">Learn more →</a></div>
+      <div class="card"><div class="ic">🏗️</div><h3>Cleanrooms &amp; GMP</h3><p>Durable, cost-effective, chemical-resistant cleanrooms delivered with our international partner MRC Solutions.</p><a class="more" href="#partner">Learn more →</a></div>
+      <div class="card"><div class="ic">🎓</div><h3>Training</h3><p>Comprehensive training so your team gets the best from their equipment — within a healthy, safe environment.</p><a class="more" href="#contact">Learn more →</a></div>
     </div>
   </div>
 </section>
 
-<!-- ============ VIDEO SHOWCASE ============ -->
-<section class="section section--soft" id="videos" data-wp="video gallery — featured video widget + 2 thumbnails; opens lightbox">
+<!-- PROJECTS (REAL) -->
+<section class="section section--soft" id="projects" data-wp="projects grid — the existing /work/ custom post type">
   <div class="wrap">
-    <div class="center" style="max-width:720px;margin:0 auto 6px">
+    <div class="center" style="max-width:740px;margin:0 auto 42px">
+      <span class="eyebrow">Our projects</span>
+      <h2>Delivered for Saudi Arabia's leading institutions</h2>
+      <p class="lead">A track record across regulators, universities, hospitals and industry — from BSL-3
+        containment to GMP cleanrooms.</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj"><div class="mono">SFDA</div><div class="type">BSL-3 Project</div><div class="client">Saudi Food &amp; Drug Authority</div><div class="loc">Riyadh</div></div>
+      <div class="proj"><div class="mono">KFS</div><div class="type">Cleanroom Project</div><div class="client">KFSHRC</div><div class="loc">King Faisal Specialist Hospital &amp; RC</div></div>
+      <div class="proj"><div class="mono">IAU</div><div class="type">BSL-3 Project</div><div class="client">Imam Abdulrahman Bin Faisal University</div><div class="loc">Dammam</div></div>
+      <div class="proj"><div class="mono">ABMI</div><div class="type">Cleanroom Project</div><div class="client">Advanced Bio-Medical Industrial Co.</div><div class="loc">ABMI Factory</div></div>
+      <div class="proj"><div class="mono">NAMI</div><div class="type">Clean (Non-Classified)</div><div class="client">NAMI — 3D Printing Company</div><div class="loc">NAMI 3D Facility</div></div>
+      <div class="proj"><div class="mono">CARE</div><div class="type">IV Pharmacy / Chemo Cleanroom</div><div class="client">Care Medical</div><div class="loc">Riyadh</div></div>
+      <div class="proj"><div class="mono">IAU</div><div class="type">GLP Laboratory</div><div class="client">Imam Abdulrahman Bin Faisal University</div><div class="loc">Dammam</div></div>
+      <div class="proj"><div class="mono">KFUH</div><div class="type">TB Lab Certification</div><div class="client">King Fahd University Hospital</div><div class="loc">Khobar</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SHOWCASE -->
+<section class="section" id="videos" data-wp="video gallery — featured + 2 thumbnails, lightbox">
+  <div class="wrap">
+    <div class="center" style="max-width:740px;margin:0 auto 6px">
       <span class="eyebrow">Masarat in action</span>
       <h2>Trusted to lead workshops at the SFDA, KFUPM &amp; beyond</h2>
-      <p class="lead">Real projects and professional workshops — evidence of work delivered at the
-        highest levels of Saudi Arabia's biosafety and quality ecosystem.</p>
+      <p class="lead">Real projects and professional workshops at the highest levels of Saudi Arabia's
+        biosafety and quality ecosystem.</p>
     </div>
     <div class="video-feat">
       <div class="vid" data-video="assets/videos/workshop-sfda.mp4">
@@ -367,38 +371,35 @@
   </div>
 </section>
 
-<!-- ============ TEAM ============ -->
-<section class="section" id="team" data-wp="team grid — CPT 'team' or repeater of member cards">
+<!-- TEAM -->
+<section class="section section--soft" id="team" data-wp="team grid — CPT 'team' or repeater">
   <div class="wrap">
-    <div class="center" style="max-width:720px;margin:0 auto 42px">
+    <div class="center" style="max-width:740px;margin:0 auto 42px">
       <span class="eyebrow">The people behind the standard</span>
       <h2>A dedicated team of engineers &amp; experts</h2>
-      <p class="lead">Masarat is not a handful of contractors — it's a professional company of
-        engineers backed by a wide network of national and international specialists.</p>
+      <p class="lead">Masarat is a professional company of engineers backed by a wide network of national
+        and international specialists — not a handful of contractors.</p>
     </div>
     <div class="team-grid">
-      <!-- PLACEHOLDER members — replace photos, names & titles with real team -->
-      <div class="member"><div class="ph"><span class="ph-tag">PHOTO</span><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg></div><div class="info"><b>Founder &amp; General Manager</b><span>Leadership</span></div></div>
-      <div class="member"><div class="ph"><span class="ph-tag">PHOTO</span><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg></div><div class="info"><b>Lead Biosafety Engineer</b><span>Biosafety</span></div></div>
-      <div class="member"><div class="ph"><span class="ph-tag">PHOTO</span><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg></div><div class="info"><b>Cleanroom Validation Specialist</b><span>Testing &amp; QA</span></div></div>
-      <div class="member"><div class="ph"><span class="ph-tag">PHOTO</span><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg></div><div class="info"><b>Training Director</b><span>Capability building</span></div></div>
+      <div class="member"><div class="ph"><span class="ph-tag">PHOTO</span><svg viewBox="0 0 24 24" fill="#2e3192"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg></div><div class="info"><b>Founder &amp; General Manager</b><span>Leadership</span></div></div>
+      <div class="member"><div class="ph"><span class="ph-tag">PHOTO</span><svg viewBox="0 0 24 24" fill="#2e3192"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg></div><div class="info"><b>Lead Biosafety Engineer</b><span>Biosafety</span></div></div>
+      <div class="member"><div class="ph"><span class="ph-tag">PHOTO</span><svg viewBox="0 0 24 24" fill="#2e3192"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg></div><div class="info"><b>Cleanroom Validation Specialist</b><span>Testing &amp; QA</span></div></div>
+      <div class="member"><div class="ph"><span class="ph-tag">PHOTO</span><svg viewBox="0 0 24 24" fill="#2e3192"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg></div><div class="info"><b>Training Director</b><span>Capability building</span></div></div>
     </div>
-    <div class="network">
-      <b>🌍 A wide network of national &amp; international experts</b>
-      <span style="color:var(--muted)">— mobilised for biosafety, contamination control and cleanroom projects across the Kingdom.</span>
-    </div>
+    <div class="network"><b>🌍 A wide network of national &amp; international experts</b>
+      <span style="color:var(--muted)"> — mobilised for biosafety, contamination control and cleanroom projects across the Kingdom.</span></div>
   </div>
 </section>
 
-<!-- ============ PARTNER ============ -->
-<section class="section section--soft" id="partner" data-wp="2-column feature (logo + bulleted text)">
-  <div class="wrap">
+<!-- PARTNER -->
+<section class="section" id="partner" data-wp="2-column feature (logo + bullets)">
+  <div class="wrap partner">
     <div class="partner-logo">MRC&nbsp;Solutions</div>
     <div>
       <span class="eyebrow">International partnership</span>
       <h2>Exceptional cleanrooms, with MRC Solutions</h2>
-      <p class="lead">We deliver innovative cleanroom solutions through our renowned international
-        partner, MRC Solutions — over 35 years designing and building state-of-the-art cleanrooms.</p>
+      <p class="lead">We deliver innovative cleanroom solutions through our renowned international partner —
+        over 35 years designing and building state-of-the-art cleanrooms.</p>
       <ul>
         <li>Exceptionally durable, built to last</li>
         <li>Cost-effective across the full lifecycle</li>
@@ -409,25 +410,25 @@
   </div>
 </section>
 
-<!-- ============ CTA BAND ============ -->
-<section class="section cta-band" data-wp="full-width call-to-action band">
+<!-- CTA BAND -->
+<section class="section cta-band" data-wp="full-width CTA band">
   <div class="wrap">
     <h2>Planning a cleanroom, lab or certification project?</h2>
-    <p class="lead" style="color:#eafafa">Tell us your requirements and our engineers will get back to you with a clear, compliant plan.</p>
-    <a href="#contact" class="btn btn-light" style="margin-top:8px">Request a Quote →</a>
+    <p class="lead" style="color:#eceaf8">Tell us your requirements and our engineers will reply with a clear, compliant plan.</p>
+    <a href="#contact" class="btn btn-primary" style="margin-top:8px">Request a Quote →</a>
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
-<section class="section contact" id="contact" data-wp="contact section — form via Contact Form 7 / WPForms (front-end only here)">
+<!-- CONTACT -->
+<section class="section contact" id="contact" data-wp="contact section — Contact Form 7 / WPForms (front-end only)">
   <div class="wrap">
     <div>
       <span class="eyebrow">Get in touch</span>
       <h2>Let's discuss your project</h2>
       <p class="lead">Based in Riyadh, serving clients across the Kingdom of Saudi Arabia.</p>
-      <ul class="contact-info" style="padding:0;margin-top:24px">
+      <ul class="contact-info" style="margin-top:24px">
         <li><span class="ci-ic">📍</span><span><b>Office</b>Riyadh, Kingdom of Saudi Arabia</span></li>
-        <li><span class="ci-ic">📞</span><span><b>Phone</b>+966 00 000 0000</span></li>
+        <li><span class="ci-ic">📞</span><span><b>Phone</b>+966 1148 70 043</span></li>
         <li><span class="ci-ic">✉️</span><span><b>Email</b>info@m4acc.com</span></li>
         <li><span class="ci-ic">🕑</span><span><b>Hours</b>Sun–Thu, 8:00–17:00 (AST)</span></li>
       </ul>
@@ -442,14 +443,7 @@
         <div><label>Phone</label><input type="tel" placeholder="+966"></div>
       </div>
       <label>Service of interest</label>
-      <select>
-        <option>Cleanroom testing &amp; qualification</option>
-        <option>Biosafety laboratory (BSL-3/4)</option>
-        <option>Cabinet / hood certification</option>
-        <option>Cleanroom construction (MRC)</option>
-        <option>Consultancy</option>
-        <option>Training</option>
-      </select>
+      <select><option>Cleanroom testing &amp; qualification</option><option>High-risk lab (BSL-3 &amp; 4)</option><option>Cabinet / hood certification</option><option>Cleanrooms &amp; GMP construction</option><option>Consultancy</option><option>Training</option></select>
       <label>Project details</label>
       <textarea placeholder="Tell us about your facility and requirements…"></textarea>
       <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:16px">Send request</button>
@@ -458,70 +452,42 @@
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+<!-- FOOTER -->
 <footer data-wp="theme footer widgets">
   <div class="wrap">
     <div class="cols">
       <div>
-        <a class="logo" href="#" style="color:#fff;margin-bottom:14px"><span class="mark">M</span><span style="color:#fff">Masarat<small style="color:#9fb6c0">for Accreditation</small></span></a>
-        <p>Saudi expertise in biosafety and cleanrooms — helping clients achieve the highest infection and contamination control standards since 2016.</p>
+        <a class="logo" href="#" style="margin-bottom:14px">
+          <svg class="mark" viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 42 L18 6 L26 22 L21 32 L18 24 L9 42 Z" fill="#fff"/>
+            <path d="M30 42 L25 30 L34 10 L52 42 Z" fill="#fff"/>
+            <path d="M3 29 L15 41 L41 9" fill="none" stroke="#f7941e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="logo-text" style="color:#fff">MASARAT<small style="color:#b9bbe0">Infection &amp; Contamination Control Solutions</small></span>
+        </a>
+        <p>A Saudi company specialized in cleanroom solutions (Cleanrooms &amp; GMP) and high-risk laboratories (BSL-3 &amp; 4) — since 2016.</p>
       </div>
-      <div><h4>Services</h4><ul>
-        <li><a href="#services">Consultancy</a></li>
-        <li><a href="#services">Cleanroom testing</a></li>
-        <li><a href="#services">Biosafety labs</a></li>
-        <li><a href="#services">Cabinet certification</a></li>
-        <li><a href="#services">Training</a></li>
-      </ul></div>
-      <div><h4>Company</h4><ul>
-        <li><a href="#team">Our team</a></li>
-        <li><a href="#videos">In action</a></li>
-        <li><a href="#partner">MRC partnership</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul></div>
-      <div><h4>Compliance</h4><ul>
-        <li>SFDA · CBAHI</li>
-        <li>WHO · CDC</li>
-        <li>CAP · GMP</li>
-        <li>NIH · BMBL</li>
-      </ul></div>
+      <div><h4>Company</h4><ul><li><a href="#about">About us</a></li><li><a href="#services">Services</a></li><li><a href="#projects">Our Projects</a></li><li><a href="#team">Our Team</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#services">Products</a></li><li><a href="#services">Solutions</a></li><li><a href="#services">Training</a></li><li><a href="#services">Consultancy</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>+966 1148 70 043</li><li>info@m4acc.com</li><li>Riyadh, Saudi Arabia</li></ul></div>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Masarat for Accreditation. All rights reserved.</span>
-      <span>Riyadh, Kingdom of Saudi Arabia</span>
-    </div>
+    <div class="foot-bottom"><span>© 2026 Masarat for Accreditation. All rights reserved.</span><span>Riyadh, Kingdom of Saudi Arabia</span></div>
   </div>
 </footer>
 
-<!-- Floating WhatsApp (standard in KSA/GCC) -->
 <a class="wa" href="#" aria-label="WhatsApp" title="Chat on WhatsApp">
   <svg viewBox="0 0 32 32" fill="#fff"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.6c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.1 1.1 1.1-4-.3-.4a10 10 0 0 1-1.6-5.4C5.6 9.7 10.3 5 16 5s10.4 4.7 10.4 10.5S21.7 25.6 16 25.6zm5.7-7.8c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
 </a>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <span class="close" id="lbClose">&times;</span>
-  <video id="lbVideo" controls playsinline></video>
-</div>
+<div class="lightbox" id="lightbox"><span class="close" id="lbClose">&times;</span><video id="lbVideo" controls playsinline></video></div>
 
 <script>
-  // Mobile menu
   const burger=document.getElementById('burger'),menu=document.getElementById('menu');
   burger.addEventListener('click',()=>menu.classList.toggle('show'));
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('show')));
-
-  // Hover-preview: play muted loop on hover (desktop)
-  document.querySelectorAll('.vid video').forEach(v=>{
-    const card=v.closest('.vid');
-    card.addEventListener('mouseenter',()=>{v.play().catch(()=>{})});
-    card.addEventListener('mouseleave',()=>{v.pause();v.currentTime=0});
-  });
-
-  // Lightbox
+  document.querySelectorAll('.vid video').forEach(v=>{const c=v.closest('.vid');c.addEventListener('mouseenter',()=>v.play().catch(()=>{}));c.addEventListener('mouseleave',()=>{v.pause();v.currentTime=0});});
   const lb=document.getElementById('lightbox'),lbV=document.getElementById('lbVideo');
-  document.querySelectorAll('.vid').forEach(c=>{
-    c.addEventListener('click',()=>{lbV.src=c.dataset.video;lb.classList.add('open');lbV.play()});
-  });
+  document.querySelectorAll('.vid').forEach(c=>c.addEventListener('click',()=>{lbV.src=c.dataset.video;lb.classList.add('open');lbV.play()}));
   function closeLb(){lb.classList.remove('open');lbV.pause();lbV.removeAttribute('src')}
   document.getElementById('lbClose').addEventListener('click',closeLb);
   lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
