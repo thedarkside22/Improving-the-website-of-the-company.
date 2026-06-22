@@ -40,7 +40,7 @@ featured), and **the team** (a "Meet our experts" section), plus a real
 | Element | Status |
 |---|---|
 | Brand colors (navy `#2e3192` + orange `#f7941e`), purple hero | ✅ **Real** (from the live site) |
-| Logo | ✅ **Real** — the official `assets/masarat-logo.png` is used in every header/footer (white "chip" on dark backgrounds for legibility) |
+| Logo | ✅ **Real** — official Masarat logo, using transparent `masarat-logo-light.png` on light areas and `masarat-logo-dark.png` (white wordmark, orange mark) on dark areas — no white box |
 | Identity copy, tagline, nav menu, contact (+966 1148 70 043 · info@m4acc.com) | ✅ **Real** |
 | Accreditation bodies (SFDA, CBAHI, WHO, CAP, CDC, GMP, NIH/BMBL) | ✅ **Real** |
 | **Our Projects** (SFDA, KFSHRC, IAU, ABMI, NAMI, Care Medical, KFUH) | ✅ **Real** clients/locations |
@@ -55,8 +55,9 @@ featured), and **the team** (a "Meet our experts" section), plus a real
 
 - **Brand colors:** each file starts with a `:root { --navy / --orange / --purple … }`
   block — change those values to re-skin the whole page.
-- **The logo** is `assets/masarat-logo.png` (the real file). To resize it, change
-  the `height` on the `<img>`; on dark headers/footers it sits in a white chip.
+- **The logo** uses two transparent variants generated from the official file:
+  `masarat-logo-light.png` (navy, for light areas) and `masarat-logo-dark.png`
+  (white + orange, for dark areas). To resize, change the `height` on the `<img>`.
 - **Featured video:** all designs feature `assets/videos/workshop-sfda.mp4`;
   rename the files in `assets/videos/` to change which is featured.
 - **Team / photos:** replace the placeholder `PHOTO` blocks once you attach real
