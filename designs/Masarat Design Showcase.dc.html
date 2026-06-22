@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#f4f4f7}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#f4f4f7;font-family:Inter,system-ui,sans-serif;color:#1a1c2e;-webkit-font-smoothing:antialiased">
+
+  <!-- Top bar -->
+  <div style="background:#2e3192;color:#fff;padding:0">
+    <div style="max-width:1120px;margin:0 auto;padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:14px">
+        <div style="background:#fff;border-radius:10px;padding:7px 14px;display:flex;align-items:center;flex:none">
+          <img src="assets/masarat-logo.png" alt="Masarat for Accreditation" style="height:42px;width:auto;display:block"/>
+        </div>
+      </div>
+      <div style="font-size:12.5px;color:#c3c5e8;letter-spacing:.04em">Website redesign · concept review</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div style="max-width:1120px;margin:0 auto;padding:64px 32px 40px">
+    <div style="display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid #e3e3ec;padding:8px 16px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.1em;color:#f7941e;text-transform:uppercase;margin-bottom:26px">
+      <span style="width:7px;height:7px;border-radius:50%;background:#f7941e;display:inline-block"></span>
+      3 homepage directions
+    </div>
+    <h1 style="font-size:46px;line-height:1.08;font-weight:800;letter-spacing:-0.02em;max-width:760px;text-wrap:balance">Three directions for the new Masarat website</h1>
+    <p style="margin-top:20px;font-size:18px;line-height:1.6;color:#54566e;max-width:680px;text-wrap:pretty">Front-end concepts for the redesigned homepage — all on the real navy &amp; orange brand, with the real identity copy, contact details, project roster and workshop videos. Preview each below, then open the full design to click through it.</p>
+  </div>
+
+  <!-- Design previews -->
+  <div style="max-width:1120px;margin:0 auto;padding:0 32px 80px;display:flex;flex-direction:column;gap:56px">
+
+    <sc-for list="{{ designs }}" as="d" hint-placeholder-count="3">
+      <div style="background:#fff;border:1px solid #e7e7ef;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(20,22,50,.04),0 16px 40px -28px rgba(20,22,50,.3)">
+
+        <!-- Card header -->
+        <div style="padding:28px 32px;display:flex;align-items:flex-start;justify-content:space-between;gap:28px;flex-wrap:wrap;border-bottom:1px solid #f0f0f5">
+          <div style="display:flex;gap:20px;align-items:flex-start;min-width:280px;flex:1">
+            <div style="font-family:Inter;font-size:13px;font-weight:700;letter-spacing:.12em;color:#fff;background:{{ d.tag }};padding:7px 13px;border-radius:8px;flex:none;margin-top:3px">{{ d.letter }}</div>
+            <div>
+              <div style="font-size:23px;font-weight:800;letter-spacing:-0.01em">{{ d.name }}</div>
+              <div style="margin-top:5px;font-size:14.5px;color:#8688a0;font-weight:500">{{ d.vibe }}</div>
+              <div style="margin-top:12px;font-size:15px;line-height:1.55;color:#54566e;max-width:520px;text-wrap:pretty">{{ d.best }}</div>
+            </div>
+          </div>
+          <a href="{{ d.file }}" target="_blank" rel="noopener" style="flex:none;display:inline-flex;align-items:center;gap:9px;background:#2e3192;color:#fff;text-decoration:none;font-size:14.5px;font-weight:600;padding:13px 22px;border-radius:10px;transition:background .15s" style-hover="background:#f7941e">
+            Open full design
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <!-- Browser-framed live preview -->
+        <div style="background:#eceaf1;padding:18px 18px 0">
+          <div style="background:#fff;border-radius:11px 11px 0 0;overflow:hidden;border:1px solid #ddd;border-bottom:none;box-shadow:0 -1px 0 rgba(0,0,0,.02)">
+            <div style="height:38px;background:#f3f2f6;border-bottom:1px solid #e6e5ee;display:flex;align-items:center;gap:7px;padding:0 16px">
+              <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block"></span>
+              <div style="margin-left:14px;flex:1;max-width:320px;height:22px;background:#fff;border:1px solid #e6e5ee;border-radius:6px;display:flex;align-items:center;padding:0 12px;font-size:11.5px;color:#9a9ab0">m4acc.com</div>
+            </div>
+            <div style="position:relative;width:100%;height:560px;overflow:hidden;background:#fff">
+              <iframe src="{{ d.file }}" loading="lazy" scrolling="no" tabindex="-1" style="position:absolute;top:0;left:0;width:1456px;height:1120px;border:0;transform:scale(0.7361);transform-origin:0 0;pointer-events:none"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+
+  </div>
+
+  <!-- Footer note -->
+  <div style="border-top:1px solid #e7e7ef;background:#fff">
+    <div style="max-width:1120px;margin:0 auto;padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13.5px;color:#8688a0">
+      <div>Previews are scaled and non-interactive — <strong style="color:#54566e;font-weight:600">open the full design</strong> to click through and view on mobile.</div>
+      <div style="color:#b3b4c6">Concepts · not the live site</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      designs: [
+        {
+          letter: "A",
+          tag: "#7a5cd8",
+          name: "Clinical Corporate",
+          vibe: "Light body · purple hero · navy + orange",
+          best: "The safest, most conventional \u201Cmedical-grade trust\u201D B2B look \u2014 closest to the current site.",
+          file: "design-1-clinical.html"
+        },
+        {
+          letter: "B",
+          tag: "#f7941e",
+          name: "Bold Modern Dark",
+          vibe: "Deep indigo + orange · video hero",
+          best: "Maximum impact \u2014 leads with the SFDA workshop film for a confident, modern feel.",
+          file: "design-2-bold.html"
+        },
+        {
+          letter: "C",
+          tag: "#2e3192",
+          name: "Editorial Premium",
+          vibe: "Serif + whitespace · navy + orange",
+          best: "Feels established, premium and understated \u2014 lots of air, restrained typography.",
+          file: "design-3-editorial.html"
+        }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
