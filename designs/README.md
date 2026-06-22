@@ -66,17 +66,35 @@ featured), and **the team** (a "Meet our experts" section), plus a real
 
 ```
 designs/
-├── index.html                 # chooser / comparison page
-├── design-1-clinical.html     # Direction A — Clinical Corporate
-├── design-2-bold.html         # Direction B — Bold Modern Dark
-├── design-3-editorial.html    # Direction C — Editorial Premium
-├── assets/videos/             # your 3 real clips (self-hosted)
-│   ├── workshop-sfda.mp4       (featured — confirm this is the SFDA one)
+├── index.html                      # chooser / comparison page
+├── design-1-clinical.html          # Direction A — Clinical Corporate (homepage)
+├── design-2-bold.html              # Direction B — Bold Modern Dark (homepage)
+├── design-3-editorial.html         # Direction C — Editorial Premium (homepage)
+├── design-1-projects.html          # A — full "Our Projects" page (11 projects)
+├── design-2-projects.html          # B — full "Our Projects" page
+├── design-3-projects.html          # C — full "Our Projects" page
+├── design-1-project-*.html         # A — a detail page for EACH of the 11 projects
+├── design-2-project-example.html   # B — one example project detail page
+├── design-3-project-example.html   # C — one example project detail page
+├── assets/videos/                  # your 3 real clips (self-hosted)
+│   ├── workshop-sfda.mp4            (featured — confirm this is the SFDA one)
 │   ├── project-2.mp4
 │   └── project-3.mp4
-├── README.md                  # this file
-└── WORDPRESS-MAPPING.md       # how each section becomes a WordPress build
+├── README.md                       # this file
+└── WORDPRESS-MAPPING.md            # how each section becomes a WordPress build
 ```
+
+## Projects pages (new)
+
+Each direction has a full **Our Projects** page (linked from the nav and a
+"View all projects →" button on the homepage). It lists **11 projects** — the
+8 real ones (SFDA, KFSHRC, IAU ×2, ABMI, NAMI, Care Medical, KFUH) plus **3
+clearly-marked placeholders** for upcoming case studies. Each project opens its
+own **detail page** (overview, photo gallery, project facts, certificates &
+reports). **Direction A** has a real page for all 11; **B & C** link to one
+example each. Photos, the certificate files, and the placeholder-project text
+are **placeholders** — the real project descriptions/images/certs can be dropped
+in later.
 
 ## Notes & caveats
 

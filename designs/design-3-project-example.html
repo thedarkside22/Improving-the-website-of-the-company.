@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Saudi Food &amp; Drug Authority — Masarat for Accreditation</title><!-- Front-end-only mockup page. Photos, some descriptions and certificates are PLACEHOLDERS. --><style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:#fbfaf7;color:#1f2147;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.2;margin:0 0 .5em;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;padding:.8rem 1.4rem;border-radius:999px;border:1px solid transparent;cursor:pointer;font-size:.95rem;transition:.18s;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}
+.btn-primary{background:#f7941e;color:#fff}.btn-primary:hover{filter:brightness(1.06)}
+.btn-ghost{background:transparent;border-color:#e4e3ee;color:#1f2147}
+.eyebrow{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#e07d10;margin-bottom:.6rem}
+/* header */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.93);backdrop-filter:blur(8px);border-bottom:1px solid #e4e3ee}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px}.logo .mark{width:42px;height:34px;flex:0 0 auto}
+.logo b{font-weight:800;font-size:1.12rem;color:#2e3192;line-height:1;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}
+.logo b small{display:block;font-size:.52rem;font-weight:600;color:#6c6f8c;margin-top:3px;letter-spacing:.02em}
+nav.menu{display:flex;gap:20px;align-items:center}
+nav.menu a{font-weight:600;font-size:.9rem;color:#1f2147}nav.menu a:hover{color:#e07d10}
+.burger{display:none;background:none;border:0;cursor:pointer;width:40px;height:40px}
+.burger span{display:block;height:2px;width:22px;background:#1f2147;margin:5px auto}
+/* hero band */
+.phero{background:linear-gradient(135deg,#2e3192,#20225f);color:#fff;padding:46px 0 52px}
+.crumb{font-size:.85rem;color:rgba(255,255,255,.75);margin-bottom:18px}
+.crumb a:hover{color:#fff}.crumb .sep{opacity:.5;margin:0 8px}
+.chip{display:inline-block;background:#f7941e;color:#fff;font-weight:700;font-size:.78rem;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.phero h1{font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;max-width:20ch}
+.phero .loc{color:rgba(255,255,255,.8);font-size:1.05rem;margin-top:6px}
+.section{padding:60px 0}
+/* listing grid */
+.intro{max-width:720px;margin:0 auto 40px;text-align:center}
+.intro h2{font-size:clamp(1.6rem,3vw,2.2rem)}.intro p{color:#6c6f8c;font-size:1.08rem}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{display:block;background:#ffffff;border:1px solid #e4e3ee;border-radius:3px;padding:24px;transition:.2s}
+.pcard:hover{transform:translateY(-4px);border-color:#f7941e;box-shadow:0 14px 32px rgba(20,22,60,.12)}
+.pcard .mono{width:50px;height:50px;border-radius:10px;background:#2e3192;color:#fff;display:grid;place-items:center;font-weight:800;font-size:.9rem;margin-bottom:14px}
+.pcard.ph .mono{background:#6c6f8c}
+.pcard .t{color:#e07d10;font-weight:800;font-size:1.05rem}
+.pcard .c{color:#1f2147;font-weight:600;margin-top:2px}
+.pcard .l{color:#6c6f8c;font-size:.86rem}
+.pcard .go{color:#e07d10;font-weight:700;font-size:.85rem;margin-top:14px;display:inline-block}
+.phtag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.08em;color:#6c6f8c;border:1px solid #e4e3ee;border-radius:5px;padding:2px 7px;margin-top:10px}
+/* detail layout */
+.dwrap{display:grid;grid-template-columns:1.6fr .9fr;gap:40px;align-items:start}
+.gallery .main{border-radius:3px;overflow:hidden;background:#0d0f24;aspect-ratio:16/9;display:grid;place-items:center;color:#fff;position:relative}
+.gallery .main video{width:100%;height:100%;object-fit:cover}
+.ph-box{background:repeating-linear-gradient(45deg,#f1f1f6,#f1f1f6 12px,rgba(0,0,0,.03) 12px,rgba(0,0,0,.03) 24px);display:grid;place-items:center;color:#6c6f8c;font-weight:700;font-size:.8rem;letter-spacing:.1em}
+.gallery .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.gallery .thumbs .ph-box{aspect-ratio:4/3;border-radius:calc(3px - 2px);border:1px solid #e4e3ee}
+.block{margin-top:34px}
+.block h2{font-size:1.4rem;color:#2e3192}
+.block p{color:#6c6f8c}
+.draft{font-size:.78rem;color:#6c6f8c;font-style:italic;border-left:3px solid #f7941e;padding-left:10px;margin-top:10px}
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px}
+.cert{display:flex;gap:12px;align-items:center;border:1px solid #e4e3ee;border-radius:3px;padding:14px;background:#ffffff}
+.cert .ic{width:40px;height:40px;border-radius:8px;background:#f1f1f6;display:grid;place-items:center;color:#e07d10;font-weight:800;font-size:.7rem;flex:0 0 auto}
+.cert b{font-size:.95rem;color:#1f2147;display:block}.cert span{font-size:.74rem;color:#6c6f8c}
+.facts{background:#ffffff;border:1px solid #e4e3ee;border-radius:3px;padding:24px;position:sticky;top:90px}
+.facts h3{font-size:1.05rem;color:#2e3192;margin-bottom:14px}
+.facts dl{margin:0}.facts dt{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6c6f8c;margin-top:14px}
+.facts dd{margin:2px 0 0;color:#1f2147;font-weight:600}
+.facts .cta{margin-top:22px}
+.back{display:inline-block;margin-bottom:6px;color:#fff;font-weight:600;font-size:.9rem}
+/* footer */
+footer{background:#2e3192;color:#c2c4e4;padding:40px 0;font-size:.9rem;margin-top:20px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+footer a:hover{color:#fff}
+@media(max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr)}.dwrap{grid-template-columns:1fr}.facts{position:static}
+ nav.menu{display:none}.burger{display:block}}
+@media(max-width:560px){.pgrid,.certs,.gallery .thumbs{grid-template-columns:1fr}}
+</style></head><body><header class="nav"><div class="wrap"><a class="logo" href="design-3-editorial.html"><svg class="mark" viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 42 L18 6 L26 22 L21 32 L18 24 L9 42 Z" fill="#2e3192"/><path d="M30 42 L25 30 L34 10 L52 42 Z" fill="#2e3192"/><path d="M3 29 L15 41 L41 9" fill="none" stroke="#f7941e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>MASARAT<small>Infection &amp; Contamination Control Solutions</small></b></a><nav class="menu" id="menu"><a href="design-3-editorial.html">Home</a><a href="design-3-editorial.html#about">About</a><a href="design-3-editorial.html#services">Services</a><a href="design-3-projects.html">Our Projects</a><a href="design-3-editorial.html#contact">Contact</a></nav><a href="design-3-editorial.html#contact" class="btn btn-primary">Contact us</a><button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button></div></header><section class="phero"><div class="wrap"><a class="back" href="design-3-projects.html">← All projects</a><div class="crumb"><a href="design-3-editorial.html">Home</a><span class="sep">/</span><a href="design-3-projects.html">Our Projects</a><span class="sep">/</span>Saudi Food &amp; Drug Authority</div><span class="chip">BSL-3 Project</span><h1>Saudi Food &amp; Drug Authority</h1><div class="loc">📍 Riyadh</div></div></section><section class="section"><div class="wrap"><div class="dwrap"><div><div class="gallery"><div class="main"><video src="assets/videos/workshop-sfda.mp4" muted loop playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()"></video></div><div class="thumbs"><div class="ph-box">PHOTO</div><div class="ph-box">PHOTO</div><div class="ph-box">PHOTO</div></div></div><div><div class="block" style="margin-top:0"><h2>Overview</h2><p>Design, construction, commissioning and certification of a Biosafety Level 3 (BSL-3) containment laboratory for the Saudi Food &amp; Drug Authority — delivered to WHO, CDC and BMBL containment requirements with full directional-airflow and HVAC validation.</p><p class="draft">Indicative summary — final project copy &amp; figures to be supplied by Masarat.</p></div><div class="block"><h2>Certificates &amp; reports</h2><div class="certs"><div class="cert"><div class="ic">COC</div><div><b>Certificate of Compliance</b><span>Placeholder — upload the signed PDF</span></div></div><div class="cert"><div class="ic">ISO</div><div><b>ISO 14644 Classification Report</b><span>Placeholder — cleanroom classification</span></div></div><div class="cert"><div class="ic">HVAC</div><div><b>HVAC Validation &amp; Commissioning</b><span>Placeholder — commissioning report</span></div></div><div class="cert"><div class="ic">DOC</div><div><b>As-built / Handover Pack</b><span>Placeholder — project documentation</span></div></div></div></div></div></div><div class="facts"><h3>Project facts</h3><dl><dt>Client</dt><dd>Saudi Food &amp; Drug Authority</dd><dt>Location</dt><dd>Riyadh</dd><dt>Project type</dt><dd>BSL-3 Project</dd><dt>Scope</dt><dd>BSL-3 containment · HVAC &amp; directional airflow · commissioning · certification</dd><dt>Standards</dt><dd>WHO · CDC · NIH · BMBL</dd><dt>Year</dt><dd>—</dd></dl><div class="cta"><a href="design-3-editorial.html#contact" class="btn btn-primary">Discuss a similar project →</a></div></div></div></div></section><footer><div class="wrap"><span>© 2026 Masarat for Accreditation — Riyadh, Saudi Arabia</span><span><a href="tel:+966114870043">+966 1148 70 043</a> &nbsp;·&nbsp; <a href="mailto:info@m4acc.com">info@m4acc.com</a></span></div></footer><script>var b=document.getElementById('burger'),m=document.getElementById('menu');if(b)b.addEventListener('click',function(){m.style.display=m.style.display==='flex'?'none':'flex';m.style.position='absolute';m.style.flexDirection='column';m.style.top='72px';m.style.left='0';m.style.right='0';m.style.background='#fbfaf7';m.style.padding='16px 24px';});</script></body></html>
