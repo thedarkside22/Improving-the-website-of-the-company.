@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services - Masarat for Accreditation</title>
+<!-- Front-end-only mockup (Direction E). Real logo; stock content photos & some copy are PLACEHOLDERS. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    "colors": {
+      "surface-bright": "#f8f9fe", "on-secondary-fixed": "#2d1600", "on-error-container": "#93000a", "secondary-container": "#fd9924", "error": "#ba1a1a", "on-tertiary-container": "#7d82e6", "surface-dim": "#d8dadf", "on-background": "#191c1f", "tertiary-fixed-dim": "#c0c1ff", "inverse-surface": "#2e3134", "safety-orange": "#F7941E", "on-primary-fixed": "#14183d", "secondary-fixed": "#ffdcbf", "on-secondary-container": "#663800", "primary-fixed": "#dfe0ff", "surface-container-low": "#f2f3f8", "surface-gray": "#F5F6FB", "error-container": "#ffdad6", "inverse-primary": "#c0c3f3", "surface-container-highest": "#e1e2e7", "tertiary": "#020048", "clinical-white": "#FFFFFF", "on-surface-variant": "#46464e", "secondary-fixed-dim": "#ffb874", "surface-container-high": "#e7e8ed", "on-tertiary-fixed": "#04006d", "primary-container": "#1d2147", "on-secondary": "#ffffff", "deep-navy": "#1D2147", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "on-primary-container": "#8588b5", "accent-blue": "#2E3192", "primary-fixed-dim": "#c0c3f3", "outline": "#77767f", "tertiary-container": "#0f0e79", "secondary": "#8c4f00", "on-primary": "#ffffff", "surface-tint": "#575b85", "surface-container": "#eceef3", "on-primary-fixed-variant": "#40446c", "surface-variant": "#e1e2e7", "primary": "#070a31", "on-tertiary-fixed-variant": "#373a9b", "inverse-on-surface": "#eff0f5", "surface": "#f8f9fe", "on-error": "#ffffff", "on-secondary-fixed-variant": "#6b3b00", "outline-variant": "#c7c5cf", "on-surface": "#191c1f", "background": "#f8f9fe", "tertiary-fixed": "#e1e0ff"
+    },
+    "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+    "spacing": { "margin-desktop": "64px", "unit": "4px", "gutter": "24px", "margin-mobile": "16px", "max-width": "1280px" },
+    "fontFamily": { "label-caps": ["Inter"], "body-sm": ["Inter"], "stats-display": ["Montserrat"], "headline-xl": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "body-lg": ["Inter"], "headline-md": ["Montserrat"], "headline-sm": ["Montserrat"], "body-md": ["Inter"], "headline-lg": ["Montserrat"] },
+    "fontSize": { "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "stats-display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }], "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }] }
+  } }
+}
+</script>
+<style>
+  .modular-grid { background-image: linear-gradient(to right,#40446c 1px,transparent 1px),linear-gradient(to bottom,#40446c 1px,transparent 1px); background-size: 24px 24px; }
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-clinical-white border-b border-outline-variant shadow-sm font-body-md text-body-md" id="main-nav">
+  <div class="max-w-max-width mx-auto flex items-center justify-between px-margin-mobile md:px-margin-desktop h-20">
+    <a href="design-5-home.html" class="flex items-center gap-3" aria-label="Masarat for Accreditation"><img src="assets/masarat-logo-light.png" alt="Masarat for Accreditation" class="h-14 w-auto object-contain"></a>
+    <nav class="hidden md:flex gap-8 items-center">
+      <a class="text-safety-orange font-bold border-b-2 border-safety-orange pb-1" href="design-5-services.html">Services</a>
+      <a class="text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-5-products.html">Products</a>
+      <a class="text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-5-projects.html">Projects</a>
+      <a class="text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-5-home.html#training">Training</a>
+      <a class="text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-5-home.html#about">About</a>
+      <a class="text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-5-home.html#contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="design-5-home.html#contact" class="hidden md:block bg-safety-orange text-clinical-white px-6 py-2 rounded font-label-caps hover:bg-orange-600 transition-colors">Request Audit</a>
+      <button class="md:hidden text-deep-navy" id="menu-toggle" aria-label="Menu"><span class="material-symbols-outlined">menu</span></button>
+    </div>
+  </div>
+  <div class="hidden md:hidden border-t border-outline-variant bg-clinical-white px-margin-mobile py-4 flex-col gap-1" id="mobile-menu">
+    <a class="block py-2 text-safety-orange font-bold" href="design-5-services.html">Services</a>
+    <a class="block py-2 text-on-surface-variant" href="design-5-products.html">Products</a>
+    <a class="block py-2 text-on-surface-variant" href="design-5-projects.html">Projects</a>
+    <a class="block py-2 text-on-surface-variant" href="design-5-home.html#training">Training</a>
+    <a class="block py-2 text-on-surface-variant" href="design-5-home.html#about">About</a>
+    <a class="block py-2 text-on-surface-variant" href="design-5-home.html#contact">Contact</a>
+  </div>
+</header>
+<main class="flex-grow">
+  <!-- Hero -->
+  <section class="w-full bg-deep-navy text-clinical-white py-[120px] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 modular-grid"></div>
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 flex flex-col md:flex-row items-center gap-12">
+      <div class="flex-1">
+        <span class="font-label-caps text-label-caps text-safety-orange mb-4 block tracking-widest uppercase">Clinical Precision • Technical Excellence</span>
+        <h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl mb-6">Our Products &amp; Services</h1>
+        <p class="font-body-lg text-body-lg text-surface-variant max-w-2xl">From the first consultation to final certification and training, Masarat covers the full lifecycle of a controlled environment — under one accountable partner, to international standards including ISO 14644 and SFDA regulations.</p>
+      </div>
+      <div class="flex-1 w-full relative">
+        <div class="bg-cover bg-center w-full h-[400px] rounded-lg border border-surface-tint shadow-lg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhSrRkFmvrw8a0kCiKENaHLF575sEXdXqrhGHnOaLJc48moVMdkZnRKNU8baY4Xf8B2-uA2dol5dbodC8MvJ2c_zLjdZmLivSActpgfY0dR4fep-tZgmoKOPlLVUlDbRNtWcWigbIaGknLQ_fjM23XliEPqRiIDzBVy4kNi6YotUfVZVTo08Zu6UAMesjpnExh0ylTUql9H8xKwz4wcBCOlLtPcxKwdKV8_ybDl7pVpkGm456Z42YsQWvjeq0p6rIR83dkb4fv8T0')"></div>
+        <div class="absolute -bottom-6 -left-6 bg-clinical-white text-deep-navy p-6 rounded-lg border border-outline-variant shadow-lg flex items-center gap-4">
+          <span class="material-symbols-outlined text-[40px] text-safety-orange" style="font-variation-settings:'FILL' 1;">verified</span>
+          <div><div class="font-stats-display text-stats-display">ISO</div><div class="font-label-caps text-label-caps text-outline">14644 COMPLIANT</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Official Categories -->
+  <section class="py-[120px] bg-surface-bright">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-16">
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-navy mb-4">Core service categories</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">Masarat provides 8 official categories of cleanroom, biocontainment and accreditation services, designed for uncompromising accuracy.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        <div class="bg-clinical-white border border-outline-variant rounded-lg p-8 hover:shadow-[0_4px_20px_rgba(29,33,71,0.04)] transition-shadow group">
+          <div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors"><span class="material-symbols-outlined text-deep-navy group-hover:text-clinical-white transition-colors">meeting_room</span></div>
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">Turnkey Cleanroom &amp; GMP</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Designed, built and validated to international standards.</p>
+        </div>
+        <div class="bg-clinical-white border border-outline-variant rounded-lg p-8 hover:shadow-[0_4px_20px_rgba(29,33,71,0.04)] transition-shadow group">
+          <div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors"><span class="material-symbols-outlined text-deep-navy group-hover:text-clinical-white transition-colors">biotech</span></div>
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">Biocontainment Labs (BSL-3 &amp; 4)</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Full containment delivery to WHO, CDC, NIH &amp; BMBL.</p>
+        </div>
+        <div class="bg-clinical-white border border-outline-variant rounded-lg p-8 hover:shadow-[0_4px_20px_rgba(29,33,71,0.04)] transition-shadow group">
+          <div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors"><span class="material-symbols-outlined text-deep-navy group-hover:text-clinical-white transition-colors">support_agent</span></div>
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">Consultancy Services</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Biosafety, infection and contamination control.</p>
+        </div>
+        <div class="bg-clinical-white border border-outline-variant rounded-lg p-8 hover:shadow-[0_4px_20px_rgba(29,33,71,0.04)] transition-shadow group">
+          <div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors"><span class="material-symbols-outlined text-deep-navy group-hover:text-clinical-white transition-colors">verified</span></div>
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">Commissioning, Qualification &amp; Validation</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Systems that pass inspection, first time.</p>
+        </div>
+        <div class="bg-clinical-white border border-outline-variant rounded-lg p-8 hover:shadow-[0_4px_20px_rgba(29,33,71,0.04)] transition-shadow group">
+          <div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors"><span class="material-symbols-outlined text-deep-navy group-hover:text-clinical-white transition-colors">construction</span></div>
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">Installation Services</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">GRP panels, doors, HVAC, mechanical &amp; electrical.</p>
+        </div>
+        <div class="bg-clinical-white border border-outline-variant rounded-lg p-8 hover:shadow-[0_4px_20px_rgba(29,33,71,0.04)] transition-shadow group">
+          <div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors"><span class="material-symbols-outlined text-deep-navy group-hover:text-clinical-white transition-colors">science</span></div>
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">Biological Safety Cabinet Testing</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Cabinets, hoods and isolators, NSF-aligned.</p>
+        </div>
+        <div class="bg-clinical-white border border-outline-variant rounded-lg p-8 hover:shadow-[0_4px_20px_rgba(29,33,71,0.04)] transition-shadow group">
+          <div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors"><span class="material-symbols-outlined text-deep-navy group-hover:text-clinical-white transition-colors">school</span></div>
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">Training (Workshops)</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Get the best from your facility, safely.</p>
+        </div>
+        <div class="bg-clinical-white border border-outline-variant rounded-lg p-8 hover:shadow-[0_4px_20px_rgba(29,33,71,0.04)] transition-shadow group">
+          <div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 group-hover:bg-safety-orange transition-colors"><span class="material-symbols-outlined text-deep-navy group-hover:text-clinical-white transition-colors">inventory_2</span></div>
+          <h3 class="font-headline-sm text-headline-sm text-deep-navy mb-2">Contamination Control Products</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Durable MRC GRP cleanroom systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Air Quality & BSC detail -->
+  <section class="py-[120px] bg-clinical-white border-y border-outline-variant">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-[80px]">
+      <div class="border border-outline-variant rounded-lg bg-surface-gray p-8 relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-10"><span class="material-symbols-outlined text-[120px]">air</span></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-6"><span class="w-3 h-3 bg-accent-blue rounded-full"></span><h2 class="font-headline-md text-headline-md text-deep-navy">Air Quality Validation Testing</h2></div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-8">Air quality protocols that ensure your HVAC and filtration systems operate within strict ISO 14644 classifications.</p>
+          <div class="space-y-4">
+            <div class="bg-clinical-white p-4 border border-outline-variant rounded flex items-start gap-4"><span class="material-symbols-outlined text-safety-orange mt-1" style="font-variation-settings:'FILL' 1;">filter_alt</span><div><h4 class="font-label-caps text-label-caps text-deep-navy">HEPA Filter Integrity (Leak Test)</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">PAO aerosol &amp; photometers to detect pinhole leaks in filter media and seals.</p></div></div>
+            <div class="bg-clinical-white p-4 border border-outline-variant rounded flex items-start gap-4"><span class="material-symbols-outlined text-safety-orange mt-1" style="font-variation-settings:'FILL' 1;">compress</span><div><h4 class="font-label-caps text-label-caps text-deep-navy">Room Pressure Differential</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Verification of cascading pressure zones to prevent cross-contamination.</p></div></div>
+            <div class="bg-clinical-white p-4 border border-outline-variant rounded flex items-start gap-4"><span class="material-symbols-outlined text-safety-orange mt-1" style="font-variation-settings:'FILL' 1;">grain</span><div><h4 class="font-label-caps text-label-caps text-deep-navy">Airborne Particle Counting</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Quantifying non-viable particles per cubic metre per ISO 14644-1.</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="border border-outline-variant rounded-lg bg-surface-gray p-8 relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-10"><span class="material-symbols-outlined text-[120px]">science</span></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-6"><span class="w-3 h-3 bg-safety-orange rounded-full"></span><h2 class="font-headline-md text-headline-md text-deep-navy">Biological Safety Cabinet (BSC) Testing</h2></div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-8">Primary containment validation for personnel, product and environmental protection — to NSF and CBAHI requirements.</p>
+          <div class="space-y-4">
+            <div class="bg-clinical-white p-4 border border-outline-variant rounded flex items-start gap-4"><span class="material-symbols-outlined text-accent-blue mt-1" style="font-variation-settings:'FILL' 1;">air</span><div><h4 class="font-label-caps text-label-caps text-deep-navy">Inflow &amp; Downflow Velocity</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Correct air-barrier velocities for containment and sterile work zones.</p></div></div>
+            <div class="bg-clinical-white p-4 border border-outline-variant rounded flex items-start gap-4"><span class="material-symbols-outlined text-accent-blue mt-1" style="font-variation-settings:'FILL' 1;">foggy</span><div><h4 class="font-label-caps text-label-caps text-deep-navy">Airflow Smoke Patterns</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Visualising directional airflow to identify dead spots or turbulence.</p></div></div>
+            <div class="bg-clinical-white p-4 border border-outline-variant rounded flex items-start gap-4"><span class="material-symbols-outlined text-accent-blue mt-1" style="font-variation-settings:'FILL' 1;">bolt</span><div><h4 class="font-label-caps text-label-caps text-deep-navy">HEPA, Light &amp; Electrical Safety</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Filter leak, light intensity, vibration and electrical safety checks.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 8 Phases of Delivery -->
+  <section class="py-[120px] bg-deep-navy text-clinical-white">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-16">
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-clinical-white mb-4">The 8 phases of delivery</h2>
+        <p class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto">A methodical approach ensuring zero ambiguity and complete regulatory compliance from initiation to final certification.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8">
+        <div class="relative"><div class="font-stats-display text-[64px] leading-none text-surface-tint opacity-30 absolute -top-8 -left-4 font-bold">01</div><div class="relative z-10"><h4 class="font-label-caps text-label-caps text-safety-orange mb-2 border-b border-surface-tint pb-2">PROJECT INITIATION</h4><p class="font-body-sm text-body-sm text-surface-variant">Requirements, scope and initial site assessment.</p></div></div>
+        <div class="relative"><div class="font-stats-display text-[64px] leading-none text-surface-tint opacity-30 absolute -top-8 -left-4 font-bold">02</div><div class="relative z-10"><h4 class="font-label-caps text-label-caps text-safety-orange mb-2 border-b border-surface-tint pb-2">DESIGN</h4><p class="font-body-sm text-body-sm text-surface-variant">Conceptual &amp; detailed engineering, architectural design, client approval.</p></div></div>
+        <div class="relative"><div class="font-stats-display text-[64px] leading-none text-surface-tint opacity-30 absolute -top-8 -left-4 font-bold">03</div><div class="relative z-10"><h4 class="font-label-caps text-label-caps text-safety-orange mb-2 border-b border-surface-tint pb-2">PROCUREMENT</h4><p class="font-body-sm text-body-sm text-surface-variant">Sourcing of materials &amp; equipment with quality checks.</p></div></div>
+        <div class="relative"><div class="font-stats-display text-[64px] leading-none text-surface-tint opacity-30 absolute -top-8 -left-4 font-bold">04</div><div class="relative z-10"><h4 class="font-label-caps text-label-caps text-safety-orange mb-2 border-b border-surface-tint pb-2">CONSTRUCTION</h4><p class="font-body-sm text-body-sm text-surface-variant">Site preparation, GRP panels &amp; structural components.</p></div></div>
+        <div class="relative"><div class="font-stats-display text-[64px] leading-none text-surface-tint opacity-30 absolute -top-8 -left-4 font-bold">05</div><div class="relative z-10"><h4 class="font-label-caps text-label-caps text-safety-orange mb-2 border-b border-surface-tint pb-2">INSTALLATION</h4><p class="font-body-sm text-body-sm text-surface-variant">HVAC, cleanroom components, electrical &amp; mechanical.</p></div></div>
+        <div class="relative"><div class="font-stats-display text-[64px] leading-none text-surface-tint opacity-30 absolute -top-8 -left-4 font-bold">06</div><div class="relative z-10"><h4 class="font-label-caps text-label-caps text-safety-orange mb-2 border-b border-surface-tint pb-2">TESTING &amp; VALIDATION</h4><p class="font-body-sm text-body-sm text-surface-variant">To ISO 14644 and GLP/GMP compliance.</p></div></div>
+        <div class="relative"><div class="font-stats-display text-[64px] leading-none text-surface-tint opacity-30 absolute -top-8 -left-4 font-bold">07</div><div class="relative z-10"><h4 class="font-label-caps text-label-caps text-safety-orange mb-2 border-b border-surface-tint pb-2">COMMISSIONING &amp; HANDOVER</h4><p class="font-body-sm text-body-sm text-surface-variant">Final inspections, handover and staff training.</p></div></div>
+        <div class="relative"><div class="font-stats-display text-[64px] leading-none text-surface-tint opacity-30 absolute -top-8 -left-4 font-bold">08</div><div class="relative z-10"><h4 class="font-label-caps text-label-caps text-safety-orange mb-2 border-b border-surface-tint pb-2">PROJECT CLOSURE</h4><p class="font-body-sm text-body-sm text-surface-variant">Final documentation, report and project review.</p></div></div>
+      </div>
+      <div class="text-center mt-16"><a href="design-5-home.html#contact" class="bg-safety-orange text-clinical-white px-8 py-3 rounded font-label-caps text-label-caps hover:bg-orange-600 transition-colors">REQUEST THIS SERVICE</a></div>
+    </div>
+  </section>
+</main>
+<!-- Footer -->
+<footer class="bg-deep-navy text-clinical-white w-full mt-auto font-body-sm text-body-sm">
+  <div class="max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20">
+    <div class="md:col-span-1 mb-8 md:mb-0">
+      <img src="assets/masarat-logo-dark.png" alt="Masarat for Accreditation" class="h-16 w-auto object-contain mb-4">
+      <p class="text-surface-variant opacity-80 max-w-xs">A Saudi company specialized in cleanroom solutions (Cleanrooms &amp; GMP) and high-risk laboratories (BSL-3 &amp; 4) — since 2016.</p>
+    </div>
+    <div><h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Company</h4><ul class="space-y-3">
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-5-home.html#about">About</a></li>
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-5-services.html">Services</a></li>
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-5-projects.html">Projects</a></li>
+    </ul></div>
+    <div><h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Resources</h4><ul class="space-y-3">
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-5-products.html">Products</a></li>
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-5-home.html#training">Training</a></li>
+    </ul></div>
+    <div><h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Contact</h4><ul class="space-y-3">
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="tel:+966114870043">+966 1148 70 043</a></li>
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="mailto:info@m4acc.com">info@m4acc.com</a></li>
+    </ul></div>
+  </div>
+  <div class="border-t border-surface-tint"><div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-6 text-center md:text-left text-surface-variant opacity-60 text-xs">© 2026 Masarat for Accreditation. All rights reserved.</div></div>
+</footer>
+<script>
+  window.addEventListener('scroll', () => { const n=document.getElementById('main-nav'); if(window.scrollY>10){n.classList.add('shadow-md');}else{n.classList.remove('shadow-md');} });
+  var t=document.getElementById('menu-toggle'), mm=document.getElementById('mobile-menu');
+  if(t) t.addEventListener('click', function(){ mm.classList.toggle('hidden'); mm.classList.toggle('flex'); });
+</script>
+</body>
+</html>
