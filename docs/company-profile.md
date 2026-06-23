@@ -58,7 +58,20 @@ equipment and technologies — while maintaining a healthy, safe working environ
 
 ---
 
-## 3. What we do — services
+## 3. What we do — Our Products and Services
+
+**The 8 official categories (from the "Our Products and Services" deck):**
+
+1. **Turnkey Cleanroom & GMP Solutions**
+2. **Turnkey Biocontainment Laboratories (BSL-3 & 4) Solutions**
+3. **Consultancy Services**
+4. **Commissioning, Qualification & Validation**
+5. **Installation Services**
+6. **Biological Safety Cabinet Testing & Certification**
+7. **Training (Workshops)**
+8. **Contamination Control Products**
+
+**In more detail:**
 
 - **Consultancy** — biosafety, infection & contamination control, cleanrooms.
 - **Cleanroom testing, commissioning & validation** of clean rooms and sterile areas.
