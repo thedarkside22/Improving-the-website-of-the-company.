@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IAU Advanced Diagnostics Hub — Masarat for Accreditation</title>
+<!-- Front-end-only mockup (Direction E — case study C: build & certify timeline). Real logo + real video; some copy is PLACEHOLDER. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    "colors": {
+      "surface-bright": "#f8f9fe", "on-secondary-fixed": "#2d1600", "on-error-container": "#93000a", "secondary-container": "#fd9924", "error": "#ba1a1a", "on-tertiary-container": "#7d82e6", "surface-dim": "#d8dadf", "on-background": "#191c1f", "tertiary-fixed-dim": "#c0c1ff", "inverse-surface": "#2e3134", "safety-orange": "#F7941E", "on-primary-fixed": "#14183d", "secondary-fixed": "#ffdcbf", "on-secondary-container": "#663800", "primary-fixed": "#dfe0ff", "surface-container-low": "#f2f3f8", "surface-gray": "#F5F6FB", "error-container": "#ffdad6", "inverse-primary": "#c0c3f3", "surface-container-highest": "#e1e2e7", "tertiary": "#020048", "clinical-white": "#FFFFFF", "on-surface-variant": "#46464e", "secondary-fixed-dim": "#ffb874", "surface-container-high": "#e7e8ed", "on-tertiary-fixed": "#04006d", "primary-container": "#1d2147", "on-secondary": "#ffffff", "deep-navy": "#1D2147", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "on-primary-container": "#8588b5", "accent-blue": "#2E3192", "primary-fixed-dim": "#c0c3f3", "outline": "#77767f", "tertiary-container": "#0f0e79", "secondary": "#8c4f00", "on-primary": "#ffffff", "surface-tint": "#575b85", "surface-container": "#eceef3", "on-primary-fixed-variant": "#40446c", "surface-variant": "#e1e2e7", "primary": "#070a31", "on-tertiary-fixed-variant": "#373a9b", "inverse-on-surface": "#eff0f5", "surface": "#f8f9fe", "on-error": "#ffffff", "on-secondary-fixed-variant": "#6b3b00", "outline-variant": "#c7c5cf", "on-surface": "#191c1f", "background": "#f8f9fe", "tertiary-fixed": "#e1e0ff"
+    },
+    "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+    "spacing": { "margin-desktop": "64px", "unit": "4px", "gutter": "24px", "margin-mobile": "16px", "max-width": "1280px" },
+    "fontFamily": { "label-caps": ["Inter"], "body-sm": ["Inter"], "stats-display": ["Montserrat"], "headline-xl": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "body-lg": ["Inter"], "headline-md": ["Montserrat"], "headline-sm": ["Montserrat"], "body-md": ["Inter"], "headline-lg": ["Montserrat"] },
+    "fontSize": { "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "stats-display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }], "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }] }
+  } }
+}
+</script>
+<style>
+  .scrollbar-hide::-webkit-scrollbar { display:none; } .scrollbar-hide { -ms-overflow-style:none; scrollbar-width:none; }
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="bg-surface-gray text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-clinical-white w-full top-0 sticky border-b border-outline-variant shadow-sm z-50" id="main-nav">
+  <div class="max-w-max-width mx-auto flex items-center justify-between px-margin-mobile md:px-margin-desktop h-20">
+    <a href="design-5-home.html" class="flex items-center gap-3" aria-label="Masarat for Accreditation"><img src="assets/masarat-logo-light.png" alt="Masarat for Accreditation" class="h-14 w-auto object-contain"></a>
+    <nav class="hidden md:flex gap-8 items-center font-body-md text-body-md">
+      <a class="text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-5-services.html">Services</a>
+      <a class="text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-5-products.html">Products</a>
+      <a class="text-safety-orange font-bold border-b-2 border-safety-orange pb-1" href="design-5-projects.html">Projects</a>
+      <a class="text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-5-home.html#training">Training</a>
+      <a class="text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-5-home.html#about">About</a>
+      <a class="text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-5-home.html#contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="design-5-home.html#contact" class="hidden md:block bg-safety-orange text-clinical-white font-label-caps text-label-caps px-6 py-2.5 rounded uppercase tracking-wider hover:bg-orange-600 transition-colors">Request Audit</a>
+      <button class="md:hidden text-deep-navy" id="menu-toggle" aria-label="Menu"><span class="material-symbols-outlined">menu</span></button>
+    </div>
+  </div>
+  <div class="hidden md:hidden border-t border-outline-variant bg-clinical-white px-margin-mobile py-4 flex-col gap-1" id="mobile-menu">
+    <a class="block py-2 text-on-surface-variant" href="design-5-services.html">Services</a>
+    <a class="block py-2 text-on-surface-variant" href="design-5-products.html">Products</a>
+    <a class="block py-2 text-safety-orange font-bold" href="design-5-projects.html">Projects</a>
+    <a class="block py-2 text-on-surface-variant" href="design-5-home.html#training">Training</a>
+    <a class="block py-2 text-on-surface-variant" href="design-5-home.html#about">About</a>
+    <a class="block py-2 text-on-surface-variant" href="design-5-home.html#contact">Contact</a>
+  </div>
+</header>
+<main class="flex-grow">
+  <!-- Split hero: text + video -->
+  <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
+    <nav aria-label="Breadcrumb" class="font-body-sm text-body-sm text-on-surface-variant opacity-80 mb-6"><a href="design-5-home.html" class="hover:text-deep-navy">Home</a> <span class="opacity-50 mx-1">/</span> <a href="design-5-projects.html" class="hover:text-deep-navy">Projects</a> <span class="opacity-50 mx-1">/</span> IAU Advanced Diagnostics Hub</nav>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="flex gap-2 mb-4"><span class="bg-deep-navy text-clinical-white px-2 py-1 rounded font-label-caps text-[10px] tracking-wider uppercase">Academic</span><span class="bg-safety-orange text-clinical-white px-2 py-1 rounded font-label-caps text-[10px] tracking-wider uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">build</span> Build &amp; Certify</span></div>
+        <h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl font-bold text-deep-navy mb-4">IAU Advanced Diagnostics Hub</h1>
+        <div class="flex items-center gap-2 text-on-surface-variant mb-6"><span class="material-symbols-outlined text-base">location_on</span><span class="font-body-md text-body-md">Dammam, Kingdom of Saudi Arabia</span></div>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Turnkey laboratory build and pressure-cascade setup for Imam Abdulrahman Bin Faisal University — modular GRP cleanroom construction, HVAC installation and biological-safety-cabinet certification, validated to NSF/ANSI 49 and ISO 14644.</p>
+        <div class="flex flex-wrap gap-x-8 gap-y-3">
+          <div><div class="font-label-caps text-label-caps text-on-surface-variant">Client</div><div class="font-body-md text-body-md font-semibold text-deep-navy">IAU</div></div>
+          <div><div class="font-label-caps text-label-caps text-on-surface-variant">Standards</div><div class="font-body-md text-body-md font-semibold text-deep-navy">NSF/ANSI 49 · ISO 14644</div></div>
+          <div><div class="font-label-caps text-label-caps text-on-surface-variant">Delivery</div><div class="font-body-md text-body-md font-semibold text-deep-navy">Turnkey</div></div>
+        </div>
+      </div>
+      <div class="aspect-video relative overflow-hidden rounded-lg bg-deep-navy border border-outline-variant shadow-lg group" onmouseenter="this.querySelector('video').play()" onmouseleave="var v=this.querySelector('video');v.pause()">
+        <video class="absolute inset-0 w-full h-full object-cover" src="assets/videos/project-3.mp4" muted loop playsinline preload="metadata" controls></video>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-300"><span class="material-symbols-outlined text-clinical-white text-6xl drop-shadow-lg opacity-90">play_circle</span></div>
+      </div>
+    </div>
+  </section>
+  <!-- Delivery timeline -->
+  <section class="bg-deep-navy text-clinical-white py-16">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="mb-10"><span class="font-label-caps text-label-caps text-safety-orange tracking-widest uppercase">How it was delivered</span><h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold mt-2">Build &amp; certify timeline</h2></div>
+      <div class="flex gap-5 overflow-x-auto pb-4 scrollbar-hide">
+        <div class="flex-none w-60 bg-primary-container border border-surface-tint rounded-lg p-5"><div class="font-stats-display text-headline-md text-safety-orange mb-2">01</div><h4 class="font-label-caps text-label-caps mb-2 border-b border-surface-tint pb-2">DESIGN</h4><p class="font-body-sm text-body-sm text-surface-variant">Detailed engineering &amp; architectural design, client approval.</p></div>
+        <div class="flex-none w-60 bg-primary-container border border-surface-tint rounded-lg p-5"><div class="font-stats-display text-headline-md text-safety-orange mb-2">02</div><h4 class="font-label-caps text-label-caps mb-2 border-b border-surface-tint pb-2">CONSTRUCTION</h4><p class="font-body-sm text-body-sm text-surface-variant">Modular GRP cleanroom panels &amp; structural build.</p></div>
+        <div class="flex-none w-60 bg-primary-container border border-surface-tint rounded-lg p-5"><div class="font-stats-display text-headline-md text-safety-orange mb-2">03</div><h4 class="font-label-caps text-label-caps mb-2 border-b border-surface-tint pb-2">INSTALLATION</h4><p class="font-body-sm text-body-sm text-surface-variant">HVAC, pressure cascade, mechanical &amp; electrical.</p></div>
+        <div class="flex-none w-60 bg-primary-container border border-surface-tint rounded-lg p-5"><div class="font-stats-display text-headline-md text-safety-orange mb-2">04</div><h4 class="font-label-caps text-label-caps mb-2 border-b border-surface-tint pb-2">VALIDATION</h4><p class="font-body-sm text-body-sm text-surface-variant">Particle counts, BSC velocity profiling, smoke patterns.</p></div>
+        <div class="flex-none w-60 bg-primary-container border border-surface-tint rounded-lg p-5"><div class="font-stats-display text-headline-md text-safety-orange mb-2">05</div><h4 class="font-label-caps text-label-caps mb-2 border-b border-surface-tint pb-2">CERTIFY &amp; HANDOVER</h4><p class="font-body-sm text-body-sm text-surface-variant">NSF/ANSI 49 certification, documentation &amp; staff training.</p></div>
+      </div>
+    </div>
+  </section>
+  <!-- Deliverables + CTA -->
+  <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-16">
+    <h2 class="font-headline-md text-headline-md font-bold text-deep-navy mb-6">Deliverables</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+      <div class="bg-clinical-white border border-outline-variant rounded-lg p-6"><span class="material-symbols-outlined text-safety-orange mb-3">meeting_room</span><h3 class="font-headline-sm text-headline-sm text-deep-navy mb-1">Modular GRP cleanroom</h3><p class="font-body-sm text-body-sm text-on-surface-variant">Constructed &amp; sealed to classification.</p></div>
+      <div class="bg-clinical-white border border-outline-variant rounded-lg p-6"><span class="material-symbols-outlined text-safety-orange mb-3">science</span><h3 class="font-headline-sm text-headline-sm text-deep-navy mb-1">BSC certification</h3><p class="font-body-sm text-body-sm text-on-surface-variant">Cabinets certified to NSF/ANSI 49.</p></div>
+      <div class="bg-clinical-white border border-outline-variant rounded-lg p-6"><span class="material-symbols-outlined text-safety-orange mb-3">description</span><h3 class="font-headline-sm text-headline-sm text-deep-navy mb-1">As-built &amp; handover pack</h3><p class="font-body-sm text-body-sm text-on-surface-variant">Full documentation (placeholder).</p></div>
+    </div>
+    <div class="bg-surface-gray border border-outline-variant rounded-lg p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div><h3 class="font-headline-sm text-headline-sm text-deep-navy mb-1">Planning a similar turnkey lab?</h3><p class="font-body-sm text-body-sm text-on-surface-variant">Our engineers will reply with a clear, compliant plan within one business day.</p></div>
+      <a href="design-5-home.html#contact" class="bg-safety-orange text-clinical-white px-8 py-3 rounded font-label-caps text-label-caps hover:bg-orange-600 transition-colors whitespace-nowrap">DISCUSS A SIMILAR PROJECT</a>
+    </div>
+  </section>
+</main>
+<!-- Footer -->
+<footer class="bg-deep-navy text-clinical-white w-full mt-auto font-body-sm text-body-sm">
+  <div class="max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20">
+    <div class="md:col-span-1 mb-8 md:mb-0">
+      <img src="assets/masarat-logo-dark.png" alt="Masarat for Accreditation" class="h-16 w-auto object-contain mb-4">
+      <p class="text-surface-variant opacity-80 max-w-xs">A Saudi company specialized in cleanroom solutions (Cleanrooms &amp; GMP) and high-risk laboratories (BSL-3 &amp; 4) — since 2016.</p>
+    </div>
+    <div><h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Company</h4><ul class="space-y-3">
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-5-home.html#about">About</a></li>
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-5-services.html">Services</a></li>
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-5-projects.html">Projects</a></li>
+    </ul></div>
+    <div><h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Resources</h4><ul class="space-y-3">
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-5-products.html">Products</a></li>
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-5-home.html#training">Training</a></li>
+    </ul></div>
+    <div><h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Contact</h4><ul class="space-y-3">
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="tel:+966114870043">+966 1148 70 043</a></li>
+      <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="mailto:info@m4acc.com">info@m4acc.com</a></li>
+    </ul></div>
+  </div>
+  <div class="border-t border-surface-tint"><div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-6 text-center md:text-left text-surface-variant opacity-60 text-xs">© 2026 Masarat for Accreditation. All rights reserved.</div></div>
+</footer>
+<script>
+  window.addEventListener('scroll', () => { const n=document.getElementById('main-nav'); if(window.scrollY>10){n.classList.add('shadow-md');}else{n.classList.remove('shadow-md');} });
+  var t=document.getElementById('menu-toggle'), mm=document.getElementById('mobile-menu');
+  if(t) t.addEventListener('click', function(){ mm.classList.toggle('hidden'); mm.classList.toggle('flex'); });
+</script>
+</body>
+</html>
