@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Masarat for Accreditation - Biosafety &amp; Cleanroom Engineering</title>
+<!-- Front-end-only mockup page (Direction D — Technical/Clinical). Real logo + real videos; some copy/photos are PLACEHOLDERS. -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-bright": "#f8f9fe", "on-secondary-fixed": "#2d1600", "on-error-container": "#93000a", "secondary-container": "#fd9924", "error": "#ba1a1a", "on-tertiary-container": "#7d82e6", "surface-dim": "#d8dadf", "on-background": "#191c1f", "tertiary-fixed-dim": "#c0c1ff", "inverse-surface": "#2e3134", "safety-orange": "#F7941E", "on-primary-fixed": "#14183d", "secondary-fixed": "#ffdcbf", "on-secondary-container": "#663800", "primary-fixed": "#dfe0ff", "surface-container-low": "#f2f3f8", "surface-gray": "#F5F6FB", "error-container": "#ffdad6", "inverse-primary": "#c0c3f3", "surface-container-highest": "#e1e2e7", "tertiary": "#020048", "clinical-white": "#FFFFFF", "on-surface-variant": "#46464e", "secondary-fixed-dim": "#ffb874", "surface-container-high": "#e7e8ed", "on-tertiary-fixed": "#04006d", "primary-container": "#1d2147", "on-secondary": "#ffffff", "deep-navy": "#1D2147", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "on-primary-container": "#8588b5", "accent-blue": "#2E3192", "primary-fixed-dim": "#c0c3f3", "outline": "#77767f", "tertiary-container": "#0f0e79", "secondary": "#8c4f00", "on-primary": "#ffffff", "surface-tint": "#575b85", "surface-container": "#eceef3", "on-primary-fixed-variant": "#40446c", "surface-variant": "#e1e2e7", "primary": "#070a31", "on-tertiary-fixed-variant": "#373a9b", "inverse-on-surface": "#eff0f5", "surface": "#f8f9fe", "on-error": "#ffffff", "on-secondary-fixed-variant": "#6b3b00", "outline-variant": "#c7c5cf", "on-surface": "#191c1f", "background": "#f8f9fe", "tertiary-fixed": "#e1e0ff"
+      },
+      "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+      "spacing": { "margin-desktop": "64px", "unit": "4px", "gutter": "24px", "margin-mobile": "16px", "max-width": "1280px" },
+      "fontFamily": { "label-caps": ["Inter"], "body-sm": ["Inter"], "stats-display": ["Montserrat"], "headline-xl": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "body-lg": ["Inter"], "headline-md": ["Montserrat"], "headline-sm": ["Montserrat"], "body-md": ["Inter"], "headline-lg": ["Montserrat"] },
+      "fontSize": { "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "stats-display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }], "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }] }
+    },
+  },
+}
+</script>
+<style>
+  body {
+    background-color: theme('colors.surface-gray');
+    color: theme('colors.on-surface');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .technical-grid {
+    background-image:
+      linear-gradient(to right, theme('colors.surface-variant') 1px, transparent 1px),
+      linear-gradient(to bottom, theme('colors.surface-variant') 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid theme('colors.outline-variant');
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 96px; }
+</style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-clinical-white w-full top-0 sticky z-50 border-b border-outline-variant shadow-sm transition-transform duration-300" id="main-nav">
+  <div class="max-w-max-width mx-auto flex items-center justify-between px-margin-mobile md:px-margin-desktop h-20">
+    <a class="flex items-center gap-3 group" href="design-4-home.html" aria-label="Masarat for Accreditation"><img src="assets/masarat-logo-light.png" alt="Masarat for Accreditation" class="h-14 w-auto object-contain"></a>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8">
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="#services">Services</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="#products">Products</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-4-projects.html">Projects</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="#training">Training</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="#about">About</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="#contact">Contact</a>
+    </div>
+    <div class="hidden md:flex items-center gap-6">
+      <button class="text-on-surface-variant hover:text-safety-orange transition-colors">
+        <span class="material-symbols-outlined text-2xl">search</span>
+      </button>
+      <a href="#contact" class="bg-safety-orange text-clinical-white px-6 py-2.5 rounded font-body-md text-body-md font-medium hover:bg-orange-600 transition-colors shadow-sm active:scale-95">
+        Request Audit
+      </a>
+    </div>
+    <!-- Mobile Menu Toggle -->
+    <button class="md:hidden text-deep-navy p-2" id="menu-toggle" aria-label="Menu">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div class="hidden md:hidden border-t border-outline-variant bg-clinical-white px-margin-mobile py-4 flex-col gap-1" id="mobile-menu">
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="#services">Services</a>
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="#products">Products</a>
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="design-4-projects.html">Projects</a>
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="#training">Training</a>
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="#about">About</a>
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="#contact">Contact</a>
+    <a class="mt-2 block text-center bg-safety-orange text-clinical-white px-6 py-2.5 rounded font-body-md text-body-md font-medium" href="#contact">Request Audit</a>
+  </div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow">
+  <!-- Hero -->
+  <header class="bg-deep-navy text-clinical-white relative overflow-hidden technical-grid">
+    <div class="absolute inset-0 bg-gradient-to-r from-deep-navy to-transparent opacity-90"></div>
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-32 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+      <div class="max-w-2xl">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-12 h-px bg-safety-orange"></span>
+          <span class="font-label-caps text-label-caps text-safety-orange tracking-widest uppercase">Biosafety · Cleanrooms · GMP — since 2016</span>
+        </div>
+        <h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl font-bold mb-6 leading-tight">Cleanrooms &amp; High-Risk Labs, <br><span class="text-surface-gray">Built to Pass.</span></h1>
+        <p class="font-body-lg text-body-lg text-surface-variant opacity-90 max-w-xl mb-8">
+          Masarat for Accreditation is a Saudi company specialized in cleanroom solutions (Cleanrooms &amp; GMP) and high-risk laboratories (BSL-3 &amp; 4) — delivered end-to-end and certified to SFDA, CBAHI, WHO, CAP and CDC standards.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="bg-safety-orange text-clinical-white px-8 py-4 rounded font-label-caps text-label-caps hover:bg-orange-600 transition-colors shadow-sm text-center">REQUEST A QUOTE</a>
+          <a href="#training" class="bg-clinical-white/10 border border-surface-tint text-clinical-white px-8 py-4 rounded font-label-caps text-label-caps hover:bg-clinical-white/20 transition-colors text-center flex items-center justify-center gap-2"><span class="material-symbols-outlined text-[18px]">play_circle</span> WATCH OUR WORK</a>
+        </div>
+      </div>
+      <!-- Stats Bento -->
+      <div class="grid grid-cols-2 gap-4 w-full md:w-auto">
+        <div class="bg-primary-container border border-surface-tint p-6 rounded flex flex-col justify-center">
+          <span class="font-stats-display text-stats-display text-safety-orange mb-2">2016</span>
+          <span class="font-label-caps text-label-caps text-surface-variant">Founded by Saudi Expertise</span>
+        </div>
+        <div class="bg-primary-container border border-surface-tint p-6 rounded flex flex-col justify-center">
+          <span class="font-stats-display text-stats-display text-clinical-white mb-2">ISO</span>
+          <span class="font-label-caps text-label-caps text-surface-variant">14644 Compliant</span>
+        </div>
+        <div class="bg-primary-container border border-surface-tint p-6 rounded col-span-2 flex items-center justify-between">
+          <div>
+            <span class="font-headline-md text-headline-md text-clinical-white block mb-1">100%</span>
+            <span class="font-label-caps text-label-caps text-surface-variant">Audit Success Rate</span>
+          </div>
+          <span class="material-symbols-outlined text-4xl text-surface-tint">verified</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Compliance strip -->
+  <section class="bg-clinical-white border-b border-outline-variant">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+      <span class="font-label-caps text-label-caps text-on-surface-variant">SFDA</span>
+      <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+      <span class="font-label-caps text-label-caps text-on-surface-variant">CBAHI</span>
+      <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+      <span class="font-label-caps text-label-caps text-on-surface-variant">WHO</span>
+      <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+      <span class="font-label-caps text-label-caps text-on-surface-variant">CAP</span>
+      <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+      <span class="font-label-caps text-label-caps text-on-surface-variant">CDC</span>
+      <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+      <span class="font-label-caps text-label-caps text-on-surface-variant">GMP</span>
+      <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+      <span class="font-label-caps text-label-caps text-on-surface-variant">ISO 14644</span>
+      <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+      <span class="font-label-caps text-label-caps text-on-surface-variant">NSF</span>
+    </div>
+  </section>
+  <!-- Services -->
+  <section id="services" class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-20">
+    <div class="max-w-2xl mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-12 h-px bg-safety-orange"></span>
+        <span class="font-label-caps text-label-caps text-safety-orange tracking-widest uppercase">What we do</span>
+      </div>
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-deep-navy mb-4">End-to-end, under one accountable partner</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">From the first consultation to final certification and training, Masarat covers the full lifecycle of a controlled environment.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-clinical-white border border-outline-variant rounded p-6 hover:shadow-lg hover:border-accent-blue transition-all duration-300">
+        <span class="material-symbols-outlined text-3xl text-safety-orange mb-4">meeting_room</span>
+        <h3 class="font-headline-sm text-headline-sm font-bold text-deep-navy mb-2">Turnkey Cleanroom &amp; GMP</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Designed, built and validated to international standards.</p>
+      </div>
+      <div class="bg-clinical-white border border-outline-variant rounded p-6 hover:shadow-lg hover:border-accent-blue transition-all duration-300">
+        <span class="material-symbols-outlined text-3xl text-safety-orange mb-4">biotech</span>
+        <h3 class="font-headline-sm text-headline-sm font-bold text-deep-navy mb-2">Biocontainment Labs (BSL-3 &amp; 4)</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Full containment delivery to WHO, CDC, NIH &amp; BMBL.</p>
+      </div>
+      <div class="bg-clinical-white border border-outline-variant rounded p-6 hover:shadow-lg hover:border-accent-blue transition-all duration-300">
+        <span class="material-symbols-outlined text-3xl text-safety-orange mb-4">support_agent</span>
+        <h3 class="font-headline-sm text-headline-sm font-bold text-deep-navy mb-2">Consultancy Services</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Biosafety, infection and contamination control.</p>
+      </div>
+      <div class="bg-clinical-white border border-outline-variant rounded p-6 hover:shadow-lg hover:border-accent-blue transition-all duration-300">
+        <span class="material-symbols-outlined text-3xl text-safety-orange mb-4">verified</span>
+        <h3 class="font-headline-sm text-headline-sm font-bold text-deep-navy mb-2">Commissioning, Qualification &amp; Validation</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Systems that pass inspection, first time.</p>
+      </div>
+      <div class="bg-clinical-white border border-outline-variant rounded p-6 hover:shadow-lg hover:border-accent-blue transition-all duration-300">
+        <span class="material-symbols-outlined text-3xl text-safety-orange mb-4">construction</span>
+        <h3 class="font-headline-sm text-headline-sm font-bold text-deep-navy mb-2">Installation Services</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">GRP panels, doors, HVAC, mechanical &amp; electrical.</p>
+      </div>
+      <div class="bg-clinical-white border border-outline-variant rounded p-6 hover:shadow-lg hover:border-accent-blue transition-all duration-300">
+        <span class="material-symbols-outlined text-3xl text-safety-orange mb-4">science</span>
+        <h3 class="font-headline-sm text-headline-sm font-bold text-deep-navy mb-2">Biological Safety Cabinet Testing</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Cabinets, hoods and isolators, NSF-aligned.</p>
+      </div>
+      <div class="bg-clinical-white border border-outline-variant rounded p-6 hover:shadow-lg hover:border-accent-blue transition-all duration-300">
+        <span class="material-symbols-outlined text-3xl text-safety-orange mb-4">school</span>
+        <h3 class="font-headline-sm text-headline-sm font-bold text-deep-navy mb-2">Training (Workshops)</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Get the best from your facility, safely.</p>
+      </div>
+      <div class="bg-clinical-white border border-outline-variant rounded p-6 hover:shadow-lg hover:border-accent-blue transition-all duration-300">
+        <span class="material-symbols-outlined text-3xl text-safety-orange mb-4">inventory_2</span>
+        <h3 class="font-headline-sm text-headline-sm font-bold text-deep-navy mb-2">Contamination Control Products</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Durable MRC GRP cleanroom systems.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Products -->
+  <section id="products" class="bg-deep-navy text-clinical-white relative overflow-hidden technical-grid">
+    <div class="absolute inset-0 bg-gradient-to-r from-deep-navy to-transparent opacity-90"></div>
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-20 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-12 h-px bg-safety-orange"></span>
+          <span class="font-label-caps text-label-caps text-safety-orange tracking-widest uppercase">Products</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold mb-4">MRC GRP modular cleanroom systems</h2>
+        <p class="font-body-lg text-body-lg text-surface-variant opacity-90 mb-6">Delivered through our international partner MRC Solutions (35+ years). A durable, molded paneling system with an impervious, resin-rich Gel-coat surface — resistant to mechanical damage and the most aggressive chemicals.</p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-safety-orange">check_circle</span><span class="font-body-md text-body-md text-surface-variant">Glass Reinforced Polyester (GRP) panels</span></li>
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-safety-orange">check_circle</span><span class="font-body-md text-body-md text-surface-variant">Cleanroom doors, HVAC &amp; mechanical systems</span></li>
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-safety-orange">check_circle</span><span class="font-body-md text-body-md text-surface-variant">Smooth matte finish, wide range of colours</span></li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-primary-container border border-surface-tint p-6 rounded col-span-2 flex items-center justify-between">
+          <div>
+            <span class="font-headline-md text-headline-md text-clinical-white block mb-1">35+ years</span>
+            <span class="font-label-caps text-label-caps text-surface-variant">MRC cleanroom partnership</span>
+          </div>
+          <span class="material-symbols-outlined text-4xl text-surface-tint">handshake</span>
+        </div>
+        <div class="bg-primary-container border border-surface-tint p-6 rounded flex flex-col justify-center">
+          <span class="material-symbols-outlined text-3xl text-safety-orange mb-2">shield</span>
+          <span class="font-label-caps text-label-caps text-surface-variant">Chemical &amp; impact resistant</span>
+        </div>
+        <div class="bg-primary-container border border-surface-tint p-6 rounded flex flex-col justify-center">
+          <span class="material-symbols-outlined text-3xl text-safety-orange mb-2">eco</span>
+          <span class="font-label-caps text-label-caps text-surface-variant">Energy-efficient designs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Training (featured video) -->
+  <section id="training" class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-20">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="h-80 relative overflow-hidden rounded bg-deep-navy border border-outline-variant group" onmouseenter="this.querySelector('video').play()" onmouseleave="var v=this.querySelector('video');v.pause()">
+        <video class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/videos/workshop-sfda.mp4" muted loop playsinline preload="metadata"></video>
+        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/50 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-300">
+          <span class="material-symbols-outlined text-clinical-white text-6xl drop-shadow-lg opacity-90">play_circle</span>
+        </div>
+        <span class="absolute bottom-4 left-4 bg-deep-navy/80 text-clinical-white px-3 py-1 rounded font-label-caps text-[10px] tracking-wider uppercase">SFDA Workshop · Hover to play</span>
+      </div>
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-12 h-px bg-safety-orange"></span>
+          <span class="font-label-caps text-label-caps text-safety-orange tracking-widest uppercase">Training &amp; Workshops</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-deep-navy mb-4">Your team, fully in control</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Client organizational success is essential to what we do. We offer a comprehensive array of training packages — covering cleanroom operation and maintenance — so your team gains the best from their equipment while maintaining a healthy, safe working environment. Masarat has delivered professional workshops at the SFDA and KFUPM.</p>
+        <a href="#contact" class="inline-flex items-center gap-2 text-safety-orange font-label-caps text-label-caps">ENQUIRE ABOUT TRAINING <span class="material-symbols-outlined">arrow_forward</span></a>
+      </div>
+    </div>
+  </section>
+  <!-- Selected projects -->
+  <section id="work" class="bg-clinical-white border-y border-outline-variant">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-20">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-12 h-px bg-safety-orange"></span>
+            <span class="font-label-caps text-label-caps text-safety-orange tracking-widest uppercase">Selected work</span>
+          </div>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-deep-navy">Delivered for the Kingdom's leading institutions</h2>
+        </div>
+        <a href="design-4-projects.html" class="inline-flex items-center gap-2 text-safety-orange font-label-caps text-label-caps whitespace-nowrap">VIEW ALL PROJECTS <span class="material-symbols-outlined">arrow_forward</span></a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- SFDA -->
+        <article class="bg-clinical-white border border-outline-variant rounded overflow-hidden group hover:shadow-lg transition-all duration-300 flex flex-col">
+          <a href="design-4-project-sfda.html" class="block h-64 relative overflow-hidden bg-deep-navy" onmouseenter="this.querySelector('video').play()" onmouseleave="var v=this.querySelector('video');v.pause()">
+            <video class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/videos/workshop-sfda.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/50 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-300">
+              <span class="material-symbols-outlined text-clinical-white text-6xl drop-shadow-lg opacity-90">play_circle</span>
+            </div>
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-deep-navy text-clinical-white px-2 py-1 rounded font-label-caps text-[10px] tracking-wider uppercase shadow-sm">Government</span>
+              <span class="bg-safety-orange text-clinical-white px-2 py-1 rounded font-label-caps text-[10px] tracking-wider uppercase shadow-sm flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">science</span> BSL-3</span>
+            </div>
+          </a>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="material-symbols-outlined text-outline text-sm">location_on</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Riyadh, KSA</span>
+            </div>
+            <h3 class="font-headline-md text-headline-sm font-bold text-deep-navy mb-4 group-hover:text-accent-blue transition-colors">SFDA National Reference Laboratory</h3>
+            <a class="mt-auto flex items-center justify-between text-safety-orange font-label-caps text-label-caps group/link border-t border-outline-variant pt-4" href="design-4-project-sfda.html">
+              VIEW CASE STUDY
+              <span class="material-symbols-outlined transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+        <!-- KFSHRC -->
+        <article class="bg-clinical-white border border-outline-variant rounded overflow-hidden group hover:shadow-lg transition-all duration-300 flex flex-col">
+          <a href="design-4-project-kfshrc.html" class="block h-64 relative overflow-hidden bg-deep-navy" onmouseenter="this.querySelector('video').play()" onmouseleave="var v=this.querySelector('video');v.pause()">
+            <video class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/videos/project-2.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/50 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-300">
+              <span class="material-symbols-outlined text-clinical-white text-6xl drop-shadow-lg opacity-90">play_circle</span>
+            </div>
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-deep-navy text-clinical-white px-2 py-1 rounded font-label-caps text-[10px] tracking-wider uppercase shadow-sm">Healthcare</span>
+              <span class="bg-surface-gray text-deep-navy border border-outline-variant px-2 py-1 rounded font-label-caps text-[10px] tracking-wider uppercase shadow-sm flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">air</span> Cleanroom</span>
+            </div>
+          </a>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="material-symbols-outlined text-outline text-sm">location_on</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Jeddah, KSA</span>
+            </div>
+            <h3 class="font-headline-md text-headline-sm font-bold text-deep-navy mb-4 group-hover:text-accent-blue transition-colors">KFSHRC Cell Therapy Cleanroom</h3>
+            <a class="mt-auto flex items-center justify-between text-safety-orange font-label-caps text-label-caps group/link border-t border-outline-variant pt-4" href="design-4-project-kfshrc.html">
+              VIEW CASE STUDY
+              <span class="material-symbols-outlined transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+        <!-- IAU -->
+        <article class="bg-clinical-white border border-outline-variant rounded overflow-hidden group hover:shadow-lg transition-all duration-300 flex flex-col">
+          <a href="design-4-project-iau.html" class="block h-64 relative overflow-hidden bg-deep-navy" onmouseenter="this.querySelector('video').play()" onmouseleave="var v=this.querySelector('video');v.pause()">
+            <video class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/videos/project-3.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/50 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-300">
+              <span class="material-symbols-outlined text-clinical-white text-6xl drop-shadow-lg opacity-90">play_circle</span>
+            </div>
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-deep-navy text-clinical-white px-2 py-1 rounded font-label-caps text-[10px] tracking-wider uppercase shadow-sm">Academic</span>
+              <span class="bg-safety-orange text-clinical-white px-2 py-1 rounded font-label-caps text-[10px] tracking-wider uppercase shadow-sm flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">build</span> Build &amp; Certify</span>
+            </div>
+          </a>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="material-symbols-outlined text-outline text-sm">location_on</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Dammam, KSA</span>
+            </div>
+            <h3 class="font-headline-md text-headline-sm font-bold text-deep-navy mb-4 group-hover:text-accent-blue transition-colors">IAU Advanced Diagnostics Hub</h3>
+            <a class="mt-auto flex items-center justify-between text-safety-orange font-label-caps text-label-caps group/link border-t border-outline-variant pt-4" href="design-4-project-iau.html">
+              VIEW CASE STUDY
+              <span class="material-symbols-outlined transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- About -->
+  <section id="about" class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-20">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-12 h-px bg-safety-orange"></span>
+          <span class="font-label-caps text-label-caps text-safety-orange tracking-widest uppercase">About us</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-deep-navy mb-4">Saudi expertise, backed by a global network</h2>
+      </div>
+      <div>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-4">Masarat for Accreditation was founded in 2016 by Saudi expertise in the field of biosafety and cleanrooms, to help clients achieve the highest infection and contamination control standards and comply with accreditation bodies' requirements — including SFDA, CBAHI, WHO, CAP, CDC and many others.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6">We are specialized in the testing, commissioning and validation of clean rooms and sterile areas, and we deliver end-to-end solutions through our team of engineers and a wide network of national and international experts — backed by our partner MRC Solutions, with 35+ years building state-of-the-art cleanrooms.</p>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="border border-outline-variant rounded p-4">
+            <span class="font-stats-display text-headline-md text-deep-navy block">2016</span>
+            <span class="font-label-caps text-label-caps text-on-surface-variant">Founded</span>
+          </div>
+          <div class="border border-outline-variant rounded p-4">
+            <span class="font-stats-display text-headline-md text-deep-navy block">8</span>
+            <span class="font-label-caps text-label-caps text-on-surface-variant">Service lines</span>
+          </div>
+          <div class="border border-outline-variant rounded p-4">
+            <span class="font-stats-display text-headline-md text-deep-navy block">KSA</span>
+            <span class="font-label-caps text-label-caps text-on-surface-variant">Kingdom-wide</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact -->
+  <section id="contact" class="bg-surface-gray border-t border-outline-variant py-20 relative overflow-hidden">
+    <div class="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none">
+      <svg class="w-full h-full fill-current text-deep-navy" preserveAspectRatio="none" viewBox="0 0 100 100">
+        <polygon points="0,100 100,0 100,100"></polygon>
+      </svg>
+    </div>
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid md:grid-cols-2 gap-12">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-12 h-px bg-safety-orange"></span>
+          <span class="font-label-caps text-label-caps text-safety-orange tracking-widest uppercase">Contact</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-deep-navy mb-4">Let's discuss your project</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Based in Riyadh, serving clients across the Kingdom of Saudi Arabia. Tell us your requirements and our engineers will reply with a clear, compliant plan — within one business day.</p>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-safety-orange">call</span><a href="tel:+966114870043" class="font-body-md text-body-md text-on-background hover:text-safety-orange">+966 1148 70 043</a></li>
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-safety-orange">mail</span><a href="mailto:info@m4acc.com" class="font-body-md text-body-md text-on-background hover:text-safety-orange">info@m4acc.com</a></li>
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-safety-orange">location_on</span><span class="font-body-md text-body-md text-on-background">Riyadh, Kingdom of Saudi Arabia</span></li>
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-safety-orange">schedule</span><span class="font-body-md text-body-md text-on-background">Sun–Thu, 8:00–17:00 (AST)</span></li>
+        </ul>
+      </div>
+      <form class="bg-clinical-white border border-outline-variant rounded p-6 md:p-8" onsubmit="event.preventDefault(); this.reset(); document.getElementById('form-ok').classList.remove('hidden');">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <input class="bg-surface-gray border border-outline-variant rounded py-2.5 px-4 font-body-sm text-body-sm focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20 outline-none transition-all" placeholder="Name" type="text" required>
+          <input class="bg-surface-gray border border-outline-variant rounded py-2.5 px-4 font-body-sm text-body-sm focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20 outline-none transition-all" placeholder="Organization" type="text">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <input class="bg-surface-gray border border-outline-variant rounded py-2.5 px-4 font-body-sm text-body-sm focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20 outline-none transition-all" placeholder="Email" type="email" required>
+          <input class="bg-surface-gray border border-outline-variant rounded py-2.5 px-4 font-body-sm text-body-sm focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20 outline-none transition-all" placeholder="Phone" type="tel">
+        </div>
+        <select class="w-full bg-surface-gray border border-outline-variant rounded py-2.5 px-4 mb-4 font-body-sm text-body-sm focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20 outline-none transition-all">
+          <option value="">Service of interest…</option>
+          <option>Turnkey Cleanroom &amp; GMP</option>
+          <option>Biocontainment Labs (BSL-3 &amp; 4)</option>
+          <option>Consultancy</option>
+          <option>Commissioning, Qualification &amp; Validation</option>
+          <option>Installation</option>
+          <option>Biological Safety Cabinet Testing</option>
+          <option>Training</option>
+          <option>Contamination Control Products</option>
+        </select>
+        <textarea class="w-full bg-surface-gray border border-outline-variant rounded py-2.5 px-4 mb-4 font-body-sm text-body-sm focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20 outline-none transition-all" placeholder="Project details" rows="4"></textarea>
+        <button class="w-full bg-safety-orange text-clinical-white px-6 py-3 rounded font-label-caps text-label-caps hover:bg-orange-600 transition-colors shadow-sm" type="submit">SEND REQUEST</button>
+        <p class="hidden mt-4 font-body-sm text-body-sm text-accent-blue flex items-center gap-2" id="form-ok"><span class="material-symbols-outlined text-base">check_circle</span> Thanks — this is a front-end demo, so no message was actually sent.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<!-- Footer -->
+<footer class="bg-deep-navy dark:bg-primary text-clinical-white w-full mt-auto font-body-sm text-body-sm">
+  <div class="max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20">
+    <div class="col-span-1 md:col-span-1 mb-8 md:mb-0">
+      <img src="assets/masarat-logo-dark.png" alt="Masarat for Accreditation" class="h-16 w-auto object-contain mb-4">
+      <p class="text-surface-variant opacity-80 mb-6 max-w-xs">A Saudi company specialized in cleanroom solutions (Cleanrooms &amp; GMP) and high-risk laboratories (BSL-3 &amp; 4) — since 2016.</p>
+    </div>
+    <div class="col-span-1">
+      <h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Company</h4>
+      <ul class="space-y-3">
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="#about">About</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="#services">Services</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-4-projects.html">Projects</a></li>
+      </ul>
+    </div>
+    <div class="col-span-1">
+      <h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Resources</h4>
+      <ul class="space-y-3">
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="#products">Products</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="#training">Training</a></li>
+      </ul>
+    </div>
+    <div class="col-span-1">
+      <h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Contact</h4>
+      <ul class="space-y-3">
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="tel:+966114870043">+966 1148 70 043</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="mailto:info@m4acc.com">info@m4acc.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-surface-tint">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-6 text-center md:text-left text-surface-variant opacity-60 text-xs">
+      © 2026 Masarat for Accreditation. All rights reserved.
+    </div>
+  </div>
+</footer>
+<script>
+  // Nav scroll shadow
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('main-nav');
+    if (window.scrollY > 10) { nav.classList.add('shadow-md'); } else { nav.classList.remove('shadow-md'); }
+  });
+  // Mobile menu toggle
+  var t = document.getElementById('menu-toggle'), mm = document.getElementById('mobile-menu');
+  if (t) t.addEventListener('click', function () { mm.classList.toggle('hidden'); mm.classList.toggle('flex'); });
+</script>
+</body>
+</html>

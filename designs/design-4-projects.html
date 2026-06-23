@@ -52,28 +52,38 @@ tailwind.config = {
 <!-- TopNavBar -->
 <nav class="bg-clinical-white w-full top-0 sticky z-50 border-b border-outline-variant shadow-sm transition-transform duration-300" id="main-nav">
   <div class="max-w-max-width mx-auto flex items-center justify-between px-margin-mobile md:px-margin-desktop h-20">
-    <a class="flex items-center gap-3 group" href="#" aria-label="Masarat for Accreditation"><img src="assets/masarat-logo-light.png" alt="Masarat for Accreditation" class="h-14 w-auto object-contain"></a>
+    <a class="flex items-center gap-3 group" href="design-4-home.html" aria-label="Masarat for Accreditation"><img src="assets/masarat-logo-light.png" alt="Masarat for Accreditation" class="h-14 w-auto object-contain"></a>
     <!-- Desktop Navigation -->
     <div class="hidden md:flex items-center gap-8">
-      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="#">Services</a>
-      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="#">Products</a>
-      <a class="font-body-md text-body-md text-safety-orange font-bold border-b-2 border-safety-orange pb-1" href="#">Projects</a>
-      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="#">Training</a>
-      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="#">About</a>
-      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="#">Contact</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-4-home.html#services">Services</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-4-home.html#products">Products</a>
+      <a class="font-body-md text-body-md text-safety-orange font-bold border-b-2 border-safety-orange pb-1" href="design-4-projects.html">Projects</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-4-home.html#training">Training</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-4-home.html#about">About</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-safety-orange transition-colors duration-200" href="design-4-home.html#contact">Contact</a>
     </div>
     <div class="hidden md:flex items-center gap-6">
       <button class="text-on-surface-variant hover:text-safety-orange transition-colors">
         <span class="material-symbols-outlined text-2xl">search</span>
       </button>
-      <button class="bg-safety-orange text-clinical-white px-6 py-2.5 rounded font-body-md text-body-md font-medium hover:bg-orange-600 transition-colors shadow-sm active:scale-95">
+      <a href="design-4-home.html#contact" class="bg-safety-orange text-clinical-white px-6 py-2.5 rounded font-body-md text-body-md font-medium hover:bg-orange-600 transition-colors shadow-sm active:scale-95">
         Request Audit
-      </button>
+      </a>
     </div>
     <!-- Mobile Menu Toggle -->
-    <button class="md:hidden text-deep-navy p-2">
+    <button class="md:hidden text-deep-navy p-2" id="menu-toggle" aria-label="Menu">
       <span class="material-symbols-outlined text-3xl">menu</span>
     </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div class="hidden md:hidden border-t border-outline-variant bg-clinical-white px-margin-mobile py-4 flex-col gap-1" id="mobile-menu">
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="design-4-home.html#services">Services</a>
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="design-4-home.html#products">Products</a>
+    <a class="block py-2 font-body-md text-body-md text-safety-orange font-bold" href="design-4-projects.html">Projects</a>
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="design-4-home.html#training">Training</a>
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="design-4-home.html#about">About</a>
+    <a class="block py-2 font-body-md text-body-md text-on-surface-variant" href="design-4-home.html#contact">Contact</a>
+    <a class="mt-2 block text-center bg-safety-orange text-clinical-white px-6 py-2.5 rounded font-body-md text-body-md font-medium" href="design-4-home.html#contact">Request Audit</a>
   </div>
 </nav>
 <!-- Main Content -->
@@ -167,7 +177,7 @@ tailwind.config = {
               </li>
             </ul>
           </div>
-          <a class="mt-auto flex items-center justify-between text-safety-orange font-label-caps text-label-caps group/link border-t border-outline-variant pt-4" href="#">
+          <a class="mt-auto flex items-center justify-between text-safety-orange font-label-caps text-label-caps group/link border-t border-outline-variant pt-4" href="design-4-project-sfda.html">
             VIEW CASE STUDY
             <span class="material-symbols-outlined transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
           </a>
@@ -210,7 +220,7 @@ tailwind.config = {
               </li>
             </ul>
           </div>
-          <a class="mt-auto flex items-center justify-between text-safety-orange font-label-caps text-label-caps group/link border-t border-outline-variant pt-4" href="#">
+          <a class="mt-auto flex items-center justify-between text-safety-orange font-label-caps text-label-caps group/link border-t border-outline-variant pt-4" href="design-4-project-kfshrc.html">
             VIEW CASE STUDY
             <span class="material-symbols-outlined transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
           </a>
@@ -253,7 +263,7 @@ tailwind.config = {
               </li>
             </ul>
           </div>
-          <a class="mt-auto flex items-center justify-between text-safety-orange font-label-caps text-label-caps group/link border-t border-outline-variant pt-4" href="#">
+          <a class="mt-auto flex items-center justify-between text-safety-orange font-label-caps text-label-caps group/link border-t border-outline-variant pt-4" href="design-4-project-iau.html">
             VIEW CASE STUDY
             <span class="material-symbols-outlined transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
           </a>
@@ -279,9 +289,9 @@ tailwind.config = {
         Partner with Masarat to ensure your critical environment meets the highest international safety and operational standards.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <button class="bg-safety-orange text-clinical-white px-8 py-4 rounded font-label-caps text-label-caps hover:bg-orange-600 transition-colors shadow-sm w-full sm:w-auto">
+        <a href="design-4-home.html#contact" class="bg-safety-orange text-clinical-white px-8 py-4 rounded font-label-caps text-label-caps hover:bg-orange-600 transition-colors shadow-sm w-full sm:w-auto text-center">
           INITIATE PROJECT CONSULTATION
-        </button>
+        </a>
         <button class="bg-clinical-white text-deep-navy border border-outline-variant px-8 py-4 rounded font-label-caps text-label-caps hover:border-deep-navy transition-colors w-full sm:w-auto">
           DOWNLOAD CAPABILITY STATEMENT
         </button>
@@ -294,26 +304,28 @@ tailwind.config = {
   <div class="max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20">
     <div class="col-span-1 md:col-span-1 mb-8 md:mb-0">
       <img src="assets/masarat-logo-dark.png" alt="Masarat for Accreditation" class="h-16 w-auto object-contain mb-4">
-      <p class="text-surface-variant opacity-80 mb-6 max-w-xs">Precision Biosafety &amp; Cleanroom Engineering.</p>
+      <p class="text-surface-variant opacity-80 mb-6 max-w-xs">A Saudi company specialized in cleanroom solutions (Cleanrooms &amp; GMP) and high-risk laboratories (BSL-3 &amp; 4) — since 2016.</p>
     </div>
     <div class="col-span-1">
-      <h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Corporate</h4>
+      <h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Company</h4>
       <ul class="space-y-3">
-        <li class=""><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="#">Riyadh Headquarters</a></li>
-        <li class=""><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="#">International Partnerships</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-4-home.html#about">About</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-4-home.html#services">Services</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-4-projects.html">Projects</a></li>
       </ul>
     </div>
     <div class="col-span-1">
       <h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Resources</h4>
       <ul class="space-y-3">
-        <li class=""><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="#">Technical Specs</a></li>
-        <li class=""><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="#">Compliance</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-4-home.html#products">Products</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="design-4-home.html#training">Training</a></li>
       </ul>
     </div>
     <div class="col-span-1">
-      <h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Legal</h4>
+      <h4 class="font-label-caps text-label-caps text-surface-variant mb-4 uppercase tracking-wider">Contact</h4>
       <ul class="space-y-3">
-        <li class=""><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="#">Privacy Policy</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="tel:+966114870043">+966 1148 70 043</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-clinical-white transition-opacity" href="mailto:info@m4acc.com">info@m4acc.com</a></li>
       </ul>
     </div>
   </div>
@@ -324,7 +336,7 @@ tailwind.config = {
   </div>
 </footer>
 <script>
-  // Simple scroll effect for TopNavBar
+  // Nav scroll shadow
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('main-nav');
     if (window.scrollY > 10) {
@@ -333,6 +345,9 @@ tailwind.config = {
       nav.classList.remove('shadow-md');
     }
   });
+  // Mobile menu toggle
+  var t = document.getElementById('menu-toggle'), mm = document.getElementById('mobile-menu');
+  if (t) t.addEventListener('click', function () { mm.classList.toggle('hidden'); mm.classList.toggle('flex'); });
 </script>
 </body>
 </html>
