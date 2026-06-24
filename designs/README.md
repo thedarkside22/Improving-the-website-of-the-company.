@@ -35,6 +35,28 @@ SFDA/CBAHI/WHO/CAP/CDC), **videos** (the real workshop/project films, SFDA
 featured), and **the team** (a "Meet our experts" section), plus a real
 **Our Projects** section.
 
+## Direction G — "Precision+" (newest, most interactive)
+
+An **enhanced evolution of Direction F** — same clinical-modern navy/orange/white
+system, with a reworked layout and richer (still professional) motion. Open
+**[`design-7-home.html`](design-7-home.html)** or the **Direction G** card in
+`index.html`.
+
+- **Fixes the "What we do" bento:** the large tile is now image-backed with its
+  content anchored at the bottom over a gradient — no dead space, properly
+  rounded and aligned with the other tiles.
+- **More modern motion:** an **animated hero** (gradient mesh + cursor/scroll
+  parallax + a word-by-word headline reveal), **3D-tilt cards with a
+  cursor-follow spotlight glow**, and **magnetic buttons**.
+- **Same content & structure** as Direction F (all 9 pages), shared via
+  [`design-7.css`](design-7.css) + [`design-7.js`](design-7.js).
+- **Safe by default:** every flourish is disabled under `prefers-reduced-motion`
+  and on touch devices; the layout/content still works without them. Same
+  `data-wp` hints, same **Themify Ultra / Themify Builder** port path.
+
+> Files: `design-7.css`, `design-7.js`, and `design-7-*.html` (home, solutions,
+> products, projects, project-sfda/-kfshrc/-iau, about, contact).
+
 ## Direction F — "Precision" (new, most built-out)
 
 A clinical-modern, **interactive** full direction on the navy + orange + white

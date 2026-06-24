@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solutions | Masarat for Accreditation</title>
+<meta name="description" content="Turnkey cleanrooms & GMP, BSL-3/4 biocontainment labs, air quality validation, CQV, cabinet certification, installation, consultancy and training — end-to-end.">
+<!-- Design G — "Precision+". Front-end-only mockup. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-7.css">
+<style>
+  .sol-subnav{position:sticky;top:84px;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+  .sol-subnav .wrap{display:flex;gap:8px;overflow-x:auto;padding:12px 24px;scrollbar-width:none}
+  .sol-subnav .wrap::-webkit-scrollbar{display:none}
+  .sol-subnav a{white-space:nowrap;padding:8px 15px;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--muted);transition:all .2s}
+  .sol-subnav a:hover{color:var(--navy)}
+  .sol-subnav a.active{background:var(--navy);color:#fff}
+  main section[id]{scroll-margin-top:148px}
+</style>
+</head>
+<body>
+
+<!-- ===================== GLOBAL HEADER ===================== -->
+<header class="site-header" id="top" data-wp="Theme header (Themify Ultra) + Appearance → Menus">
+  <div class="nav-inner">
+    <a class="brand" href="design-7-home.html" aria-label="Masarat for Accreditation — home">
+      <img src="assets/masarat-logo-light.png" alt="Masarat for Accreditation">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="design-7-solutions.html" aria-current="page">Solutions <span class="material-symbols-outlined">expand_more</span></a>
+          <div class="dropdown" role="menu">
+            <a href="#cleanrooms"><span class="material-symbols-outlined">architecture</span> Turnkey Cleanrooms &amp; GMP</a>
+            <a href="#biocontainment"><span class="material-symbols-outlined">biotech</span> Biocontainment Labs (BSL-3/4)</a>
+            <a href="#air-quality"><span class="material-symbols-outlined">air</span> Air Quality Validation Testing</a>
+            <a href="#cqv"><span class="material-symbols-outlined">fact_check</span> Commissioning, Qualification &amp; Validation</a>
+            <a href="#bsc"><span class="material-symbols-outlined">verified_user</span> Cabinet Testing &amp; Certification</a>
+            <a href="#consultancy"><span class="material-symbols-outlined">support_agent</span> Consultancy &amp; Training</a>
+          </div>
+        </li>
+        <li><a href="design-7-products.html">Products</a></li>
+        <li><a href="design-7-projects.html">Projects</a></li>
+        <li><a href="design-7-about.html">About</a></li>
+        <li><a href="design-7-contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary nav-cta desktop" href="design-7-contact.html">Request a Quote <span class="material-symbols-outlined">arrow_forward</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-top">
+    <img src="assets/masarat-logo-dark.png" alt="Masarat for Accreditation">
+    <button class="mobile-close" data-mobile-close aria-label="Close menu"><span class="material-symbols-outlined">close</span></button>
+  </div>
+  <nav aria-label="Mobile">
+    <button class="m-acc-toggle" aria-expanded="false">Solutions <span class="material-symbols-outlined">expand_more</span></button>
+    <div class="m-acc-panel">
+      <a href="#cleanrooms">Turnkey Cleanrooms &amp; GMP</a>
+      <a href="#biocontainment">Biocontainment Labs (BSL-3/4)</a>
+      <a href="#air-quality">Air Quality Validation Testing</a>
+      <a href="#cqv">Commissioning, Qualification &amp; Validation</a>
+      <a href="#bsc">Cabinet Testing &amp; Certification</a>
+      <a href="#consultancy">Consultancy &amp; Training</a>
+    </div>
+    <a href="design-7-products.html">Products</a>
+    <a href="design-7-projects.html">Projects</a>
+    <a href="design-7-about.html">About</a>
+    <a href="design-7-contact.html">Contact</a>
+  </nav>
+  <a class="btn btn-primary" href="design-7-contact.html">Request a Quote <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+
+<main>
+  <!-- ===================== SLIM HERO ===================== -->
+  <section class="hero hero--slim" data-wp="Builder page-title row">
+    <div class="tech-grid--dark"></div>
+    <div class="hero-glow"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="reveal">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="design-7-home.html">Home</a> <span>/</span> <span>Solutions</span></nav>
+          <span class="eyebrow">Our products &amp; services</span>
+          <h1>Turnkey solutions for controlled environments</h1>
+          <p class="lead">From the first consultation to final certification and training, Masarat covers the full lifecycle of a controlled environment — under one accountable partner.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-rule"></div>
+  </section>
+
+  <!-- ===================== IN-PAGE SUB-NAV (scroll-spy) ===================== -->
+  <div class="sol-subnav" data-spy aria-label="Solutions sections">
+    <div class="wrap">
+      <a href="#cleanrooms">Cleanrooms &amp; GMP</a>
+      <a href="#biocontainment">Biocontainment</a>
+      <a href="#air-quality">Air Quality Testing</a>
+      <a href="#cqv">CQV</a>
+      <a href="#bsc">Cabinet Certification</a>
+      <a href="#installation">Installation</a>
+      <a href="#consultancy">Consultancy</a>
+      <a href="#training">Training</a>
+    </div>
+  </div>
+
+  <!-- ===================== SERVICE BLOCKS ===================== -->
+  <section class="section" data-wp="Builder Rows + Feature/Accordion modules">
+    <div class="wrap">
+
+      <article class="service-block" id="cleanrooms">
+        <div class="reveal">
+          <span class="eyebrow">Build &amp; Engineer</span>
+          <h2>Turnkey Cleanroom &amp; GMP Solutions</h2>
+          <p class="lead">Full cleanroom and GMP facilities delivered end-to-end — designed, supplied, constructed, installed and commissioned to international standards.</p>
+          <ul class="svc-list">
+            <li><span class="material-symbols-outlined">check_circle</span> Architectural plans, HVAC schematics, electrical &amp; process engineering</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Construction &amp; installation of GRP panels, doors and mechanical systems</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Commissioned and validated to ISO 14644 and GLP/GMP</li>
+          </ul>
+          <div class="chip-row"><span class="chip chip--std">ISO 14644</span><span class="chip chip--std">GLP / GMP</span></div>
+          <p style="margin-top:20px"><a class="btn btn-navy" href="design-7-contact.html">Request a Quote <span class="material-symbols-outlined">arrow_forward</span></a></p>
+        </div>
+        <div class="svc-media media-ph reveal"><div class="tech-grid--dark"></div><span class="ph-label">PHOTO · Modular cleanroom</span></div>
+      </article>
+
+      <article class="service-block flip" id="biocontainment">
+        <div class="reveal">
+          <span class="eyebrow">Build &amp; Engineer</span>
+          <h2>Biocontainment Laboratories (BSL-3 &amp; 4)</h2>
+          <p class="lead">Design, construction, commissioning and certification of high-risk biocontainment laboratories — in accordance with WHO, CDC, NIH and BMBL.</p>
+          <ul class="svc-list">
+            <li><span class="material-symbols-outlined">check_circle</span> Containment design, airflow &amp; pressure control</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Construction, certification and ongoing support</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Cross-linked safety cabinets, autoclaves &amp; monitoring</li>
+          </ul>
+          <div class="chip-row"><span class="chip chip--bsl">BSL-3 / BSL-4</span><span class="chip chip--std">WHO · CDC · NIH · BMBL</span></div>
+          <p style="margin-top:20px"><a class="btn btn-navy" href="design-7-contact.html">Request a Quote <span class="material-symbols-outlined">arrow_forward</span></a></p>
+        </div>
+        <div class="svc-media media-ph reveal"><div class="tech-grid--dark"></div><span class="ph-label">PHOTO · BSL-3 laboratory</span></div>
+      </article>
+
+      <article class="service-block" id="air-quality">
+        <div class="reveal">
+          <span class="eyebrow">Test &amp; Maintain</span>
+          <h2>Air Quality Validation Testing</h2>
+          <p class="lead">Air quality validation testing and accreditation to international standards (ISO 14644) — with consultancy advice, or full design and construction.</p>
+          <p style="font-weight:600;color:var(--navy-ink);margin-bottom:6px">Areas we test</p>
+          <p class="muted" style="font-size:.92rem">Operating rooms · drug-preparation rooms · isolation rooms · sterile areas (CSSD, IVF lab) · other areas requiring sterility or special airflow.</p>
+          <p style="font-weight:600;color:var(--navy-ink);margin:14px 0 6px">Tests</p>
+          <ul class="test-grid">
+            <li><span class="material-symbols-outlined">done</span> Air flow rates (supply &amp; extract)</li>
+            <li><span class="material-symbols-outlined">done</span> Containment &amp; integrity</li>
+            <li><span class="material-symbols-outlined">done</span> HEPA filter leak test</li>
+            <li><span class="material-symbols-outlined">done</span> Pressure differential</li>
+            <li><span class="material-symbols-outlined">done</span> Airborne particle counting</li>
+            <li><span class="material-symbols-outlined">done</span> Smoke visualization</li>
+          </ul>
+          <p class="muted" style="font-size:.86rem"><em>Optional:</em> microbial counts · lighting · sound &amp; vibration · gowning &amp; protocol evaluation.</p>
+          <div class="chip-row"><span class="chip chip--std">ISO 14644-1/2</span><span class="chip chip--std">USP</span></div>
+          <p style="margin-top:20px"><a class="btn btn-navy" href="design-7-contact.html">Request this service <span class="material-symbols-outlined">arrow_forward</span></a></p>
+        </div>
+        <div class="svc-media media-ph reveal"><div class="tech-grid--dark"></div><span class="ph-label">PHOTO · Particle counting</span></div>
+      </article>
+
+      <article class="service-block flip" id="cqv">
+        <div class="reveal">
+          <span class="eyebrow">Test &amp; Maintain</span>
+          <h2>Commissioning, Qualification &amp; Validation</h2>
+          <p class="lead">Rigorous CQV so systems function as intended and meet every standard — from cleanroom classification to equipment IQ/OQ/PQ.</p>
+          <ul class="svc-list">
+            <li><span class="material-symbols-outlined">check_circle</span> <strong>Cleanroom CQV</strong> — design review, commissioning, classification &amp; performance verification</li>
+            <li><span class="material-symbols-outlined">check_circle</span> <strong>Equipment qualification</strong> — IQ/OQ/PQ scope, protocols, execution &amp; reports</li>
+            <li><span class="material-symbols-outlined">check_circle</span> <strong>Air quality &amp; containment validation</strong> — airflow, pressure, particles, HEPA integrity, smoke</li>
+          </ul>
+          <p class="muted" style="font-size:.86rem">Requalification intervals depend on the standard, risk assessment and your quality system — we won't promise a universal interval.</p>
+          <p style="margin-top:14px"><a class="btn btn-navy" href="design-7-contact.html">Request a Quote <span class="material-symbols-outlined">arrow_forward</span></a></p>
+        </div>
+        <div class="svc-media media-ph reveal"><div class="tech-grid--dark"></div><span class="ph-label">PHOTO · Validation reporting</span></div>
+      </article>
+
+      <article class="service-block" id="bsc">
+        <div class="reveal">
+          <span class="eyebrow">Test &amp; Maintain</span>
+          <h2>Biological Safety Cabinet Testing &amp; Certification</h2>
+          <p class="lead">Certifying your cabinets protects patients/products, personnel and the environment — and meets the requirements of accreditation bodies (e.g. JCIA, CBAHI).</p>
+          <p style="font-weight:600;color:var(--navy-ink);margin:6px 0 6px">Tests</p>
+          <ul class="test-grid">
+            <li><span class="material-symbols-outlined">done</span> Inflow air velocity</li>
+            <li><span class="material-symbols-outlined">done</span> Downflow air velocity</li>
+            <li><span class="material-symbols-outlined">done</span> HEPA filter leak</li>
+            <li><span class="material-symbols-outlined">done</span> Smoke visualization</li>
+            <li><span class="material-symbols-outlined">done</span> Site installation &amp; alarm calibration</li>
+            <li><span class="material-symbols-outlined">done</span> Light intensity</li>
+            <li><span class="material-symbols-outlined">done</span> Vibration</li>
+            <li><span class="material-symbols-outlined">done</span> Electrical safety</li>
+          </ul>
+          <div class="callout" style="margin-top:8px"><span class="material-symbols-outlined">info</span><p>The service report/certificate, traceable instrument calibration and the identified standard are prominent deliverables. <strong>NSF</strong> field-certifier credentials are distinct from product or company certification — see the <a href="design-7-about.html#credentials" style="color:var(--orange-deep);font-weight:600">credentials page</a>.</p></div>
+          <p style="margin-top:18px"><a class="btn btn-navy" href="design-7-contact.html">Request this service <span class="material-symbols-outlined">arrow_forward</span></a></p>
+        </div>
+        <div class="svc-media media-ph reveal"><div class="tech-grid--dark"></div><span class="ph-label">PHOTO · Cabinet certification</span></div>
+      </article>
+
+      <article class="service-block flip" id="installation">
+        <div class="reveal">
+          <span class="eyebrow">Build &amp; Engineer</span>
+          <h2>Installation Services</h2>
+          <p class="lead">Professional installation of GRP panels, cleanroom doors, HVAC, mechanical and electrical systems — the construction backbone of every facility we deliver.</p>
+          <ul class="svc-list">
+            <li><span class="material-symbols-outlined">check_circle</span> GRP panels, doors &amp; architectural components</li>
+            <li><span class="material-symbols-outlined">check_circle</span> HVAC &amp; mechanical integration</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Electrical installation &amp; integration</li>
+          </ul>
+          <p style="margin-top:14px"><a class="btn btn-navy" href="design-7-contact.html">Request a Quote <span class="material-symbols-outlined">arrow_forward</span></a></p>
+        </div>
+        <div class="svc-media media-ph reveal"><div class="tech-grid--dark"></div><span class="ph-label">PHOTO · GRP panel installation</span></div>
+      </article>
+
+      <article class="service-block" id="consultancy">
+        <div class="reveal">
+          <span class="eyebrow">Equip &amp; Advise</span>
+          <h2>Consultancy</h2>
+          <p class="lead">Expert guidance in biosafety, infection and contamination control, and cleanrooms — from our engineers and our wide network of national and international experts.</p>
+          <ul class="svc-list">
+            <li><span class="material-symbols-outlined">check_circle</span> Compliance roadmaps for SFDA, CBAHI, WHO, CAP, CDC</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Specification &amp; validation of controlled environments</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Advice at every stage — from air-quality validation to design &amp; construction</li>
+          </ul>
+          <p style="margin-top:14px"><a class="btn btn-navy" href="design-7-contact.html">Book a consultation <span class="material-symbols-outlined">arrow_forward</span></a></p>
+        </div>
+        <div class="svc-media media-ph reveal"><div class="tech-grid--dark"></div><span class="ph-label">PHOTO · Consultancy</span></div>
+      </article>
+
+      <article class="service-block flip" id="training">
+        <div class="reveal">
+          <span class="eyebrow">Equip &amp; Advise</span>
+          <h2>Training &amp; Workshops</h2>
+          <p class="lead">Comprehensive training packages so your team gains the best from their equipment and technologies — while maintaining a healthy, safe working environment.</p>
+          <ul class="svc-list">
+            <li><span class="material-symbols-outlined">check_circle</span> Cleanroom operation &amp; maintenance</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Workshops delivered by experienced engineers</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Delivered at the SFDA and KFUPM</li>
+          </ul>
+          <p style="margin-top:14px"><a class="btn btn-navy" href="design-7-contact.html">Enquire about training <span class="material-symbols-outlined">arrow_forward</span></a></p>
+        </div>
+        <div class="svc-media media-ph reveal"><div class="tech-grid--dark"></div><span class="ph-label">PHOTO · SFDA workshop</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================== HOW WE DELIVER (timeline) ===================== -->
+  <section class="section bg-surf2" id="delivery" data-wp="Builder timeline (Code module) / Accordion">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">How we deliver</span><h2>A clear, accountable methodology</h2><p class="lead">Eight phases from kick-off to closure — one partner, full traceability.</p></div>
+      <div class="timeline">
+        <div class="timeline-track"><div class="timeline-progress"></div></div>
+        <div class="phase reveal"><div class="node"></div><div class="pnum">PHASE 01</div><h3>Project Initiation</h3><p>Kick-off, finalised requirements &amp; scope, initial site assessment.</p></div>
+        <div class="phase reveal"><div class="node"></div><div class="pnum">PHASE 02</div><h3>Design</h3><p>Conceptual &amp; detailed engineering and architectural design, approved by the client.</p></div>
+        <div class="phase reveal"><div class="node"></div><div class="pnum">PHASE 03</div><h3>Procurement</h3><p>Sourcing of materials &amp; equipment, quality checks, preparation for shipping.</p></div>
+        <div class="phase reveal"><div class="node"></div><div class="pnum">PHASE 04</div><h3>Construction</h3><p>Site preparation, GRP panels and structural components assembled and installed.</p></div>
+        <div class="phase reveal"><div class="node"></div><div class="pnum">PHASE 05</div><h3>Installation</h3><p>HVAC systems, cleanroom components, electrical and mechanical installation.</p></div>
+        <div class="phase reveal"><div class="node"></div><div class="pnum">PHASE 06</div><h3>Testing &amp; Validation</h3><p>Comprehensive testing and validation to ISO 14644 and GLP/GMP compliance.</p></div>
+        <div class="phase reveal"><div class="node"></div><div class="pnum">PHASE 07</div><h3>Commissioning &amp; Handover</h3><p>Final inspections, handover of the facility, and training of client staff.</p></div>
+        <div class="phase reveal"><div class="node"></div><div class="pnum">PHASE 08</div><h3>Project Closure</h3><p>Final documentation, project report, client feedback and review.</p></div>
+      </div>
+      <p style="margin-top:30px"><a class="link-arrow" href="design-7-products.html">Looking for equipment? Browse our products <span class="material-symbols-outlined">arrow_right_alt</span></a></p>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-band" data-wp="Full-width Call-to-action widget">
+    <div class="tech-grid--dark"></div>
+    <div class="wrap">
+      <h2>Discuss your project</h2>
+      <p>Tell us your requirements and our engineers will reply within one business day with a clear, compliant plan.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="design-7-contact.html">Request a Quote <span class="material-symbols-outlined">arrow_forward</span></a>
+        <a class="btn btn-ghost" href="design-7-projects.html">See our projects</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== GLOBAL FOOTER ===================== -->
+<footer class="site-footer" data-wp="Theme footer widget areas">
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="assets/masarat-logo-dark.png" alt="Masarat for Accreditation">
+        <p>A Saudi company specialized in cleanroom solutions (Cleanrooms &amp; GMP) and high-risk laboratories (BSL-3 &amp; 4) — since 2016.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="design-7-solutions.html#cleanrooms">Turnkey Cleanrooms &amp; GMP</a>
+        <a href="design-7-solutions.html#biocontainment">Biocontainment Labs</a>
+        <a href="design-7-solutions.html#cqv">CQV &amp; Testing</a>
+        <a href="design-7-solutions.html#bsc">Cabinet Certification</a>
+        <a href="design-7-products.html">Products</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="design-7-about.html">About &amp; Credentials</a>
+        <a href="design-7-projects.html">Projects</a>
+        <a href="design-7-solutions.html#training">Training</a>
+        <a href="design-7-contact.html">Contact</a>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <div><span class="material-symbols-outlined">call</span> +966 1148 70 043</div>
+        <div><span class="material-symbols-outlined">mail</span> info@m4acc.com</div>
+        <div><span class="material-symbols-outlined">location_on</span> Riyadh, Kingdom of Saudi Arabia</div>
+        <div><span class="material-symbols-outlined">schedule</span> Sun–Thu, 08:00–17:00 (AST)</div>
+      </div>
+    </div>
+    <div class="footer-compliance">
+      <span>SFDA</span><span>CBAHI</span><span>WHO</span><span>CAP</span><span>CDC</span><span>GMP</span><span>ISO 14644</span><span>NSF</span>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="js-year">2026</span> Masarat for Accreditation. All rights reserved.</span>
+      <span class="partner-line">International partner: <b>MRC Solutions</b> — 35+ years of cleanroom engineering.</span>
+      <button class="ar-toggle" type="button" aria-label="Switch to Arabic (placeholder)">العربية · AR</button>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><span class="material-symbols-outlined">arrow_upward</span></button>
+<script src="design-7.js" defer></script>
+</body>
+</html>
