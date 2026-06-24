@@ -6,10 +6,11 @@ the honest, evidence-based answer.
 ## TL;DR
 
 **m4acc.com is a WordPress website.** It is PHP, server-rendered. It is **not**
-a JavaScript single-page app (React/Vue/Angular/Next/Nuxt). It uses a premium
-theme with a drag-and-drop **page builder** (most likely WPBakery or Elementor),
-a portfolio-style **custom post type** for project pages, a contact form with
-**reCAPTCHA**, and is served via **Google Cloud**.
+a JavaScript single-page app (React/Vue/Angular/Next/Nuxt). It runs the
+**Themify Ultra** premium theme with the bundled **Themify Builder** page builder
+(✅ **confirmed** from the admin dashboard, 2026-06-24 — *not* WPBakery/Elementor
+as earlier guessed), a Themify **Portfolio** custom post type for project pages,
+a contact form with **reCAPTCHA**, and is served via **Google Cloud**.
 
 ## How we know (the evidence)
 
@@ -31,6 +32,29 @@ the site's own URL structure:
 3. **reCAPTCHA** on the contact page → a forms plugin such as **Contact Form 7**
    or **WPForms**.
 
+## ✅ Confirmed from the admin dashboard (2026-06-24)
+
+A screenshot of the live **wp-admin** dashboard (logged in as `manag_mas`)
+confirmed the stack first-hand. No more guessing on these:
+
+| Aspect | Confirmed value | Evidence in the dashboard |
+|---|---|---|
+| **Theme** | **Themify Ultra** (premium multipurpose Themify theme) | "Themify Ultra" admin menu item |
+| **Page builder** | **Themify Builder** (bundled with the theme) | The theme + the "Builder Contact" addon menu |
+| **Project CPT** | **Portfolio** (Themify's portfolio post type) | "Portfolios" admin menu item (this is the `/work/` content) |
+| **Contact form** | **Themify Builder Contact** addon | "Builder Contact" admin menu item |
+| **Caching** | **Themify Cache** | "Themify Cache" toolbar item |
+| **Multilingual** | A translation plugin, **likely Polylang** *(confirm)* | "Languages" menu + "Show all languages" toolbar |
+| **Migration tool** | **All-in-One WP Migration** | "All-in-One WP Migration" admin menu — handy for staging copies |
+| **Transactional email** | **WP Mail SMTP** | "WP Mail SMTP" menu — ⚠️ Pro license **expired**, 2 emails failed in 7 days (ops to-do) |
+
+**Why this matters for the redesign:** the agreed design direction is built with
+**Themify Builder modules** (Rows/Columns, Feature, Counter, Portfolio, Accordion,
+Video, Builder Contact) plus **Custom CSS** and a **Code module** (or a Themify
+Ultra child theme) for any bespoke interactions. See
+[`../designs/WORDPRESS-MAPPING.md`](../designs/WORDPRESS-MAPPING.md) for the
+section-by-section build.
+
 ## What this means for you (why it's good news)
 
 - **WordPress is the most documented platform in existence.** Almost any problem
@@ -51,15 +75,15 @@ These can't be seen reliably from outside. You'll confirm them with
 
 | Unknown                         | Why it matters                                        |
 |---------------------------------|-------------------------------------------------------|
-| Exact **theme** name + version  | Determines where design lives and how to edit safely  |
-| Whether it's a **child theme**  | Editing a parent theme directly = changes lost on update |
-| **Page builder** (WPBakery/Elementor/other) | Each edits pages very differently             |
-| Full **plugin** list + versions | Plugins are the #1 cause of conflicts/outages         |
+| ~~Exact **theme**~~ → **Themify Ultra** ✅ | *Confirmed.* Still need the **version**, and whether a **child theme** is active |
+| ~~**Page builder**~~ → **Themify Builder** ✅ | *Confirmed.* No longer WPBakery/Elementor |
+| Full **plugin** list + versions | Partially known (Polylang?, All-in-One WP Migration, WP Mail SMTP, Themify Cache); get the complete list |
+| **Multilingual plugin** exact name | "Languages" menu suggests **Polylang** — confirm (affects the Arabic/RTL plan) |
 | **Host / control panel** (cPanel, Plesk, managed WP, raw GCP VM) | Decides how you get staging, backups, SSH/SFTP |
 | **PHP / WordPress versions**    | Affects compatibility and security                    |
-| Existing **backups**            | Your safety net — must exist before you touch anything |
-| **Who has admin access**        | You need credentials to do real work                  |
-| **Bilingual / Arabic + RTL?**   | Saudi audience; may need right-to-left support later   |
+| Existing **backups**            | Your safety net — must exist before you touch anything (All-in-One WP Migration helps) |
+| **Who has admin access**        | At least `manag_mas` (seen in the dashboard) — confirm the full list |
+| **Bilingual / Arabic + RTL?**   | A multilingual plugin is already installed → Arabic/RTL is more feasible than assumed |
 
 ## A note on "is it JS-rendered?"
 

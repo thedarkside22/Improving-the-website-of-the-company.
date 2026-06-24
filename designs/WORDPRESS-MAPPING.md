@@ -13,23 +13,32 @@
 > So you implement the agreed design *once*; you don't "design it twice." This
 > file maps every section of the mockups to the exact WordPress building block.
 
-## First: confirm the stack (one quick discovery step)
+## The stack is confirmed (2026-06-24)
 
-The live site is **WordPress** with a premium theme + page builder, **likely
-WPBakery or Elementor** — but that's **not yet confirmed**. Confirm it before the
-real build (see `../docs/08-discovery-checklist.md`). The exact builder changes
-*which widget* you use, not the design. Once confirmed, replace "page-builder
-section" below with the concrete widget names.
+✅ The live site runs the **Themify Ultra** theme with the bundled **Themify
+Builder** page builder — confirmed from the wp-admin dashboard (see
+[`../docs/01-how-the-site-is-built.md`](../docs/01-how-the-site-is-built.md)). It
+is **not** WPBakery or Elementor, as earlier guessed. So "page-builder section"
+below means a **Themify Builder module**. The concrete module names are given
+inline.
 
 ## Three ways to implement (pick per section)
 
-1. **Page builder** (Elementor / WPBakery) — best for most sections; the client
-   can edit content later without code.
+1. **Themify Builder modules** — best for most sections; staff can edit content
+   later without code. Core modules you'll use: **Row/Column** (layout),
+   **Feature** (icon box), **Counter** (animated stats), **Portfolio**
+   (filterable project grid + detail), **Accordion**, **Tabs**, **Video**,
+   **Image/Gallery**, **Buttons**, and **Builder Contact** (the form — already
+   installed).
 2. **Child theme** (`style.css` + a template/template-part) — best for the global
-   header/footer and any custom layout the builder can't do cleanly. **Never edit
-   the parent theme** (updates would wipe it) — see `../docs/02` and `../docs/04`.
-3. **Gutenberg blocks / block patterns** — a no-builder option if the site moves
-   to the block editor.
+   header/footer and any custom layout the builder can't do cleanly. Create a
+   **Themify Ultra child theme**; **never edit the parent theme** (updates would
+   wipe it) — see `../docs/02` and `../docs/04`.
+3. **Code module + Custom CSS** — Themify's **Code/HTML module** plus the theme's
+   **Custom CSS** box is the clean home for any bespoke interaction (the hero
+   motif, the scroll-linked timeline, the product quick-view drawer). The
+   mockup's own `design-6.css` / `design-6.js` paste in here verbatim — nothing
+   is rebuilt from scratch.
 
 ## Section-by-section mapping
 
@@ -87,5 +96,6 @@ Full safe-change workflow: `../docs/03-staging-explained.md` and
 - Nothing here is throwaway: **the design is the deliverable**, and it carries
   over 1:1.
 - The only "redo" is normal WordPress implementation work, done once.
-- Confirm the page builder first (`../docs/08`), then build section-by-section
-  using the table above — reusing the mockup's CSS tokens and structure.
+- The builder is confirmed (**Themify Builder** on **Themify Ultra**), so build
+  section-by-section using the table above with Themify modules — reusing the
+  mockup's CSS tokens and structure via Custom CSS / a Code module.
