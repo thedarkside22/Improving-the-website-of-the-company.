@@ -35,6 +35,33 @@ SFDA/CBAHI/WHO/CAP/CDC), **videos** (the real workshop/project films, SFDA
 featured), and **the team** (a "Meet our experts" section), plus a real
 **Our Projects** section.
 
+## Direction F — "Precision" (new, most built-out)
+
+A clinical-modern, **interactive** full direction on the navy + orange + white
+brand — the most complete option. Open **[`design-6-home.html`](design-6-home.html)**
+(or the **Direction F** card in `index.html`).
+
+- **Pages:** Home, Solutions (all engineered services + the 8-phase delivery
+  method), a filterable **Products** catalog (with quick-view drawers), an
+  interactive **Projects** gallery (live filter + search), **three case studies**
+  (SFDA, KFSHRC, IAU), **About & Credentials** (with the NSF credential card),
+  and **Contact** (a working front-end Request-a-Quote form).
+- **Shared system:** one stylesheet [`design-6.css`](design-6.css) (CSS tokens +
+  components + the tech-grid/airflow motif) and one script
+  [`design-6.js`](design-6.js) (sticky nav, scroll-reveal, count-up stats,
+  scroll-linked timeline, filter/search, quick-view drawer, form validation).
+  Fonts: **Sora + Inter**. No build step, no JS libraries.
+- **Motion:** tasteful and professional — and fully disabled under
+  `prefers-reduced-motion`.
+- **WordPress-ready:** semantic, section-based markup with a `data-wp="…"` hint on
+  every section, built to port onto the now-confirmed **Themify Ultra / Themify
+  Builder** stack. See [`WORDPRESS-MAPPING.md`](WORDPRESS-MAPPING.md).
+
+> Files: `design-6.css`, `design-6.js`, `design-6-home.html`,
+> `design-6-solutions.html`, `design-6-products.html`, `design-6-projects.html`,
+> `design-6-project-sfda.html`, `design-6-project-kfshrc.html`,
+> `design-6-project-iau.html`, `design-6-about.html`, `design-6-contact.html`.
+
 ## What's real vs. placeholder
 
 | Element | Status |
