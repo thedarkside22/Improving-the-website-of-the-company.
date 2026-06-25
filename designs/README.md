@@ -93,7 +93,7 @@ brand — the most complete option. Open **[`design-6-home.html`](design-6-home.
 | Identity copy, tagline, nav menu, contact (+966 1148 70 043 · info@m4acc.com) | ✅ **Real** |
 | Accreditation bodies (SFDA, CBAHI, WHO, CAP, CDC, GMP, NIH/BMBL) | ✅ **Real** |
 | **Our Projects** (SFDA, KFSHRC, IAU, ABMI, NAMI, Care Medical, KFUH) | ✅ **Real** clients/locations |
-| MRC Solutions partnership (35+ yrs) | ✅ **Real** |
+| Premium GRP cleanroom systems | ✅ **Real** |
 | Videos (3 clips, self-hosted) | ✅ **Real** — your uploaded files |
 | Which clip is the SFDA workshop | ⚠️ **Confirm** — currently `assets/videos/workshop-sfda.mp4` |
 | Team photos, lab/hero photos | 🔧 **Placeholder** — marked "PHOTO"; attach as files to drop in |

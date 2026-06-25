@@ -55,7 +55,7 @@ map (applies to all three designs — they share the same content structure):
 | **Services** (grid / numbered list) | Repeater of icon-boxes, **or** link each to the existing `/work/` items | Pages, or `work` CPT |
 | **Video showcase** | "Video" widgets + a lightbox (built-in to most builders, or a plugin) | **Self-hosted media** or a video CDN |
 | **Team** ("Meet our experts") | A **Team** custom post type or a team plugin → "team grid" widget | New `team` CPT |
-| **Partner (MRC)** | 2-column "image + text" section | Page content |
+| **Premium products (GRP)** | 2-column "image + text" section | Page content |
 | **CTA band** | Full-width "call to action" widget | Page content |
 | **Contact** | **Existing form plugin** (Contact Form 7 / WPForms) embedded via shortcode | Form plugin |
 | **Footer** | Theme footer widget areas | Widgets |

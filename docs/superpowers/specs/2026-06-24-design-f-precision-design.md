@@ -110,8 +110,7 @@ slight shrink on scroll.
 **Footer** (`<footer data-wp="theme-footer widget areas">`): logo + tagline,
 nav columns (Solutions / Products / Company), contact block (📞 +966 1148 70 043
 · ✉️ info@m4acc.com · 📍 Riyadh, KSA · Sun–Thu 08:00–17:00 AST), compliance strip
-(SFDA · CBAHI · WHO · CAP · CDC · GMP · ISO 14644 · NSF), MRC Solutions partner
-line, AR toggle placeholder, copyright with JS year.
+(SFDA · CBAHI · WHO · CAP · CDC · GMP · ISO 14644 · NSF), an assurance line, AR toggle placeholder, copyright with JS year.
 
 > Build rule for parallel page authors: **copy the header/footer markup verbatim
 > from `design-6-home.html`**; change only the `aria-current`/active-nav state.
@@ -127,11 +126,11 @@ source docs above — no invented specs, model numbers, or unconfirmed claims.
    (orange accent); subhead from website-copy; CTAs **Request a Quote** /
    **Watch our work**; glass trust card "ISO 14644 Certified". `data-wp="hero row"`.
 2. **Compliance strip** — SFDA · CBAHI · WHO · CAP · CDC · GMP · ISO 14644 · NSF.
-3. **Stats band** — Founded 2016 · 8 capability areas · 35-yr MRC partner ·
+3. **Stats band** — Founded 2016 · 8 capability areas · 10+ standards/bodies ·
    BSL-3 & 4 (count-up). `data-wp="Counter modules"`.
 4. **What we do** — refined **bento** of the 8 categories grouped Build · Equip ·
    Test & Maintain; hover + scroll-reveal. `data-wp="Row + Feature modules"`.
-5. **Modular Cleanroom spotlight** — MRC GRP value props + image placeholder +
+5. **Modular Cleanroom spotlight** — GRP value props + image placeholder +
    Design » Supply » Construct » Install » Commission mini value-chain.
 6. **8-phase delivery timeline** (`#delivery`) — scroll-linked progress.
 7. **Why Masarat** — value pillars.
@@ -156,7 +155,7 @@ Slim hero + intro. **Filter tabs** (All · Safety Cabinets & Hoods · Lab Equipm
 · Cleanroom Systems · Monitoring) + **search**. Product-family cards with the
 **three headline criteria** from the catalog blueprint §4 and **Quick view** →
 drawer (overview, applications, standards, Request a Quote). Launch-first families
-live (MRC GRP **featured**; Biological Safety Cabinets; Laminar Flow Clean
+live (GRP **featured**; Biological Safety Cabinets; Laminar Flow Clean
 Benches; Laboratory Fume Hoods); "expanding range" families clearly marked as such
 (Autoclaves, Freezers, Centrifuges, CO₂ Incubators, Lab Furniture, Environmental
 Monitoring Instruments) per blueprint §10. Include the blueprint §4 **safety
@@ -178,8 +177,7 @@ certificates & reports (placeholders); related/next project; CTA. `data-wp="Port
 single template"`.
 
 ### 5.6 `design-6-about.html` — About & Credentials
-Story (founded 2016, specialization), our people/team (placeholders), MRC
-partnership, **Our Value** pillars, the **value chain** (Design→Commission),
+Story (founded 2016, specialization), our people/team (placeholders), our GRP cleanroom systems, **Our Value** pillars, the **value chain** (Design→Commission),
 **Standards & Credentials** grid (ISO 14644-1/2, GLP/GMP, USP <797>/<800>,
 WHO/CDC/NIH/BMBL, SFDA, CBAHI, JCIA, CAP, NSF) + the **NSF credential card** with
 **View NSF Credential (PDF)** (exact-title placeholder; no blanket "NSF certified"

@@ -46,7 +46,7 @@ certification and training — for cleanrooms, GMP facilities and high-risk
 6. **Biological Safety Cabinet Testing & Certification** — cabinets, hoods,
    isolators.
 7. **Training (Workshops)** — get the best from your facility, safely.
-8. **Contamination Control Products** — durable MRC GRP cleanroom systems.
+8. **Contamination Control Products** — durable GRP cleanroom systems.
 
 **Why Masarat (value pillars)**
 - **Standards-led** — ISO 14644, GLP/GMP, USP, WHO/CDC/NIH/BMBL.
@@ -89,10 +89,8 @@ Our work is delivered by a team of engineers and technologists, backed by a wide
 network of national and international experts — mobilised to match the demands of
 each project.
 
-**Our partner**
-We deliver exceptional, innovative cleanroom solutions through our renowned
-international partner, **MRC Solutions** — with more than 35 years of experience
-designing and building state-of-the-art cleanrooms. Our cleanroom products are
+**Our cleanroom systems**
+We deliver exceptional, innovative cleanroom solutions built around our **GRP (Glass Reinforced Polyester) cleanroom system** - an impervious, smooth surface resistant to mechanical damage and the most aggressive chemicals. Our cleanroom products are
 exceptionally durable, cost-effective and resistant to the most aggressive
 chemicals.
 
@@ -176,10 +174,9 @@ laboratories in accordance with WHO, CDC, NIH and BMBL.
 ## 5. Products
 
 - **H1:** Contamination Control Products
-- **Intro:** Premium cleanroom products delivered through our international partner
-  MRC Solutions.
+- **Intro:** Premium cleanroom products engineered and delivered end-to-end by Masarat.
 
-**MRC GRP (Glass Reinforced Polyester) Panels**
+**GRP (Glass Reinforced Polyester) Panels**
 A durable, molded cleanroom paneling system. An advanced manufacturing technique
 and specific GRP formulation create an impervious, smooth surface resistant to
 mechanical damage and chemical attack. A thick, resin-rich Gel-coat surface offers

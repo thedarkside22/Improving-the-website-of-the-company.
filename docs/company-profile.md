@@ -19,8 +19,7 @@
 - **Website:** https://m4acc.com
 - **Team:** a team of engineers & technologists, plus a wide network of national
   and international experts (~20 specialists — **confirm**)
-- **International partner:** MRC Solutions — 35+ years designing and building
-  state-of-the-art cleanrooms (supplier of the MRC GRP modular cleanroom system)
+- **Cleanroom systems:** premium GRP (Glass Reinforced Polyester) modular cleanroom system - durable and chemical-resistant. *(Client decision: the external supplier/partner is NOT named or promoted on the public website.)*
 
 ---
 
@@ -47,9 +46,7 @@ international experts. We pioneer in testing and maintaining cleanrooms, biosafe
 laboratories, controlled environments, biological safety cabinets, horizontal
 laminar airflow cabinets, isolators, and fume hoods to meet international standards.
 
-Masarat offers exceptional and innovative cleanroom solutions through our renowned
-international partner **MRC Solutions** (35+ years building state-of-the-art
-cleanrooms). Our cleanroom products are exceptionally durable, cost-effective, and
+Masarat offers exceptional and innovative cleanroom solutions built around our premium GRP cleanroom system. Our cleanroom products are exceptionally durable, cost-effective, and
 resistant to the most aggressive chemicals.
 
 Client organizational success is an essential component of what we do. We offer a
@@ -80,7 +77,7 @@ equipment and technologies — while maintaining a healthy, safe working environ
   certification.
 - **Biological Safety Cabinet / laminar flow / isolator / fume hood** testing &
   certification.
-- **Cleanroom design & construction** — modular GRP cleanrooms (MRC system).
+- **Cleanroom design & construction** — modular GRP cleanrooms.
 - **Training & support** for cleanroom operation and maintenance.
 
 **Value chain (one line):** Design » Supply » Construct » Install » Commission.
@@ -144,9 +141,9 @@ A clear, professional delivery methodology (8 phases):
 
 ---
 
-## 7. Products — Modular Cleanroom (MRC GRP panels)
+## 7. Products - Modular Cleanroom (GRP panels)
 
-**MRC GRP (Glass Reinforced Polyester) Panels** provide a durable, molded
+**GRP (Glass Reinforced Polyester) Panels** provide a durable, molded
 cleanroom paneling system. The advanced manufacturing technique and specific GRP
 formulation create an impervious, smooth surface resistant to mechanical damage
 and chemical attack. A thick, resin-rich Gel-coat surface offers high resistance
@@ -237,7 +234,7 @@ standards.
   international experts.
 - **Trusted by leading institutions:** regulators (SFDA), top hospitals (KFSHRC,
   KFUH), and universities (IAU).
-- **Premium products:** durable, chemical-resistant MRC GRP cleanrooms.
+- **Premium products:** durable, chemical-resistant GRP cleanrooms.
 - **Sustainability & efficiency:** energy-efficient, cost-reducing designs.
 - **Training & support:** clients get the best from their facilities, safely.
 
