@@ -35,6 +35,17 @@ SFDA/CBAHI/WHO/CAP/CDC), **videos** (the real workshop/project films, SFDA
 featured), and **the team** (a "Meet our experts" section), plus a real
 **Our Projects** section.
 
+## Direction H - "Definitive Precision" (the final, page-by-page build)
+
+The eighth and final direction, designed **page by page with the client** and built on the shared design-8 system. Open **[`design-8-home.html`](design-8-home.html)** or the **Direction H** card in `index.html`.
+
+- **Marketing-led & relationship-first:** a flag-photo hero (Ken Burns) with the brand promise *"Protecting what matters most"*, a mission-led story that sells the company (not just products), and a "Saudi-founded. Standards-obsessed. Trusted where it matters most." brand line.
+- **Solutions split into three real pages:** **Build & Engineer**, **Equip**, and **Test & Maintain** (from the client pathway map), each cross-linked.
+- **No-pressure UX:** soft, varied CTAs (header "Contact us", one closing "Discuss your project") - no "Request a Quote" spam; **certification kept private** (no PDF/badge - available on request only).
+- **8-phase delivery ending in "Ongoing Support & Partnership"**; serpentine value chain; 3 photo group-cards; reduced-motion & touch safe.
+- **10 pages**, MRC-free, Themify-portable (`data-wp` hints). Hero/card photos are placeholders (`assets/hero-flag.jpg`, `wwd-*.jpg`).
+
+> Files: `design-8.css`, `design-8.js`, and `design-8-*.html` (home, build, equip, test-maintain, projects, project-sfda/-kfshrc/-iau, about, contact).
 ## Direction G — "Precision+" (newest, most interactive)
 
 An **enhanced evolution of Direction F** — same clinical-modern navy/orange/white

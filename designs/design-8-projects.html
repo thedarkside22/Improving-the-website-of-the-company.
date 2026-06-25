@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Masarat for Accreditation</title>
+<meta name="description" content="Delivered for Saudi Arabia's leading regulators, hospitals, universities and industry — from BSL-3 containment to GMP cleanrooms.">
+<!-- Design H — "Definitive Precision". Front-end-only mockup. Project photos are PLACEHOLDERS; client names per company profile. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-8.css">
+</head>
+<body>
+
+<!-- ===================== GLOBAL HEADER ===================== -->
+<header class="site-header" id="top" data-wp="Theme header (Themify Ultra) + Appearance → Menus">
+  <div class="nav-inner">
+    <a class="brand" href="design-8-home.html" aria-label="Masarat for Accreditation — home">
+      <img src="assets/masarat-logo-light.png" alt="Masarat for Accreditation">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="design-8-build.html">Solutions <span class="material-symbols-outlined">expand_more</span></a>
+          <div class="dropdown" role="menu">
+            <a href="design-8-build.html"><span class="material-symbols-outlined">architecture</span> Build &amp; Engineer</a>
+            <a href="design-8-equip.html"><span class="material-symbols-outlined">science</span> Equip</a>
+            <a href="design-8-test-maintain.html"><span class="material-symbols-outlined">fact_check</span> Test &amp; Maintain</a>
+          </div>
+        </li>
+        <li><a href="design-8-projects.html" aria-current="page">Projects</a></li>
+        <li><a href="design-8-about.html">About</a></li>
+        <li><a href="design-8-contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary nav-cta desktop" href="design-8-contact.html">Contact us <span class="material-symbols-outlined">arrow_forward</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-top">
+    <img src="assets/masarat-logo-dark.png" alt="Masarat for Accreditation">
+    <button class="mobile-close" data-mobile-close aria-label="Close menu"><span class="material-symbols-outlined">close</span></button>
+  </div>
+  <nav aria-label="Mobile">
+    <button class="m-acc-toggle" aria-expanded="false">Solutions <span class="material-symbols-outlined">expand_more</span></button>
+    <div class="m-acc-panel">
+      <a href="design-8-build.html">Build &amp; Engineer</a>
+      <a href="design-8-equip.html">Equip</a>
+      <a href="design-8-test-maintain.html">Test &amp; Maintain</a>
+    </div>
+    <a href="design-8-projects.html">Projects</a>
+    <a href="design-8-about.html">About</a>
+    <a href="design-8-contact.html">Contact</a>
+  </nav>
+  <a class="btn btn-primary" href="design-8-contact.html">Contact us <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+
+<main>
+  <!-- ===================== SLIM HERO ===================== -->
+  <section class="hero hero--slim" data-wp="Builder page-title row">
+    <div class="tech-grid--dark"></div>
+    <div class="hero-glow"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="reveal">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="design-8-home.html">Home</a> <span>/</span> <span>Projects</span></nav>
+          <span class="eyebrow">Our projects</span>
+          <h1>Delivered for the institutions that set the standards</h1>
+          <p class="lead">From BSL-3 containment to GMP cleanrooms — for Saudi Arabia's leading regulators, hospitals, universities and industry.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-rule"></div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section class="section" data-wp="Portfolio module (filterable categories)">
+    <div class="wrap">
+      <div class="filter-bar" data-filter-group data-target="#projectGrid">
+        <div class="filter-btns" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="cleanroom" aria-pressed="false">Cleanroom</button>
+          <button class="filter-btn" data-filter="bsl" aria-pressed="false">Biocontainment (BSL)</button>
+          <button class="filter-btn" data-filter="glp" aria-pressed="false">GLP</button>
+          <button class="filter-btn" data-filter="certification" aria-pressed="false">Certification</button>
+        </div>
+        <div class="search"><span class="material-symbols-outlined">search</span><input class="js-search" type="search" placeholder="Search projects…" aria-label="Search projects"></div>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+
+        <a class="project-card" data-cat="bsl" data-search="sfda biosafety bsl-3 riyadh regulator" href="design-8-project-sfda.html">
+          <div class="project-media has-vid"><div class="tech-grid--dark"></div><span class="chip chip--bsl type-chip">BSL-3</span><video muted loop playsinline preload="none" src="assets/videos/workshop-sfda.mp4"></video><span class="ph-label">PHOTO · SFDA</span></div>
+          <div class="project-body"><h3>SFDA — BSL-3 Laboratory</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> Riyadh · Saudi Food &amp; Drug Authority</div><span class="link-arrow">View case study <span class="material-symbols-outlined">arrow_right_alt</span></span></div>
+        </a>
+
+        <a class="project-card" data-cat="cleanroom" data-search="kfshrc cleanroom hospital riyadh gmp" href="design-8-project-kfshrc.html">
+          <div class="project-media has-vid"><div class="tech-grid--dark"></div><span class="chip chip--std type-chip">Cleanroom</span><video muted loop playsinline preload="none" src="assets/videos/project-2.mp4"></video><span class="ph-label">PHOTO · KFSHRC</span></div>
+          <div class="project-body"><h3>KFSHRC — Cleanroom</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> Riyadh · King Faisal Specialist Hospital &amp; RC</div><span class="link-arrow">View case study <span class="material-symbols-outlined">arrow_right_alt</span></span></div>
+        </a>
+
+        <a class="project-card" data-cat="bsl glp" data-search="iau imam abdulrahman bin faisal university dammam bsl-3 glp" href="design-8-project-iau.html">
+          <div class="project-media has-vid"><div class="tech-grid--dark"></div><span class="chip chip--bsl type-chip">BSL-3 · GLP</span><video muted loop playsinline preload="none" src="assets/videos/project-3.mp4"></video><span class="ph-label">PHOTO · IAU</span></div>
+          <div class="project-body"><h3>IAU — BSL-3 &amp; GLP Laboratories</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> Dammam · Imam Abdulrahman Bin Faisal University</div><span class="link-arrow">View case study <span class="material-symbols-outlined">arrow_right_alt</span></span></div>
+        </a>
+
+        <article class="project-card" data-cat="cleanroom" data-search="abmi advanced bio-medical industrial cleanroom factory">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="chip chip--std type-chip">Cleanroom</span><span class="ph-label">PHOTO · ABMI</span></div>
+          <div class="project-body"><h3>ABMI — Cleanroom</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> Advanced Bio-Medical Industrial Co. · Factory</div><span class="muted" style="font-size:.85rem;margin-top:auto">Detail coming soon</span></div>
+        </article>
+
+        <article class="project-card" data-cat="cleanroom" data-search="nami 3d printing clean non-classified">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="chip chip--std type-chip">Clean env.</span><span class="ph-label">PHOTO · NAMI</span></div>
+          <div class="project-body"><h3>NAMI — Clean (Non-Classified)</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> NAMI 3D-printing facility</div><span class="muted" style="font-size:.85rem;margin-top:auto">Detail coming soon</span></div>
+        </article>
+
+        <article class="project-card" data-cat="cleanroom" data-search="care medical iv pharmacy chemo aseptic compounding riyadh">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="chip chip--std type-chip">Aseptic</span><span class="ph-label">PHOTO · Care Medical</span></div>
+          <div class="project-body"><h3>Care Medical — IV / Chemo Cleanroom</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> Riyadh · Aseptic compounding</div><span class="muted" style="font-size:.85rem;margin-top:auto">Detail coming soon</span></div>
+        </article>
+
+        <article class="project-card" data-cat="certification" data-search="kfuh king fahd university hospital tb lab certification khobar containment">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="chip chip--bsl type-chip">Certification</span><span class="ph-label">PHOTO · KFUH</span></div>
+          <div class="project-body"><h3>KFUH — TB Lab Certification</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> Khobar · King Fahd University Hospital</div><span class="muted" style="font-size:.85rem;margin-top:auto">Detail coming soon</span></div>
+        </article>
+
+        <article class="project-card placeholder-card" data-cat="cleanroom" data-search="upcoming case study placeholder">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="ph-label">UPCOMING CASE STUDY</span></div>
+          <div class="project-body"><h3>Upcoming Case Study</h3><div class="project-meta"><span class="material-symbols-outlined">schedule</span> Placeholder — to be added</div></div>
+        </article>
+        <article class="project-card placeholder-card" data-cat="bsl" data-search="upcoming case study placeholder">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="ph-label">UPCOMING CASE STUDY</span></div>
+          <div class="project-body"><h3>Upcoming Case Study</h3><div class="project-meta"><span class="material-symbols-outlined">schedule</span> Placeholder — to be added</div></div>
+        </article>
+        <article class="project-card placeholder-card" data-cat="certification" data-search="upcoming case study placeholder">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="ph-label">UPCOMING CASE STUDY</span></div>
+          <div class="project-body"><h3>Upcoming Case Study</h3><div class="project-meta"><span class="material-symbols-outlined">schedule</span> Placeholder — to be added</div></div>
+        </article>
+
+      </div>
+      <p class="muted center" style="margin-top:28px;font-size:.88rem">Client names per the company profile — <em>confirm which may be published publicly</em>.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-band" data-wp="Full-width Call-to-action widget">
+    <div class="tech-grid--dark"></div>
+    <div class="wrap">
+      <h2>Start a similar project</h2>
+      <p>Tell us your requirements and our engineers will reply within one business day with a clear, compliant plan.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="design-8-contact.html">Contact us <span class="material-symbols-outlined">arrow_forward</span></a>
+        <a class="btn btn-ghost" href="design-8-build.html">Explore solutions</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== GLOBAL FOOTER ===================== -->
+<footer class="site-footer" data-wp="Theme footer widget areas">
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="assets/masarat-logo-dark.png" alt="Masarat for Accreditation">
+        <p>A Saudi company specialized in cleanroom solutions (Cleanrooms &amp; GMP) and high-risk laboratories (BSL-3 &amp; 4) — since 2016.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="design-8-build.html">Build &amp; Engineer</a>
+        <a href="design-8-equip.html">Equip</a>
+        <a href="design-8-test-maintain.html">Test &amp; Maintain</a>
+        <a href="design-8-projects.html">Projects</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="design-8-about.html">About &amp; Credentials</a>
+        <a href="design-8-projects.html">Projects</a>
+        <a href="design-8-contact.html">Contact</a>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <div><span class="material-symbols-outlined">call</span> +966 1148 70 043</div>
+        <div><span class="material-symbols-outlined">mail</span> info@m4acc.com</div>
+        <div><span class="material-symbols-outlined">location_on</span> Riyadh, Kingdom of Saudi Arabia</div>
+        <div><span class="material-symbols-outlined">schedule</span> Sun–Thu, 08:00–17:00 (AST)</div>
+      </div>
+    </div>
+    <div class="footer-compliance">
+      <span>SFDA</span><span>CBAHI</span><span>WHO</span><span>CAP</span><span>CDC</span><span>GMP</span><span>ISO 14644</span><span>NSF</span>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="js-year">2026</span> Masarat for Accreditation. All rights reserved.</span>
+      <span class="partner-line">Cleanroom &amp; biosafety engineering, built to international standards.</span>
+      <button class="ar-toggle" type="button" aria-label="Switch to Arabic (placeholder)">العربية · AR</button>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><span class="material-symbols-outlined">arrow_upward</span></button>
+<script src="design-8.js" defer></script>
+</body>
+</html>

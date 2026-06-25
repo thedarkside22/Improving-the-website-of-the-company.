@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Masarat | Masarat for Accreditation</title>
+<meta name="description" content="Built for critical environments, guided by responsibility. Since 2016, Masarat has helped laboratories, healthcare and research facilities create environments they can trust.">
+<!-- Design H — "Definitive Precision". About page (client-authored layout). No certification PDF/badge. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-8.css">
+<style>
+  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .team-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease)}
+  .team-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--orange)}
+  .team-photo{aspect-ratio:4/5;width:100%;object-fit:cover;object-position:center top;display:block;background:#eceef3}
+  .team-body{padding:18px 20px}
+  .team-body b{font-family:var(--sora);display:block;color:var(--navy-ink);font-size:1.05rem}
+  .team-body .role{display:block;color:var(--orange);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;margin:3px 0 9px}
+  .team-body p{font-size:.88rem;color:var(--muted);margin:0;line-height:1.55}
+  @media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.team-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ===================== GLOBAL HEADER ===================== -->
+<header class="site-header" id="top" data-wp="Theme header (Themify Ultra) + Appearance → Menus">
+  <div class="nav-inner">
+    <a class="brand" href="design-8-home.html" aria-label="Masarat for Accreditation — home">
+      <img src="assets/masarat-logo-light.png" alt="Masarat for Accreditation">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="design-8-build.html">Solutions <span class="material-symbols-outlined">expand_more</span></a>
+          <div class="dropdown" role="menu">
+            <a href="design-8-build.html"><span class="material-symbols-outlined">architecture</span> Build &amp; Engineer</a>
+            <a href="design-8-equip.html"><span class="material-symbols-outlined">science</span> Equip</a>
+            <a href="design-8-test-maintain.html"><span class="material-symbols-outlined">fact_check</span> Test &amp; Maintain</a>
+          </div>
+        </li>
+        <li><a href="design-8-projects.html">Projects</a></li>
+        <li><a href="design-8-about.html" aria-current="page">About</a></li>
+        <li><a href="design-8-contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary nav-cta desktop" href="design-8-contact.html">Contact us <span class="material-symbols-outlined">arrow_forward</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-top">
+    <img src="assets/masarat-logo-dark.png" alt="Masarat for Accreditation">
+    <button class="mobile-close" data-mobile-close aria-label="Close menu"><span class="material-symbols-outlined">close</span></button>
+  </div>
+  <nav aria-label="Mobile">
+    <button class="m-acc-toggle" aria-expanded="false">Solutions <span class="material-symbols-outlined">expand_more</span></button>
+    <div class="m-acc-panel">
+      <a href="design-8-build.html">Build &amp; Engineer</a>
+      <a href="design-8-equip.html">Equip</a>
+      <a href="design-8-test-maintain.html">Test &amp; Maintain</a>
+    </div>
+    <a href="design-8-projects.html">Projects</a>
+    <a href="design-8-about.html">About</a>
+    <a href="design-8-contact.html">Contact</a>
+  </nav>
+  <a class="btn btn-primary" href="design-8-contact.html">Contact us <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+
+<main>
+  <!-- ===================== 1 · HERO ===================== -->
+  <section class="hero hero--slim" data-wp="Builder page-title row">
+    <div class="tech-grid--dark"></div>
+    <div class="hero-glow"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="reveal">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="design-8-home.html">Home</a> <span>/</span> <span>About</span></nav>
+          <span class="eyebrow">About Masarat</span>
+          <h1>Built for critical environments. <span class="u">Guided by responsibility.</span></h1>
+          <p class="lead">Since 2016, Masarat has supported organizations that depend on clean, safe and controlled environments — laboratories, healthcare facilities, pharmaceutical spaces, research centers and technical teams, where performance is not just a preference. It is a responsibility.</p>
+          <p class="muted" style="max-width:60ch">We build, equip, validate and maintain spaces where air quality, containment, safety and reliability can affect people, processes and important decisions.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-rule"></div>
+  </section>
+
+  <!-- ===================== 2 · WHY OUR WORK MATTERS ===================== -->
+  <section class="section" data-wp="Builder Row + text">
+    <div class="wrap" style="max-width:880px">
+      <span class="eyebrow">Why our work matters</span>
+      <h2>Because critical spaces protect more than operations</h2>
+      <p class="lead">A cleanroom is not just a room. A safety cabinet is not just equipment. A certification report is not just paperwork.</p>
+      <p class="muted">Behind every controlled environment are people doing important work — protecting patients, handling sensitive samples, producing regulated products, conducting research, or keeping teams safe. We understand that responsibility. It is the reason we care about details that may not always be visible, but always matter.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 3 · WHAT WE DO (trimmed + linked) ===================== -->
+  <section class="section bg-surf2" data-wp="Builder Row + 3 link cards">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">What we do</span><h2>We help clients create environments they can trust</h2><p class="lead">Three connected capabilities that support clients from early planning to long-term performance.</p></div>
+      <div class="solgrid">
+        <a class="card reveal" href="design-8-build.html" style="text-decoration:none">
+          <div class="ic"><span class="material-symbols-outlined">architecture</span></div>
+          <h3>Controlled Environment Solutions</h3>
+          <p>Cleanrooms, biocontainment laboratories, air filtration and environmental monitoring. We care about these spaces because they protect sensitive work and the people using them every day.</p>
+          <span class="link-arrow" style="margin-top:14px;display:inline-flex">Explore Build <span class="material-symbols-outlined">arrow_right_alt</span></span>
+        </a>
+        <a class="card reveal" href="design-8-equip.html" style="text-decoration:none">
+          <div class="ic"><span class="material-symbols-outlined">science</span></div>
+          <h3>Laboratory &amp; Safety Products</h3>
+          <p>Safety cabinets, benches, fume hoods, autoclaves, freezers, centrifuges, incubators, furniture and instruments. Not catalog items — each has a role in protecting the operator, the sample or the work.</p>
+          <span class="link-arrow" style="margin-top:14px;display:inline-flex">Explore Equip <span class="material-symbols-outlined">arrow_right_alt</span></span>
+        </a>
+        <a class="card reveal" href="design-8-test-maintain.html" style="text-decoration:none">
+          <div class="ic"><span class="material-symbols-outlined">fact_check</span></div>
+          <h3>Technical Services</h3>
+          <p>Commissioning, qualification, validation, testing, certification, maintenance, installation, consultancy and training. We believe performance should be proven, not assumed.</p>
+          <span class="link-arrow" style="margin-top:14px;display:inline-flex">Explore Test &amp; Maintain <span class="material-symbols-outlined">arrow_right_alt</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4 · HOW WE WORK ===================== -->
+  <section class="section" data-wp="Builder Row + text">
+    <div class="wrap" style="max-width:880px">
+      <span class="eyebrow">How we work</span>
+      <h2>Clear from the beginning. Careful until the end.</h2>
+      <p class="muted">We begin by understanding the client's real requirement before recommending a solution. We ask questions, explain options, and avoid pushing unnecessary complexity.</p>
+      <p class="muted">Our work is guided by practical thinking, proper documentation and careful execution. We care about what happens after handover — not only what looks complete on delivery day. A successful project, to us, is one that continues to serve the people who rely on it.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 5 · PEOPLE ===================== -->
+  <section class="section bg-surf2" data-wp="Team CPT / team-grid widget">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">People behind the work</span><h2>Critical environments are delivered by people first</h2><p class="lead">Our team brings together technical knowledge, field experience, project discipline and a shared responsibility toward the clients and facilities we support.</p></div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <img class="team-photo" src="assets/team-faisal-alrasheedi.png" alt="Faisal Alrasheedi, CEO &amp; Founder" loading="lazy">
+          <div class="team-body"><b>Faisal Alrasheedi</b><span class="role">CEO &amp; Founder</span><p>Founded Masarat in 2016 and leads its mission to deliver critical environments the Kingdom can trust.</p></div>
+        </div>
+        <div class="team-card reveal">
+          <img class="team-photo" src="assets/team-turki-bin-saud.png" alt="Turki bin Saud, Director of Operations" loading="lazy">
+          <div class="team-body"><b>Turki bin Saud</b><span class="role">Director of Operations</span><p>Leads project delivery and operations with a focus on reliable execution and long-term client support.</p></div>
+        </div>
+        <div class="team-card reveal">
+          <img class="team-photo" src="assets/team-fawaz-kekya.png" alt="Fawaz Kekya, Management" loading="lazy">
+          <div class="team-body"><b>Fawaz Kekya</b><span class="role">Management</span><p>Supports management and client relationships with careful attention to standards, documentation and service quality.</p></div>
+        </div>
+        <div class="team-card reveal">
+          <img class="team-photo" src="assets/team-khalid-alzuwayyid.png" alt="Khalid Alzuwayyid, Manager of Service &amp; Maintenance" loading="lazy">
+          <div class="team-body"><b>Khalid Alzuwayyid</b><span class="role">Manager of Service &amp; Maintenance</span><p>Coordinates service and maintenance to keep clients' facilities performing reliably long after handover.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6 · OUR VALUES ===================== -->
+  <section class="section" data-wp="Builder Rows + Feature modules">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Our values</span><h2>The way we work matters as much as what we deliver</h2></div>
+      <div class="pillars">
+        <div class="pillar reveal"><div class="ic"><span class="material-symbols-outlined">handshake</span></div><h3>Integrity</h3><p>We speak honestly about scope, standards, timelines and limitations. Trust is built through clarity.</p></div>
+        <div class="pillar reveal"><div class="ic"><span class="material-symbols-outlined">verified</span></div><h3>Quality</h3><p>We care about the small technical details — they are often the difference between looking right and performing reliably.</p></div>
+        <div class="pillar reveal"><div class="ic"><span class="material-symbols-outlined">shield</span></div><h3>Responsibility</h3><p>Our work supports sensitive spaces and important human outcomes. We treat that responsibility seriously.</p></div>
+        <div class="pillar reveal"><div class="ic"><span class="material-symbols-outlined">diversity_3</span></div><h3>Partnership</h3><p>We work with clients as long-term partners — we listen, explain, support, and respect the pressure they carry.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7 · STANDARDS & CREDENTIALS (no PDF) ===================== -->
+  <section class="section bg-surf2" id="credentials" data-wp="Builder Rows + Feature modules">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Standards &amp; credentials</span><h2>Standards help turn trust into evidence</h2><p class="lead">Our credentials, procedures and technical reports reflect a commitment to recognized standards and responsible practice. For us, credentials are not decoration — they are part of a disciplined way of working, so clients know critical systems are handled with care, structure and accountability.</p></div>
+      <div class="standards-grid reveal">
+        <div class="standard"><b>ISO 14644-1/2</b><span>Cleanroom classification &amp; monitoring</span></div>
+        <div class="standard"><b>GLP / GMP</b><span>Good lab / manufacturing practice</span></div>
+        <div class="standard"><b>USP &lt;797&gt;/&lt;800&gt;</b><span>Sterile &amp; hazardous compounding</span></div>
+        <div class="standard"><b>WHO · CDC · NIH</b><span>Biosafety / BMBL</span></div>
+        <div class="standard"><b>SFDA</b><span>Saudi Food &amp; Drug Authority</span></div>
+        <div class="standard"><b>CBAHI</b><span>Healthcare accreditation (KSA)</span></div>
+        <div class="standard"><b>JCIA · CAP</b><span>International healthcare</span></div>
+        <div class="standard"><b>NSF</b><span>Biosafety cabinets</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8 · WHY CLIENTS TRUST MASARAT (evidence-backed) ===================== -->
+  <section class="section" data-wp="Builder Row + text + links">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="eyebrow">Why clients trust Masarat</span>
+        <h2>Because we care about the outcome, not only the delivery</h2>
+        <p class="muted">Clients choose Masarat when they need a partner who understands both the technical and human importance of critical environments — confidence that the space is controlled, the equipment is suitable, the testing is reliable, and the support will continue when needed.</p>
+        <p class="muted">That confidence is earned in the work itself, and kept through the support that follows.</p>
+      </div>
+      <div class="reveal">
+        <a class="pathway-card" href="design-8-projects.html" style="margin-bottom:14px">
+          <div class="pic"><span class="material-symbols-outlined">apartment</span></div>
+          <div><b>Delivered for leading institutions</b><span>SFDA, KFSHRC, IAU, KFUH and more.</span></div>
+          <span class="go material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a class="pathway-card" href="design-8-test-maintain.html">
+          <div class="pic"><span class="material-symbols-outlined">all_inclusive</span></div>
+          <div><b>Support that continues after handover</b><span>Maintenance, requalification and responsive service.</span></div>
+          <span class="go material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9 · FINAL CTA ===================== -->
+  <section class="cta-band" data-wp="Full-width Call-to-action widget">
+    <div class="tech-grid--dark"></div>
+    <div class="wrap">
+      <h2>Let's talk about what your environment needs</h2>
+      <p>Whether you're planning a new facility, upgrading laboratory equipment, or validating an existing space, Masarat can help you move forward with clarity, care and confidence.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="design-8-contact.html">Contact Masarat <span class="material-symbols-outlined">arrow_forward</span></a>
+        <a class="btn btn-ghost" href="design-8-projects.html">See our projects</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== GLOBAL FOOTER ===================== -->
+<footer class="site-footer" data-wp="Theme footer widget areas">
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="assets/masarat-logo-dark.png" alt="Masarat for Accreditation">
+        <p>A Saudi company specialized in cleanroom solutions (Cleanrooms &amp; GMP) and high-risk laboratories (BSL-3 &amp; 4) — since 2016.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="design-8-build.html">Build &amp; Engineer</a>
+        <a href="design-8-equip.html">Equip</a>
+        <a href="design-8-test-maintain.html">Test &amp; Maintain</a>
+        <a href="design-8-projects.html">Projects</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="design-8-about.html">About &amp; Credentials</a>
+        <a href="design-8-projects.html">Projects</a>
+        <a href="design-8-contact.html">Contact</a>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <div><span class="material-symbols-outlined">call</span> +966 1148 70 043</div>
+        <div><span class="material-symbols-outlined">mail</span> info@m4acc.com</div>
+        <div><span class="material-symbols-outlined">location_on</span> Riyadh, Kingdom of Saudi Arabia</div>
+        <div><span class="material-symbols-outlined">schedule</span> Sun–Thu, 08:00–17:00 (AST)</div>
+      </div>
+    </div>
+    <div class="footer-compliance">
+      <span>SFDA</span><span>CBAHI</span><span>WHO</span><span>CAP</span><span>CDC</span><span>GMP</span><span>ISO 14644</span><span>NSF</span>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="js-year">2026</span> Masarat for Accreditation. All rights reserved.</span>
+      <span class="partner-line">Cleanroom &amp; biosafety engineering, built to international standards.</span>
+      <button class="ar-toggle" type="button" aria-label="Switch to Arabic (placeholder)">العربية · AR</button>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><span class="material-symbols-outlined">arrow_upward</span></button>
+<script src="design-8.js" defer></script>
+</body>
+</html>
