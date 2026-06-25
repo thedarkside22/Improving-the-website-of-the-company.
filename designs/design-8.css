@@ -734,3 +734,7 @@ main section[id]{scroll-margin-top:150px}
 .pathway-card span{font-size:.88rem;color:var(--muted)}
 .pathway-card .go{margin-left:auto;color:var(--orange)}
 @media(max-width:640px){.pathway-grid{grid-template-columns:1fr}}
+
+/* Photo-hero variant for category pages (slim) */
+.hero--photo.hero--slim{min-height:420px}
+.hero--photo.hero--slim .hero-inner{grid-template-columns:1fr}
