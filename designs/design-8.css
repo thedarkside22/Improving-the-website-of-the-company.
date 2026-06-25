@@ -682,3 +682,55 @@ p{margin:0 0 1rem}
   text-transform:uppercase;color:var(--orange);background:rgba(247,148,30,.12);border:1px solid rgba(247,148,30,.3);
   border-radius:999px;padding:3px 10px;margin-left:8px;vertical-align:middle}
 .ongoing-badge .material-symbols-outlined{font-size:14px}
+
+/* ==========================================================================
+   Design H — category pages (Build / Equip / Test & Maintain) shared styles.
+   ========================================================================== */
+.cat-subnav{position:sticky;top:84px;z-index:50;background:rgba(255,255,255,.97);
+  backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+.cat-subnav .wrap{display:flex;gap:8px;overflow-x:auto;padding:12px 24px;scrollbar-width:none}
+.cat-subnav .wrap::-webkit-scrollbar{display:none}
+.cat-subnav a{white-space:nowrap;padding:8px 15px;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--muted);transition:all .2s}
+.cat-subnav a:hover{color:var(--navy)}
+.cat-subnav a.active{background:var(--navy);color:#fff}
+main section[id]{scroll-margin-top:150px}
+
+/* solution cards */
+.solgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.solgrid .card .chip{margin-top:10px}
+@media(max-width:900px){.solgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.solgrid{grid-template-columns:1fr}}
+
+/* components — light tag grid */
+.comp-grid{display:flex;flex-wrap:wrap;gap:10px}
+.comp-grid .comp{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+  border-radius:999px;padding:9px 16px;font-size:.9rem;color:var(--ink);transition:border-color .2s,color .2s}
+.comp-grid .comp:hover{border-color:var(--orange);color:var(--navy)}
+.comp-grid .comp .material-symbols-outlined{font-size:18px;color:var(--navy)}
+.comp-note{font-size:.85rem;color:var(--muted);margin-top:14px}
+
+/* services checklist */
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;margin-top:6px}
+.checklist .it{display:flex;gap:10px;font-size:.96rem;align-items:flex-start}
+.checklist .it .material-symbols-outlined{color:var(--orange);font-size:20px;flex-shrink:0}
+@media(max-width:640px){.checklist{grid-template-columns:1fr}}
+
+/* compact 8-phase strip */
+.phasemini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.phasemini{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px}
+.phasemini .n{font-family:var(--sora);font-weight:700;font-size:.78rem;letter-spacing:.06em;color:var(--orange)}
+.phasemini h4{margin:.35em 0 0;font-size:1rem;color:var(--navy-ink)}
+.phasemini.is-ongoing{border-color:var(--orange);background:rgba(247,148,30,.06)}
+@media(max-width:900px){.phasemini-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.phasemini-grid{grid-template-columns:1fr}}
+
+/* pathway cross-links */
+.pathway-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pathway-card{display:flex;align-items:center;gap:16px;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:var(--radius);padding:22px 24px;text-decoration:none;transition:transform .25s var(--ease),border-color .25s,box-shadow .25s}
+.pathway-card:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:var(--shadow)}
+.pathway-card .pic{width:46px;height:46px;border-radius:12px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--navy);flex-shrink:0}
+.pathway-card b{font-family:var(--sora);color:var(--navy-ink);display:block}
+.pathway-card span{font-size:.88rem;color:var(--muted)}
+.pathway-card .go{margin-left:auto;color:var(--orange)}
+@media(max-width:640px){.pathway-grid{grid-template-columns:1fr}}
