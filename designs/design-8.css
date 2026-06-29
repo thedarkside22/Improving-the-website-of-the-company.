@@ -738,3 +738,10 @@ main section[id]{scroll-margin-top:150px}
 /* Photo-hero variant for category pages (slim) */
 .hero--photo.hero--slim{min-height:420px}
 .hero--photo.hero--slim .hero-inner{grid-template-columns:1fr}
+/* New full-colour logo lockup (logo.png): colour on light header, white knockout on dark areas */
+.brand img{height:54px;max-width:240px;object-fit:contain}
+.site-header.scrolled .brand img{height:46px}
+.footer-brand img{height:56px}
+.mobile-top img{height:48px}
+.footer-brand img,.mobile-top img{filter:brightness(0) invert(1)}
+@media (max-width:420px){.brand img{height:44px;max-width:170px}}
