@@ -73,6 +73,7 @@ explicit "do this / never do that" guidance. Safety over cleverness.
 
 ## Document map
 
+- **`HANDOVER.md` — ⭐ current priority: rebuild the chosen design (Design H = `designs/design-8-*`) in WordPress (Themify Ultra + Builder), locally first. Read this before any build work.**
 - `README.md` — start here, overview of everything
 - `docs/00-START-HERE.md` — the learning path, in order
 - `docs/01-how-the-site-is-built.md` — what we know about the live stack
