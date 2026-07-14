@@ -1,0 +1,120 @@
+/* ==========================================================================
+   design-9.css — ANIMATION LAYER for Design H (Masarat for Accreditation)
+   Add-on only: load AFTER design-8.css. Reuses Design H tokens/components and
+   adds the interactive product animations (cleanroom assembly, HEPA
+   filtration, pressure/containment airflow, BSC air curtains).
+   All class names are namespaced to avoid collisions. No external libraries.
+   Ported target: Themify Ultra — paste each block into a Code module; put this
+   file's rules in the child-theme stylesheet / Themify Custom CSS.
+   ========================================================================== */
+:root{
+  --clean:#25b3e8; --clean-deep:#1787c9; --grp:#cfd3ee; --violet:#7a5cf0;
+}
+@keyframes a9dash{to{stroke-dashoffset:-38}}
+@keyframes a9bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ======================================================================
+   1) SCROLL-SCRUBBED CLEANROOM ASSEMBLY
+   ====================================================================== */
+.anim-assembly{position:relative;padding:0}
+.assembly-scroll{position:relative;height:320vh}
+.assembly-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden}
+.assembly-sticky>.wrap{width:100%}
+.assembly-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.assembly-stage{position:relative}
+.assembly-stage svg{width:100%;height:auto;filter:drop-shadow(0 30px 50px rgba(20,24,61,.35))}
+.assembly-copy .astep{opacity:.32;transition:opacity .4s var(--ease),transform .4s var(--ease);
+  padding:12px 0 12px 20px;border-left:2px solid var(--line-dark);transform:translateX(4px)}
+.assembly-copy .astep.active{opacity:1;border-color:var(--orange);transform:none}
+.assembly-copy .astep h3{margin:0 0 4px;color:#fff;font-size:1.15rem}
+.assembly-copy .astep p{margin:0;color:#b9bde6;font-size:.94rem}
+.assembly-progress{height:5px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden;margin-top:26px}
+.assembly-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--orange),#ffd08a);border-radius:999px}
+.piece-label{font-family:var(--inter);font-size:13px;font-weight:600;fill:#fff}
+.piece-label-bg{fill:rgba(20,24,61,.82);stroke:var(--orange);stroke-width:1}
+.hint-assembly{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);color:#a9adde;
+  font-size:.8rem;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+.hint-assembly .material-symbols-outlined{animation:a9bob 1.8s var(--ease) infinite}
+
+/* ======================================================================
+   2) HEPA FILTRATION (canvas)
+   ====================================================================== */
+.hepa-shell{display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:stretch}
+.hepa-stage{position:relative;border-radius:18px;overflow:hidden;
+  background:linear-gradient(180deg,#0e1230,#161b45);box-shadow:var(--shadow-lg);min-height:440px}
+.hepa-stage canvas{width:100%;height:100%;display:block}
+.hepa-zone-label{position:absolute;left:16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#fff;background:rgba(0,0,0,.28);padding:5px 10px;border-radius:999px;pointer-events:none}
+.hepa-zone-label.top{top:14px}
+.hepa-zone-label.bottom{bottom:14px}
+.hepa-zone-label.bottom .status{color:var(--clean)}
+.hepa-panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;
+  display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow)}
+.hepa-panel h3{margin:0}
+.hepa-stat-row{display:flex;gap:14px}
+.hepa-stat{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.hepa-stat .n{font-family:var(--sora);font-weight:800;font-size:1.5rem;color:var(--navy);
+  font-variant-numeric:tabular-nums;line-height:1}
+.hepa-stat .l{font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.hepa-toggle-row{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;padding:12px 14px}
+.hepa-switch{position:relative;width:52px;height:30px;flex:none}
+.hepa-switch input{opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.hepa-switch .track{position:absolute;inset:0;background:#c9ccd8;border-radius:999px;transition:background .3s var(--ease)}
+.hepa-switch .track::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;
+  background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.25);transition:transform .3s var(--ease)}
+.hepa-switch input:checked+.track{background:var(--clean-deep)}
+.hepa-switch input:checked+.track::after{transform:translateX(22px)}
+.hepa-toggle-row .txt strong{display:block;font-size:.95rem}
+.hepa-toggle-row .txt span{font-size:.82rem;color:var(--muted)}
+.hepa-note{font-size:.9rem;color:var(--muted);border-left:3px solid var(--clean);padding:6px 0 6px 12px}
+.hepa-note.bypass{border-color:var(--danger);color:#7a1414}
+.hepa-legend{display:flex;flex-wrap:wrap;gap:10px}
+.hepa-legend span{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--muted)}
+.hepa-legend i{width:11px;height:11px;border-radius:50%;display:inline-block}
+
+/* ======================================================================
+   3) PRESSURE / CONTAINMENT AIRFLOW (SVG)
+   ====================================================================== */
+.air-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.air-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.air-card h3{display:flex;align-items:center;gap:10px;margin:0 0 4px}
+.air-card .sign{font-family:var(--sora);font-weight:800;font-size:1.1rem;width:34px;height:34px;flex:none;
+  border-radius:9px;display:grid;place-items:center}
+.air-card.pos .sign{background:rgba(37,179,232,.14);color:var(--clean-deep)}
+.air-card.neg .sign{background:var(--danger-bg);color:var(--danger)}
+.air-card p{color:var(--muted);font-size:.92rem;margin:.4em 0 14px}
+.air-card svg{width:100%;height:auto;background:var(--surface);border-radius:12px}
+.flow{stroke-linecap:round;fill:none}
+.flow.animate{stroke-dasharray:7 12;animation:a9dash 1s linear infinite}
+.room-fill{transition:fill .4s var(--ease)}
+
+/* ======================================================================
+   4) BSC AIRFLOW CURTAINS (SVG)
+   ====================================================================== */
+.bsc-shell{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+.bsc-stage{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.bsc-stage svg{width:100%;height:auto}
+.bsc-flow{fill:none;stroke-linecap:round}
+.bsc-flow.animate{stroke-dasharray:6 10;animation:a9dash 1.1s linear infinite}
+.bsc-controls .bsc-item{display:flex;gap:14px;align-items:flex-start;padding:14px;border:1px solid var(--line);
+  border-radius:12px;margin-bottom:12px;background:#fff;transition:border-color .25s var(--ease),box-shadow .25s var(--ease)}
+.bsc-controls .bsc-item:hover{border-color:var(--orange);box-shadow:var(--shadow)}
+.bsc-controls .swatch{width:14px;height:14px;border-radius:4px;flex:none;margin-top:4px}
+.bsc-controls h4{margin:0 0 3px;font-size:1rem}
+.bsc-controls p{margin:0;font-size:.88rem;color:var(--muted)}
+.honest{margin-top:6px;font-size:.86rem;color:var(--muted);background:var(--surface);border:1px dashed var(--line);
+  border-radius:10px;padding:12px 14px}
+
+/* ---- responsive ---- */
+@media (max-width:960px){
+  .assembly-grid{grid-template-columns:1fr;gap:24px}
+  .assembly-copy{display:none}
+  .assembly-scroll{height:240vh}
+  .hepa-shell{grid-template-columns:1fr}
+  .air-grid{grid-template-columns:1fr}
+  .bsc-shell{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .flow.animate,.bsc-flow.animate,.hint-assembly .material-symbols-outlined{animation:none}
+}
