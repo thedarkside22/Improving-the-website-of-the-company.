@@ -32,6 +32,23 @@
 .assembly-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--orange),#ffd08a);border-radius:999px}
 .piece-label{font-family:var(--inter);font-size:13px;font-weight:600;fill:#fff}
 .piece-label-bg{fill:rgba(20,24,61,.82);stroke:var(--orange);stroke-width:1}
+
+/* ---- real 3D cleanroom (Three.js) ---- */
+.cr3d{position:relative;width:100%;height:min(66vh,560px);border-radius:16px;overflow:hidden;
+  background:radial-gradient(120% 100% at 60% 10%,#20264d 0%,#151936 60%,#0e1230 100%)}
+.cr3d canvas{display:block;width:100%;height:100%}
+.cr3d-fallback{position:absolute;inset:0;display:grid;place-items:center;color:#9aa0d4;font-size:.9rem;
+  text-align:center;padding:24px}
+.cr3d canvas+.cr3d-fallback{display:none}
+.cr3d.cr3d-nogl canvas{display:none}
+.cr3d.cr3d-nogl .cr3d-fallback{display:grid}
+.cr3d-label{position:absolute;transform:translate(-50%,-50%) scale(.9);opacity:0;pointer-events:none;
+  font-family:var(--inter);font-size:.74rem;font-weight:600;color:#fff;white-space:nowrap;
+  background:rgba(20,24,61,.86);border:1px solid var(--orange);border-radius:999px;padding:5px 11px;
+  box-shadow:0 8px 22px rgba(0,0,0,.35);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.cr3d-label::before{content:"";position:absolute;left:14px;bottom:-5px;width:9px;height:9px;
+  background:inherit;border-right:1px solid var(--orange);border-bottom:1px solid var(--orange);transform:rotate(45deg)}
+.cr3d.cr3d-assembled .cr3d-label{opacity:1;transform:translate(-50%,-50%) scale(1)}
 .hint-assembly{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);color:#a9adde;
   font-size:.8rem;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
 .hint-assembly .material-symbols-outlined{animation:a9bob 1.8s var(--ease) infinite}

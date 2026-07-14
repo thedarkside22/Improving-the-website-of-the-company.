@@ -106,35 +106,19 @@
   </section>
 
   <!-- ===================== CLEANROOM ASSEMBLY (scroll animation) ===================== -->
-  <section class="anim-assembly bg-navy" data-wp="Code module (SVG + design-9.js scroll-scrub)">
+  <section class="anim-assembly bg-navy" data-wp="3D Code module (three.min.js + design-9-3d.js)">
     <div class="assembly-scroll" id="assemblyScroll">
       <div class="assembly-sticky">
         <div class="wrap">
           <div class="assembly-grid">
-            <div class="assembly-stage">
-              <svg id="assemblySvg" viewBox="0 0 1000 640" role="img" aria-label="Exploded modular cleanroom assembling into a finished room as you scroll">
-                <defs>
-                  <linearGradient id="grpGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef0fb"/><stop offset="1" stop-color="#c3c8ec"/></linearGradient>
-                  <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9afd8"/><stop offset="1" stop-color="#8990c4"/></linearGradient>
-                  <linearGradient id="ffuGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe3fb"/><stop offset="1" stop-color="#aeb4e6"/></linearGradient>
-                </defs>
-                <g class="piece" data-dx="-190" data-dy="-30"><rect x="210" y="150" width="290" height="350" rx="4" fill="url(#grpGrad)" stroke="#9aa0d4"/><line x1="355" y1="150" x2="355" y2="500" stroke="#b4b9e2" stroke-width="1.5"/></g>
-                <g class="piece" data-dx="190" data-dy="-30"><rect x="500" y="150" width="290" height="350" rx="4" fill="url(#grpGrad)" stroke="#9aa0d4"/><line x1="645" y1="150" x2="645" y2="500" stroke="#b4b9e2" stroke-width="1.5"/></g>
-                <g class="piece" data-dx="0" data-dy="300"><rect x="440" y="290" width="120" height="210" rx="3" fill="#dfe3fb" stroke="#8b91cf" stroke-width="2"/><rect x="470" y="320" width="60" height="90" rx="3" fill="#bfe6f6" stroke="#7fb8d8"/><circle cx="548" cy="400" r="4" fill="#6f76b8"/></g>
-                <g class="piece" data-dx="-70" data-dy="70"><path d="M212 500 q-2 -34 34 -34" fill="none" stroke="var(--orange)" stroke-width="7" stroke-linecap="round" opacity=".85"/></g>
-                <g class="piece" data-dx="70" data-dy="70"><path d="M788 500 q2 -34 -34 -34" fill="none" stroke="var(--orange)" stroke-width="7" stroke-linecap="round" opacity=".85"/></g>
-                <g class="piece" data-dx="-320" data-dy="0"><rect x="180" y="150" width="34" height="350" rx="4" fill="#b7bce6" stroke="#8b91cf"/></g>
-                <g class="piece" data-dx="320" data-dy="0"><rect x="786" y="150" width="34" height="350" rx="4" fill="#b7bce6" stroke="#8b91cf"/></g>
-                <g class="piece" data-dx="0" data-dy="-260"><rect x="180" y="120" width="640" height="34" rx="4" fill="#9aa0d4" stroke="#7a80be"/><line x1="300" y1="120" x2="300" y2="154" stroke="#7a80be"/><line x1="500" y1="120" x2="500" y2="154" stroke="#7a80be"/><line x1="700" y1="120" x2="700" y2="154" stroke="#7a80be"/></g>
-                <g class="piece" data-dx="-40" data-dy="-380"><rect x="300" y="122" width="90" height="30" rx="3" fill="url(#ffuGrad)" stroke="#7a80be"/><path d="M303 137 h84 M303 143 h84 M303 131 h84" stroke="#8b91cf" stroke-width="1.2"/></g>
-                <g class="piece" data-dx="40" data-dy="-380"><rect x="610" y="122" width="90" height="30" rx="3" fill="url(#ffuGrad)" stroke="#7a80be"/><path d="M613 137 h84 M613 143 h84 M613 131 h84" stroke="#8b91cf" stroke-width="1.2"/></g>
-                <g class="piece" data-dx="0" data-dy="240"><rect x="176" y="500" width="648" height="26" rx="4" fill="url(#floorGrad)" stroke="#7076ba"/></g>
-                <g id="assemblyLabels" opacity="0">
-                  <g transform="translate(345,96)"><rect class="piece-label-bg" x="-2" y="-16" width="150" height="24" rx="6"/><text class="piece-label" x="8" y="1">HEPA fan-filter units</text></g>
-                  <g transform="translate(120,300)"><rect class="piece-label-bg" x="-2" y="-16" width="120" height="24" rx="6"/><text class="piece-label" x="8" y="1">GRP wall panels</text></g>
-                  <g transform="translate(600,540)"><rect class="piece-label-bg" x="-2" y="-16" width="132" height="24" rx="6"/><text class="piece-label" x="8" y="1">Coved GRP corners</text></g>
-                </g>
-              </svg>
+                        <div class="assembly-stage">
+              <div class="cr3d" id="cr3d">
+                <canvas id="crCanvas"></canvas>
+                <p class="cr3d-fallback">The 3D cleanroom preview needs a WebGL-capable browser.</p>
+                <span class="cr3d-label" style="left:31%;top:15%">HEPA fan-filter units</span>
+                <span class="cr3d-label" style="left:12%;top:53%">GRP wall panels</span>
+                <span class="cr3d-label" style="left:63%;top:86%">Coved corners</span>
+              </div>
             </div>
             <div class="assembly-copy">
               <span class="eyebrow">How we build</span>
@@ -352,5 +336,7 @@
 <button class="back-to-top" id="backToTop" aria-label="Back to top"><span class="material-symbols-outlined">arrow_upward</span></button>
 <script src="design-8.js" defer></script>
 <script src="design-9.js" defer></script>
+<script src="assets/vendor/three.min.js" defer></script>
+<script src="design-9-3d.js" defer></script>
 </body>
 </html>
