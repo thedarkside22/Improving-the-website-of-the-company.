@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masarat · Interactive Product Animations (Concept Demo)</title>
+<meta name="description" content="Concept demo: scroll- and interaction-driven animations of Masarat's core engineering — GRP cleanroom assembly, HEPA filtration, pressure containment, and biological safety cabinet airflow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<style>
+/* ==========================================================================
+   Design 9 — "Motion" · Masarat for Accreditation
+   Interactive product-animation CONCEPT DEMO. Self-contained, no build step,
+   no external JS libraries (runs offline; ports to Themify as Code modules).
+   Brand tokens mirror design-8.css. Front-end-only mockup.
+   ========================================================================== */
+:root{
+  --navy:#2E3192; --navy-deep:#1D2147; --navy-ink:#14183d;
+  --orange:#F7941E; --orange-deep:#e07d0a;
+  --white:#fff; --surface:#F8F9FE; --surface-2:#F5F6FB;
+  --ink:#191C1F; --muted:#46464E; --line:#E1E2E7; --line-dark:rgba(255,255,255,.14);
+  --danger:#BA1A1A; --danger-bg:#ffdad6;
+  --clean:#25b3e8; --clean-deep:#1787c9; --grp:#cfd3ee;
+  --radius:14px; --radius-sm:8px; --maxw:1200px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --shadow:0 14px 34px rgba(20,24,61,.10); --shadow-lg:0 28px 60px rgba(20,24,61,.18);
+  --sora:"Sora",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --inter:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--inter);background:var(--surface);color:var(--ink);
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg,canvas{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--sora);font-weight:700;line-height:1.12;color:var(--navy-ink);
+  margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(2.3rem,5.2vw,3.7rem)}
+h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1rem}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+ul{margin:0;padding:0;list-style:none}
+::selection{background:var(--orange);color:#fff}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;width:100%}
+.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--muted);line-height:1.7}
+.muted{color:var(--muted)}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.74rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin:0 0 16px}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 24px;
+  border-radius:999px;font-weight:600;font-size:.97rem;border:1.5px solid transparent;
+  transition:all .25s var(--ease);white-space:nowrap}
+.material-symbols-outlined{font-family:"Material Symbols Outlined";font-weight:normal;font-style:normal;
+  line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;
+  direction:ltr;-webkit-font-feature-settings:'liga';font-feature-settings:'liga'}
+.btn .material-symbols-outlined{font-size:20px}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 20px rgba(247,148,30,.28)}
+.btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+
+/* ---- top bar ---- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);
+  backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--sora);font-weight:800;
+  color:var(--navy-ink);letter-spacing:-.01em}
+.brand .dot{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--navy),var(--navy-deep));
+  display:grid;place-items:center;color:#fff;box-shadow:var(--shadow)}
+.brand .dot .material-symbols-outlined{font-size:19px}
+.brand small{display:block;font-family:var(--inter);font-weight:500;font-size:.66rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.demo-pill{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange-deep);background:rgba(247,148,30,.12);border:1px solid rgba(247,148,30,.3);
+  padding:5px 12px;border-radius:999px}
+
+/* ---- hero ---- */
+.hero{position:relative;background:radial-gradient(1200px 600px at 78% -10%,rgba(46,49,146,.55),transparent 60%),
+  linear-gradient(160deg,var(--navy-ink),var(--navy-deep) 55%,#0d1030);color:#eef0fb;overflow:hidden}
+.hero .wrap{position:relative;z-index:2;padding:clamp(64px,10vw,120px) 24px clamp(72px,10vw,120px)}
+.hero h1{color:#fff;max-width:14ch}
+.hero .lead{color:#c7cbef;max-width:56ch}
+.hero .grid-bg{position:absolute;inset:0;z-index:1;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:46px 46px;
+  mask-image:radial-gradient(900px 500px at 70% 0%,#000,transparent 75%)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-scroll{margin-top:44px;display:inline-flex;align-items:center;gap:10px;color:#a9adde;font-size:.85rem;
+  letter-spacing:.03em}
+.hero-scroll .material-symbols-outlined{animation:bob 1.8s var(--ease) infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ---- section shell ---- */
+.section{padding:clamp(56px,8vw,104px) 0}
+.bg-surf2{background:var(--surface-2)}
+.bg-navy{background:linear-gradient(180deg,var(--navy-deep),var(--navy-ink));color:#e7e9fb}
+.bg-navy h2,.bg-navy h3{color:#fff}
+.sec-head{max-width:660px;margin:0 0 clamp(28px,5vw,48px)}
+.sec-head.center{margin-inline:auto;text-align:center}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--navy);background:rgba(46,49,146,.08);border:1px solid rgba(46,49,146,.16);
+  padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.bg-navy .tag{color:#cfd3f7;background:rgba(255,255,255,.08);border-color:var(--line-dark)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ======================================================================
+   1) SCROLL-SCRUBBED CLEANROOM ASSEMBLY
+   ====================================================================== */
+.assembly-scroll{position:relative;height:320vh}
+.assembly-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden}
+.assembly-inner{width:100%}
+.assembly-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.assembly-stage{position:relative}
+.assembly-stage svg{width:100%;height:auto;filter:drop-shadow(0 30px 50px rgba(20,24,61,.35))}
+.assembly-copy .step{opacity:.32;transition:opacity .4s var(--ease),transform .4s var(--ease);
+  padding:12px 0 12px 20px;border-left:2px solid var(--line-dark);transform:translateX(4px)}
+.assembly-copy .step.active{opacity:1;border-color:var(--orange);transform:none}
+.assembly-copy .step h3{margin:0 0 4px;color:#fff;font-size:1.15rem}
+.assembly-copy .step p{margin:0;color:#b9bde6;font-size:.94rem}
+.assembly-progress{height:5px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden;margin-top:26px}
+.assembly-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--orange),#ffd08a);
+  border-radius:999px}
+.piece-label{font-family:var(--inter);font-size:13px;font-weight:600;fill:#fff}
+.piece-label-bg{fill:rgba(20,24,61,.82);stroke:var(--orange);stroke-width:1}
+.hint-assembly{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);color:#a9adde;
+  font-size:.8rem;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+
+/* ======================================================================
+   2) HEPA FILTRATION (canvas)
+   ====================================================================== */
+.filter-shell{display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:stretch}
+.filter-canvas-wrap{position:relative;border-radius:18px;overflow:hidden;
+  background:linear-gradient(180deg,#0e1230,#161b45);box-shadow:var(--shadow-lg);min-height:440px}
+.filter-canvas-wrap canvas{width:100%;height:100%;display:block}
+.filter-zone-label{position:absolute;left:16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#fff;background:rgba(0,0,0,.28);padding:5px 10px;border-radius:999px;
+  pointer-events:none}
+.filter-zone-label.top{top:14px}
+.filter-zone-label.bottom{bottom:14px}
+.filter-zone-label.bottom .status{color:var(--clean)}
+.filter-panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;
+  display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow)}
+.filter-panel h3{margin:0}
+.stat-row{display:flex;gap:14px}
+.stat{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat .n{font-family:var(--sora);font-weight:800;font-size:1.5rem;color:var(--navy);
+  font-variant-numeric:tabular-nums;line-height:1}
+.stat .l{font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.toggle-row{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;padding:12px 14px}
+.switch{position:relative;width:52px;height:30px;flex:none}
+.switch input{opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.switch .track{position:absolute;inset:0;background:#c9ccd8;border-radius:999px;transition:background .3s var(--ease)}
+.switch .track::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;
+  background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.25);transition:transform .3s var(--ease)}
+.switch input:checked+.track{background:var(--clean-deep)}
+.switch input:checked+.track::after{transform:translateX(22px)}
+.toggle-row .txt strong{display:block;font-size:.95rem}
+.toggle-row .txt span{font-size:.82rem;color:var(--muted)}
+.mode-note{font-size:.9rem;color:var(--muted);border-left:3px solid var(--clean);padding:6px 0 6px 12px}
+.mode-note.bypass{border-color:var(--danger);color:#7a1414}
+.legend{display:flex;flex-wrap:wrap;gap:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--muted)}
+.legend i{width:11px;height:11px;border-radius:50%;display:inline-block}
+
+/* ======================================================================
+   3) PRESSURE / CONTAINMENT AIRFLOW (SVG)
+   ====================================================================== */
+.air-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.air-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.air-card h3{display:flex;align-items:center;gap:10px;margin:0 0 4px}
+.air-card .sign{font-family:var(--sora);font-weight:800;font-size:1.1rem;width:34px;height:34px;flex:none;
+  border-radius:9px;display:grid;place-items:center}
+.air-card.pos .sign{background:rgba(37,179,232,.14);color:var(--clean-deep)}
+.air-card.neg .sign{background:var(--danger-bg);color:var(--danger)}
+.air-card p{color:var(--muted);font-size:.92rem;margin:.4em 0 14px}
+.air-card svg{width:100%;height:auto;background:var(--surface);border-radius:12px}
+.flow{stroke-linecap:round;fill:none}
+.flow.animate{stroke-dasharray:7 12;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-38}}
+.room-fill{transition:fill .4s var(--ease)}
+
+/* ======================================================================
+   4) BSC AIRFLOW CURTAINS (SVG)
+   ====================================================================== */
+.bsc-shell{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+.bsc-stage{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.bsc-stage svg{width:100%;height:auto}
+.bsc-flow{fill:none;stroke-linecap:round}
+.bsc-flow.animate{stroke-dasharray:6 10;animation:dash 1.1s linear infinite}
+.bsc-controls .bsc-item{display:flex;gap:14px;align-items:flex-start;padding:14px;border:1px solid var(--line);
+  border-radius:12px;margin-bottom:12px;background:#fff;transition:border-color .25s var(--ease),box-shadow .25s var(--ease)}
+.bsc-controls .bsc-item:hover{border-color:var(--orange);box-shadow:var(--shadow)}
+.bsc-controls .swatch{width:14px;height:14px;border-radius:4px;flex:none;margin-top:4px}
+.bsc-controls h4{margin:0 0 3px;font-size:1rem}
+.bsc-controls p{margin:0;font-size:.88rem;color:var(--muted)}
+.honest{margin-top:6px;font-size:.86rem;color:var(--muted);background:var(--surface);border:1px dashed var(--line);
+  border-radius:10px;padding:12px 14px}
+
+/* ---- tech / porting notes ---- */
+.notes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.note{background:rgba(255,255,255,.05);border:1px solid var(--line-dark);border-radius:16px;padding:24px}
+.note .ic{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;background:rgba(247,148,30,.16);
+  color:var(--orange);margin-bottom:14px}
+.note h3{color:#fff;font-size:1.08rem}
+.note p{color:#c2c6ef;font-size:.92rem;margin:0}
+.note code{background:rgba(255,255,255,.1);padding:1px 6px;border-radius:5px;font-size:.85em}
+
+footer{background:var(--navy-ink);color:#aeb2dc;padding:34px 0;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+
+/* ---- responsive ---- */
+@media (max-width:960px){
+  .assembly-grid{grid-template-columns:1fr;gap:24px}
+  .assembly-copy{display:none}
+  .assembly-scroll{height:260vh}
+  .filter-shell{grid-template-columns:1fr}
+  .air-grid{grid-template-columns:1fr}
+  .bsc-shell{grid-template-columns:1fr}
+  .notes-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .flow.animate,.bsc-flow.animate,.hero-scroll .material-symbols-outlined{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ TOP BAR ============================ -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Masarat for Accreditation">
+      <span class="dot"><span class="material-symbols-outlined">deployed_code</span></span>
+      <span>Masarat<small>Motion concept</small></span>
+    </a>
+    <span class="demo-pill">Concept demo · not production</span>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow">Interactive engineering, made visible</span>
+    <h1>See how a controlled environment comes together.</h1>
+    <p class="lead">A working preview of the kind of animation we can build for the Masarat
+      site — the things we actually engineer, brought to life: GRP cleanroom panels clicking
+      into place, HEPA filters catching contamination in real time, air moving exactly where
+      it should, and the invisible barrier inside a safety cabinet. Scroll and interact.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#assembly">Start the tour <span class="material-symbols-outlined">arrow_forward</span></a>
+      <a class="btn btn-ghost" href="#notes">How we'd build it</a>
+    </div>
+    <div class="hero-scroll"><span class="material-symbols-outlined">keyboard_double_arrow_down</span> Scroll to assemble the cleanroom</div>
+  </div>
+</section>
+
+<!-- ================== 1 · CLEANROOM ASSEMBLY (scroll-scrubbed) ================== -->
+<section class="bg-navy" id="assembly">
+  <div class="assembly-scroll" id="assemblyScroll">
+    <div class="assembly-sticky">
+      <div class="assembly-inner">
+        <div class="wrap">
+          <div class="assembly-grid">
+            <!-- STAGE -->
+            <div class="assembly-stage">
+              <svg id="assemblySvg" viewBox="0 0 1000 640" role="img"
+                   aria-label="Exploded modular cleanroom assembling into a finished room as you scroll">
+                <defs>
+                  <linearGradient id="grpGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#eef0fb"/><stop offset="1" stop-color="#c3c8ec"/>
+                  </linearGradient>
+                  <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#a9afd8"/><stop offset="1" stop-color="#8990c4"/>
+                  </linearGradient>
+                  <linearGradient id="ffuGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#dfe3fb"/><stop offset="1" stop-color="#aeb4e6"/>
+                  </linearGradient>
+                </defs>
+
+                <!-- back wall (two GRP panels) -->
+                <g class="piece" data-dx="-190" data-dy="-30">
+                  <rect x="210" y="150" width="290" height="350" rx="4" fill="url(#grpGrad)" stroke="#9aa0d4"/>
+                  <line x1="355" y1="150" x2="355" y2="500" stroke="#b4b9e2" stroke-width="1.5"/>
+                </g>
+                <g class="piece" data-dx="190" data-dy="-30">
+                  <rect x="500" y="150" width="290" height="350" rx="4" fill="url(#grpGrad)" stroke="#9aa0d4"/>
+                  <line x1="645" y1="150" x2="645" y2="500" stroke="#b4b9e2" stroke-width="1.5"/>
+                </g>
+
+                <!-- cleanroom door in back wall -->
+                <g class="piece" data-dx="0" data-dy="300">
+                  <rect x="440" y="290" width="120" height="210" rx="3" fill="#dfe3fb" stroke="#8b91cf" stroke-width="2"/>
+                  <rect x="470" y="320" width="60" height="90" rx="3" fill="#bfe6f6" stroke="#7fb8d8"/>
+                  <circle cx="548" cy="400" r="4" fill="#6f76b8"/>
+                </g>
+
+                <!-- coving (rounded GRP corners) -->
+                <g class="piece" data-dx="-70" data-dy="70">
+                  <path d="M210 470 q0 30 30 30 l0 0 q-30 0 -30 -30 Z" fill="none"/>
+                  <path d="M212 500 q-2 -34 34 -34" fill="none" stroke="var(--orange)" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+                </g>
+                <g class="piece" data-dx="70" data-dy="70">
+                  <path d="M788 500 q2 -34 -34 -34" fill="none" stroke="var(--orange)" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+                </g>
+
+                <!-- left & right GRP wall returns -->
+                <g class="piece" data-dx="-320" data-dy="0">
+                  <rect x="180" y="150" width="34" height="350" rx="4" fill="#b7bce6" stroke="#8b91cf"/>
+                </g>
+                <g class="piece" data-dx="320" data-dy="0">
+                  <rect x="786" y="150" width="34" height="350" rx="4" fill="#b7bce6" stroke="#8b91cf"/>
+                </g>
+
+                <!-- ceiling plenum / walkable ceiling grid -->
+                <g class="piece" data-dx="0" data-dy="-260">
+                  <rect x="180" y="120" width="640" height="34" rx="4" fill="#9aa0d4" stroke="#7a80be"/>
+                  <line x1="300" y1="120" x2="300" y2="154" stroke="#7a80be"/>
+                  <line x1="500" y1="120" x2="500" y2="154" stroke="#7a80be"/>
+                  <line x1="700" y1="120" x2="700" y2="154" stroke="#7a80be"/>
+                </g>
+
+                <!-- HEPA fan-filter units (drop in last) -->
+                <g class="piece" data-dx="-40" data-dy="-380">
+                  <rect x="300" y="122" width="90" height="30" rx="3" fill="url(#ffuGrad)" stroke="#7a80be"/>
+                  <path d="M303 137 h84 M303 143 h84 M303 131 h84" stroke="#8b91cf" stroke-width="1.2"/>
+                </g>
+                <g class="piece" data-dx="40" data-dy="-380">
+                  <rect x="610" y="122" width="90" height="30" rx="3" fill="url(#ffuGrad)" stroke="#7a80be"/>
+                  <path d="M613 137 h84 M613 143 h84 M613 131 h84" stroke="#8b91cf" stroke-width="1.2"/>
+                </g>
+
+                <!-- floor slab -->
+                <g class="piece" data-dx="0" data-dy="240">
+                  <rect x="176" y="500" width="648" height="26" rx="4" fill="url(#floorGrad)" stroke="#7076ba"/>
+                </g>
+
+                <!-- assembled-state labels (fade in at the end) -->
+                <g id="assemblyLabels" opacity="0">
+                  <g transform="translate(345,96)">
+                    <rect class="piece-label-bg" x="-2" y="-16" width="150" height="24" rx="6"/>
+                    <text class="piece-label" x="8" y="1">HEPA fan-filter units</text>
+                  </g>
+                  <g transform="translate(120,300)">
+                    <rect class="piece-label-bg" x="-2" y="-16" width="120" height="24" rx="6"/>
+                    <text class="piece-label" x="8" y="1">GRP wall panels</text>
+                  </g>
+                  <g transform="translate(600,540)">
+                    <rect class="piece-label-bg" x="-2" y="-16" width="132" height="24" rx="6"/>
+                    <text class="piece-label" x="8" y="1">Coved GRP corners</text>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <!-- COPY -->
+            <div class="assembly-copy">
+              <span class="tag">Build · Modular cleanrooms</span>
+              <h2>A cleanroom, assembled as you scroll.</h2>
+              <div class="step" data-step="0">
+                <h3>1 · Structure &amp; envelope</h3>
+                <p>GRP wall panels and the floor slab define an impervious, chemical-resistant shell.</p>
+              </div>
+              <div class="step" data-step="1">
+                <h3>2 · Ceiling &amp; access</h3>
+                <p>The walkable ceiling grid and cleanroom door close the envelope.</p>
+              </div>
+              <div class="step" data-step="2">
+                <h3>3 · Air &amp; finishing</h3>
+                <p>HEPA fan-filter units drop in; coved GRP corners leave nowhere for contamination to hide.</p>
+              </div>
+              <div class="assembly-progress" aria-hidden="true"><i id="assemblyBar"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hint-assembly"><span class="material-symbols-outlined" style="font-size:18px">swipe_up</span> keep scrolling</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== 2 · HEPA FILTRATION (interactive canvas) ================== -->
+<section class="section" id="filtration">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">The core of what we do · Contamination control</span>
+      <h2>Watch contamination get caught.</h2>
+      <p class="lead">Airborne particles fall toward a HEPA filter. When the filter is working,
+        they're captured and only clean, one-directional air passes below — the whole reason a
+        cleanroom is clean. Turn the filter off to see why it matters.</p>
+    </div>
+    <div class="filter-shell reveal">
+      <div class="filter-canvas-wrap">
+        <span class="filter-zone-label top">Incoming air · particles</span>
+        <span class="filter-zone-label bottom">Work zone · <span class="status" id="zoneStatus">ISO-clean</span></span>
+        <canvas id="hepaCanvas"></canvas>
+      </div>
+      <aside class="filter-panel">
+        <h3>HEPA filtration</h3>
+        <div class="stat-row">
+          <div class="stat"><div class="n tnum" id="capturedN">0</div><div class="l">Captured</div></div>
+          <div class="stat"><div class="n tnum" id="escapedN">0</div><div class="l">Escaped</div></div>
+        </div>
+        <div class="toggle-row">
+          <label class="switch"><input type="checkbox" id="hepaToggle" checked aria-label="HEPA filter on or off">
+            <span class="track"></span></label>
+          <div class="txt"><strong id="hepaState">Filter ON</strong><span>≥99.97% capture at 0.3 µm</span></div>
+        </div>
+        <p class="mode-note" id="modeNote">Clean, unidirectional airflow keeps the work zone
+          within its ISO 14644 class.</p>
+        <div class="legend">
+          <span><i style="background:#8b90a6"></i> Dust</span>
+          <span><i style="background:#f2643c"></i> Microbial</span>
+          <span><i style="background:#25b3e8"></i> Clean air</span>
+        </div>
+        <p class="muted" style="font-size:.8rem;margin:0">Illustrative simulation — not a measurement of any specific filter.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================== 3 · PRESSURE / CONTAINMENT AIRFLOW ================== -->
+<section class="section bg-surf2" id="pressure">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="tag">Engineering the invisible</span>
+      <h2>Air that knows which way to go.</h2>
+      <p class="lead">The difference between a cleanroom and a containment lab is direction.
+        Pressure cascades push clean air out to protect the product — or pull air in to protect
+        everyone outside. Same physics, opposite intent.</p>
+    </div>
+    <div class="air-grid reveal">
+      <!-- POSITIVE PRESSURE -->
+      <div class="air-card pos">
+        <h3><span class="sign">+</span> Positive pressure · Cleanroom</h3>
+        <p>Higher pressure inside means air flows <strong>outward</strong> through every gap —
+          nothing drifts in to contaminate the product.</p>
+        <svg viewBox="0 0 460 240" role="img" aria-label="Cleanroom held at positive pressure, air flowing outward">
+          <rect x="120" y="40" width="220" height="150" rx="8" class="room-fill" fill="rgba(37,179,232,.10)" stroke="#9fb8c9"/>
+          <text x="230" y="118" text-anchor="middle" font-family="Sora" font-weight="700" fill="#1787c9" font-size="26">+</text>
+          <text x="230" y="140" text-anchor="middle" font-size="11" fill="#46464E">clean · higher P</text>
+          <!-- outward flows -->
+          <path class="flow airflow-pos" d="M120 80 L60 60" stroke="#25b3e8" stroke-width="3" marker-end="url(#arrPos)"/>
+          <path class="flow airflow-pos" d="M120 150 L60 175" stroke="#25b3e8" stroke-width="3" marker-end="url(#arrPos)"/>
+          <path class="flow airflow-pos" d="M340 80 L400 60" stroke="#25b3e8" stroke-width="3" marker-end="url(#arrPos)"/>
+          <path class="flow airflow-pos" d="M340 150 L400 175" stroke="#25b3e8" stroke-width="3" marker-end="url(#arrPos)"/>
+          <defs><marker id="arrPos" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0 0 L8 4 L0 8 Z" fill="#25b3e8"/></marker></defs>
+        </svg>
+      </div>
+      <!-- NEGATIVE PRESSURE -->
+      <div class="air-card neg">
+        <h3><span class="sign">−</span> Negative pressure · Containment (BSL-3/4)</h3>
+        <p>Lower pressure inside means air is drawn <strong>inward</strong> and exhausted through
+          HEPA — hazardous agents can't escape to the outside.</p>
+        <svg viewBox="0 0 460 240" role="img" aria-label="Containment lab held at negative pressure, air flowing inward">
+          <rect x="120" y="40" width="220" height="150" rx="8" class="room-fill" fill="rgba(186,26,26,.07)" stroke="#d3a2a2"/>
+          <text x="230" y="118" text-anchor="middle" font-family="Sora" font-weight="700" fill="#BA1A1A" font-size="26">−</text>
+          <text x="230" y="140" text-anchor="middle" font-size="11" fill="#46464E">contained · lower P</text>
+          <!-- inward flows -->
+          <path class="flow airflow-neg" d="M60 60 L120 80" stroke="#BA1A1A" stroke-width="3" marker-end="url(#arrNeg)"/>
+          <path class="flow airflow-neg" d="M60 175 L120 150" stroke="#BA1A1A" stroke-width="3" marker-end="url(#arrNeg)"/>
+          <path class="flow airflow-neg" d="M400 60 L340 80" stroke="#BA1A1A" stroke-width="3" marker-end="url(#arrNeg)"/>
+          <path class="flow airflow-neg" d="M400 175 L340 150" stroke="#BA1A1A" stroke-width="3" marker-end="url(#arrNeg)"/>
+          <defs><marker id="arrNeg" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0 0 L8 4 L0 8 Z" fill="#BA1A1A"/></marker></defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== 4 · BSC AIRFLOW CURTAINS ================== -->
+<section class="section" id="bsc">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">Equip · Biological safety cabinets</span>
+      <h2>The invisible barrier, made visible.</h2>
+      <p class="lead">A Class II biological safety cabinet protects three things at once — the
+        sample, the operator, and the room — using nothing but precisely directed air. Hover a
+        stream to trace what it protects.</p>
+    </div>
+    <div class="bsc-shell reveal">
+      <div class="bsc-stage">
+        <svg viewBox="0 0 520 420" role="img" aria-label="Cross-section of a Class II biological safety cabinet showing downflow, inflow and HEPA exhaust air">
+          <!-- cabinet body -->
+          <rect x="70" y="40" width="380" height="330" rx="10" fill="#f4f6ff" stroke="#c7cbe6" stroke-width="2"/>
+          <!-- top plenum + HEPA -->
+          <rect x="70" y="40" width="380" height="46" fill="#e5e8fa" stroke="#c7cbe6"/>
+          <path d="M80 74 h360" stroke="#9aa0d4" stroke-width="2" stroke-dasharray="4 4"/>
+          <text x="260" y="66" text-anchor="middle" font-size="11" font-family="Inter" font-weight="600" fill="#46464E">Supply + Exhaust HEPA filters</text>
+          <!-- sash -->
+          <rect x="70" y="86" width="300" height="150" fill="rgba(37,179,232,.05)"/>
+          <rect x="330" y="86" width="40" height="120" fill="rgba(37,179,232,.14)" stroke="#9fb8c9"/>
+          <text x="350" y="150" text-anchor="middle" font-size="10" fill="#46464E" transform="rotate(90 350 150)">sash</text>
+          <!-- worktop -->
+          <rect x="90" y="300" width="300" height="16" rx="3" fill="#cfd3ee" stroke="#9aa0d4"/>
+          <text x="240" y="345" text-anchor="middle" font-size="11" font-family="Inter" fill="#46464E">work surface</text>
+
+          <!-- DOWNFLOW (product protection) -->
+          <g id="grp-down">
+            <path class="bsc-flow animate" d="M150 92 V296" stroke="#25b3e8" stroke-width="3" marker-end="url(#dDown)"/>
+            <path class="bsc-flow animate" d="M210 92 V296" stroke="#25b3e8" stroke-width="3" marker-end="url(#dDown)" style="animation-delay:.2s"/>
+            <path class="bsc-flow animate" d="M270 92 V296" stroke="#25b3e8" stroke-width="3" marker-end="url(#dDown)" style="animation-delay:.4s"/>
+            <path class="bsc-flow animate" d="M310 92 V296" stroke="#25b3e8" stroke-width="3" marker-end="url(#dDown)" style="animation-delay:.15s"/>
+          </g>
+          <!-- INFLOW (operator protection) -->
+          <g id="grp-in">
+            <path class="bsc-flow animate" d="M40 250 H150" stroke="#F7941E" stroke-width="3" marker-end="url(#dIn)"/>
+            <path class="bsc-flow animate" d="M110 340 q-40 -10 -55 -95" stroke="#F7941E" stroke-width="3" marker-end="url(#dIn)"/>
+          </g>
+          <!-- EXHAUST (environment protection) -->
+          <g id="grp-ex">
+            <path class="bsc-flow animate" d="M410 300 V96" stroke="#7a5cf0" stroke-width="3" marker-end="url(#dEx)"/>
+            <path class="bsc-flow animate" d="M410 96 h-20" stroke="#7a5cf0" stroke-width="3"/>
+          </g>
+
+          <defs>
+            <marker id="dDown" markerWidth="9" markerHeight="9" refX="4" refY="7" orient="auto">
+              <path d="M0 0 L4 8 L8 0 Z" fill="#25b3e8"/></marker>
+            <marker id="dIn" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+              <path d="M0 0 L8 4 L0 8 Z" fill="#F7941E"/></marker>
+            <marker id="dEx" markerWidth="9" markerHeight="9" refX="4" refY="2" orient="auto">
+              <path d="M0 8 L4 0 L8 8 Z" fill="#7a5cf0"/></marker>
+          </defs>
+        </svg>
+      </div>
+      <div class="bsc-controls">
+        <div class="bsc-item" data-target="grp-down">
+          <span class="swatch" style="background:#25b3e8"></span>
+          <div><h4>Downflow → product protection</h4>
+            <p>Clean HEPA air falls over the work surface so nothing lands on the sample.</p></div>
+        </div>
+        <div class="bsc-item" data-target="grp-in">
+          <span class="swatch" style="background:#F7941E"></span>
+          <div><h4>Inflow → operator protection</h4>
+            <p>Air is drawn in at the opening, so aerosols never reach the person.</p></div>
+        </div>
+        <div class="bsc-item" data-target="grp-ex">
+          <span class="swatch" style="background:#7a5cf0"></span>
+          <div><h4>HEPA exhaust → environment protection</h4>
+            <p>Everything leaves through a HEPA filter, protecting the room and the world outside.</p></div>
+        </div>
+        <p class="honest"><strong>Honest by design:</strong> this is a Class II cabinet. A laminar-flow
+          clean bench protects the product only, and a fume hood controls chemical vapour — neither
+          is a substitute. We label every product for exactly what it protects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== TECH / PORTING NOTES ================== -->
+<section class="section bg-navy" id="notes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">For the build</span>
+      <h2>How this becomes part of the real site.</h2>
+      <p class="lead" style="color:#c2c6ef">Everything on this page is plain HTML, SVG and canvas with
+        no external libraries, so it drops into the WordPress / Themify site as Code modules — the same
+        way the approved Design H mockup was authored.</p>
+    </div>
+    <div class="notes-grid reveal">
+      <div class="note">
+        <div class="ic"><span class="material-symbols-outlined">bolt</span></div>
+        <h3>Lightweight &amp; offline-safe</h3>
+        <p>Vanilla JS + <code>&lt;canvas&gt;</code> + SVG. No framework, no CDN dependency. Each animation
+          self-guards and respects <code>prefers-reduced-motion</code> for accessibility.</p>
+      </div>
+      <div class="note">
+        <div class="ic"><span class="material-symbols-outlined">tune</span></div>
+        <h3>Scales up when we want</h3>
+        <p>For richer choreography we can layer in <code>GSAP + ScrollTrigger</code> (now fully free), or a
+          single <code>Three.js</code> 3D hero if we get real panel models/renders from the CAD.</p>
+      </div>
+      <div class="note">
+        <div class="ic"><span class="material-symbols-outlined">integration_instructions</span></div>
+        <h3>Ports to Themify cleanly</h3>
+        <p>Paste each block into a Themify <strong>Code module</strong>; the styles live in the child-theme
+          stylesheet. No changes to production until it's reviewed on staging.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Masarat for Accreditation — interactive animation concept · front-end demo only</span>
+    <span class="muted">Built to port into WordPress · Themify Ultra</span>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================================
+   design-9 — vanilla interactions. Every module is self-guarding: it no-ops
+   if its target elements are absent. All heavy motion respects reduced-motion.
+   ========================================================================== */
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var clamp = function(v,a,b){ return v<a?a:(v>b?b:v); };
+  var lerp  = function(a,b,t){ return a+(b-a)*t; };
+
+  /* ---- scroll reveal ---------------------------------------------------- */
+  (function(){
+    var els = document.querySelectorAll(".reveal");
+    if(!els.length) return;
+    if(reduce || !("IntersectionObserver" in window)){
+      els.forEach(function(e){ e.classList.add("in"); }); return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, {threshold:.15});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  /* ---- 1 · cleanroom assembly (scroll-scrub) ---------------------------- */
+  (function(){
+    var scroll = document.getElementById("assemblyScroll");
+    var svg    = document.getElementById("assemblySvg");
+    if(!scroll || !svg) return;
+    var pieces = Array.prototype.slice.call(svg.querySelectorAll(".piece"));
+    var labels = document.getElementById("assemblyLabels");
+    var bar    = document.getElementById("assemblyBar");
+    var steps  = Array.prototype.slice.call(document.querySelectorAll(".assembly-copy .step"));
+    var ticking = false, inView = true;
+
+    function apply(p){
+      // easeInOutCubic for a settled feel
+      var e = p<.5 ? 4*p*p*p : 1-Math.pow(-2*p+2,3)/2;
+      pieces.forEach(function(g){
+        var dx = parseFloat(g.getAttribute("data-dx"))||0;
+        var dy = parseFloat(g.getAttribute("data-dy"))||0;
+        var tx = lerp(dx,0,e), ty = lerp(dy,0,e);
+        g.setAttribute("transform","translate("+tx.toFixed(1)+","+ty.toFixed(1)+")");
+        g.style.opacity = lerp(.12,1,clamp(e*1.3,0,1)).toFixed(3);
+      });
+      if(labels) labels.setAttribute("opacity", clamp((p-.82)/.18,0,1).toFixed(3));
+      if(bar) bar.style.width = (p*100).toFixed(1)+"%";
+      var idx = p<.34 ? 0 : (p<.7 ? 1 : 2);
+      steps.forEach(function(s,i){ s.classList.toggle("active", i===idx); });
+    }
+    function progress(){
+      var r = scroll.getBoundingClientRect();
+      var total = r.height - window.innerHeight;
+      return clamp(-r.top/(total||1),0,1);
+    }
+    function onScroll(){
+      if(ticking || !inView) return;
+      ticking = true;
+      window.requestAnimationFrame(function(){ apply(progress()); ticking=false; });
+    }
+    if(reduce){ apply(1); return; }  // show finished room, no scrubbing
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(en){ inView = en[0].isIntersecting; if(inView) onScroll(); },
+        {threshold:0}).observe(scroll);
+    }
+    window.addEventListener("scroll", onScroll, {passive:true});
+    window.addEventListener("resize", onScroll);
+    apply(progress());
+  })();
+
+  /* ---- 2 · HEPA filtration (canvas particle sim) ------------------------ */
+  (function(){
+    var canvas = document.getElementById("hepaCanvas");
+    if(!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext("2d");
+    var wrap = canvas.parentElement;
+    var toggle = document.getElementById("hepaToggle");
+    var stateLbl = document.getElementById("hepaState");
+    var zoneLbl = document.getElementById("zoneStatus");
+    var modeNote = document.getElementById("modeNote");
+    var capturedEl = document.getElementById("capturedN");
+    var escapedEl = document.getElementById("escapedN");
+
+    var DPR = Math.min(window.devicePixelRatio||1, 2);
+    var W=0,H=0, filterY=0, spanL=0, spanR=0;
+    var particles=[], clean=[], captured=[], haze=0;
+    var capturedCount=0, escapedCount=0, filterOn=true, raf=null, running=false;
+
+    function resize(){
+      W = wrap.clientWidth; H = wrap.clientHeight;
+      canvas.width = W*DPR; canvas.height = H*DPR;
+      ctx.setTransform(DPR,0,0,DPR,0,0);
+      filterY = H*0.42; spanL = W*0.12; spanR = W*0.88;
+    }
+    function rand(a,b){ return a+Math.random()*(b-a); }
+    function spawn(){
+      particles.push({
+        x: rand(spanL, spanR), y: rand(-20,-4),
+        vx: rand(-0.25,0.25), vy: rand(0.9,1.7),
+        r: rand(1.6,3.2),
+        micro: Math.random()<0.34
+      });
+    }
+    function spawnClean(){
+      clean.push({ x: rand(spanL, spanR), y: filterY+rand(0,10), vy: rand(1.1,1.9), a: rand(.25,.6), len: rand(10,22) });
+    }
+    function reset(){ particles=[]; clean=[]; captured=[]; capturedCount=0; escapedCount=0; haze=0;
+      if(capturedEl) capturedEl.textContent="0"; if(escapedEl) escapedEl.textContent="0"; }
+
+    function drawFilter(){
+      // pleated HEPA band
+      ctx.save();
+      var y=filterY, amp=7, teeth=Math.max(10,Math.round((spanR-spanL)/16));
+      ctx.beginPath(); ctx.moveTo(spanL,y-amp);
+      for(var i=0;i<=teeth;i++){ var x=spanL+(spanR-spanL)*(i/teeth); ctx.lineTo(x, y+(i%2?amp:-amp)); }
+      ctx.lineTo(spanR,y+amp); ctx.lineTo(spanR,y+16); ctx.lineTo(spanL,y+16); ctx.closePath();
+      ctx.fillStyle = filterOn ? "rgba(221,227,255,.92)" : "rgba(150,120,120,.55)";
+      ctx.fill();
+      ctx.strokeStyle = filterOn ? "rgba(122,92,240,.7)" : "rgba(186,26,26,.6)";
+      ctx.lineWidth=1.4; ctx.stroke();
+      // frame
+      ctx.fillStyle="rgba(255,255,255,.14)";
+      ctx.fillRect(spanL-10,y-amp-4,8,26); ctx.fillRect(spanR+2,y-amp-4,8,26);
+      // captured specks lodged in the filter
+      for(var c=0;c<captured.length;c++){ var p=captured[c];
+        ctx.globalAlpha=p.a; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.28);
+        ctx.fillStyle=p.micro?"#f2643c":"#8b90a6"; ctx.fill(); }
+      ctx.globalAlpha=1; ctx.restore();
+    }
+
+    function step(){
+      ctx.clearRect(0,0,W,H);
+      // zone tints
+      ctx.fillStyle="rgba(255,255,255,.03)"; ctx.fillRect(0,0,W,filterY);
+      // lower work-zone haze grows when contaminated
+      if(haze>0){ ctx.fillStyle="rgba(210,70,50,"+(haze*0.5).toFixed(3)+")"; ctx.fillRect(0,filterY+14,W,H-filterY-14); }
+      else { ctx.fillStyle="rgba(37,179,232,.05)"; ctx.fillRect(0,filterY+14,W,H-filterY-14); }
+
+      // clean laminar downflow (only when filter on)
+      if(filterOn){
+        if(clean.length<70 && Math.random()<0.9) spawnClean();
+        ctx.lineWidth=1.4; ctx.strokeStyle="rgba(37,179,232,.5)";
+        for(var i=clean.length-1;i>=0;i--){ var s=clean[i]; s.y+=s.vy;
+          ctx.globalAlpha=s.a; ctx.beginPath(); ctx.moveTo(s.x,s.y); ctx.lineTo(s.x,s.y+s.len); ctx.stroke();
+          if(s.y>H){ clean.splice(i,1); } }
+        ctx.globalAlpha=1;
+      }
+
+      // incoming particles
+      if(particles.length<130 && Math.random()<0.75) spawn();
+      for(var j=particles.length-1;j>=0;j--){
+        var p=particles[j];
+        p.x+=p.vx; p.y+=p.vy; p.vy+=0.006;
+        // filter interaction
+        if(filterOn && p.y>=filterY-6 && p.y<=filterY+8 && p.x>spanL && p.x<spanR){
+          p.a=rand(.55,.9); captured.push(p); particles.splice(j,1);
+          capturedCount++; if(capturedEl) capturedEl.textContent=String(capturedCount);
+          if(captured.length>240) captured.shift();
+          continue;
+        }
+        // passed below the filter line
+        if(!filterOn && p.y>filterY && !p.counted){ p.counted=true; escapedCount++;
+          if(escapedEl) escapedEl.textContent=String(escapedCount);
+          haze=clamp(haze+0.012,0,1); }
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.28);
+        ctx.fillStyle=p.micro?"#f2643c":"#8b90a6"; ctx.globalAlpha=0.92; ctx.fill(); ctx.globalAlpha=1;
+        if(p.y>H+10){ particles.splice(j,1); }
+      }
+      // slowly clear haze when filter restored
+      if(filterOn && haze>0){ haze=clamp(haze-0.004,0,1); }
+
+      drawFilter();
+      raf = window.requestAnimationFrame(step);
+    }
+
+    function setMode(on){
+      filterOn=on;
+      if(stateLbl) stateLbl.textContent = on?"Filter ON":"Filter OFF · bypassed";
+      if(zoneLbl) zoneLbl.textContent = on?"ISO-clean":"contaminated";
+      if(zoneLbl) zoneLbl.style.color = on?"var(--clean)":"#ff9a86";
+      if(modeNote){
+        modeNote.textContent = on
+          ? "Clean, unidirectional airflow keeps the work zone within its ISO 14644 class."
+          : "Without filtration, particles flood the work zone — product and people are exposed.";
+        modeNote.classList.toggle("bypass", !on);
+      }
+    }
+
+    function start(){ if(running) return; running=true; if(!reduce) step(); else drawStatic(); }
+    function stop(){ running=false; if(raf) window.cancelAnimationFrame(raf); raf=null; }
+    function drawStatic(){
+      ctx.clearRect(0,0,W,H);
+      ctx.fillStyle="rgba(37,179,232,.05)"; ctx.fillRect(0,filterY+14,W,H-filterY-14);
+      for(var k=0;k<40;k++){ captured.push({x:rand(spanL,spanR),y:filterY+rand(-6,6),r:rand(1.6,3),a:.8,micro:Math.random()<.34}); }
+      drawFilter();
+    }
+
+    if(toggle) toggle.addEventListener("change", function(){ setMode(toggle.checked); });
+    window.addEventListener("resize", function(){ resize(); });
+    resize(); setMode(true);
+
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(en){ if(en[0].isIntersecting) start(); else stop(); },
+        {threshold:.12}).observe(canvas);
+    } else { start(); }
+  })();
+
+  /* ---- 4 · BSC stream focus on hover/tap -------------------------------- */
+  (function(){
+    var items = document.querySelectorAll(".bsc-item[data-target]");
+    if(!items.length) return;
+    var groups = ["grp-down","grp-in","grp-ex"].map(function(id){ return document.getElementById(id); });
+    function focus(id){
+      groups.forEach(function(g){ if(!g) return;
+        g.style.opacity = (!id || g.id===id) ? "1" : "0.16";
+        g.style.transition="opacity .25s ease"; });
+    }
+    items.forEach(function(it){
+      var t=it.getAttribute("data-target");
+      it.addEventListener("mouseenter", function(){ focus(t); });
+      it.addEventListener("mouseleave", function(){ focus(null); });
+      it.addEventListener("focusin", function(){ focus(t); });
+      it.addEventListener("focusout", function(){ focus(null); });
+      it.setAttribute("tabindex","0");
+    });
+  })();
+
+})();
+</script>
+</body>
+</html>
