@@ -23,6 +23,22 @@ You (the maintainer). You will do the development. You currently:
 
 This repo meets you exactly there.
 
+## ⭐ New: the Next.js + 3D rebuild (`/web`)
+
+The approved design is now being built as a **separate, standalone Next.js
+application** in [`web/`](web) — server-rendered, English/Arabic (RTL), with a
+flagship **interactive 3D cleanroom** that assembles from the background as you
+scroll through it. It runs **alongside** the live WordPress site and replaces it
+only after staging review; production `m4acc.com` is untouched.
+
+- **Run it:** `cd web && npm install && npm run dev` → http://localhost:3000
+- **Why + how:** [`docs/10-architecture-decision-nextjs-rebuild.md`](docs/10-architecture-decision-nextjs-rebuild.md)
+- **The 3D experience:** [`docs/11-flagship-explorer-brief-and-storyboard.md`](docs/11-flagship-explorer-brief-and-storyboard.md)
+- **3D asset (Blender→GLB) brief:** [`web/public/models/README.md`](web/public/models/README.md)
+
+Everything below concerns the original learning workspace and the live
+WordPress site, which remain valid.
+
 ## What we already know about the live site
 
 It's **WordPress** (PHP — a traditional server-rendered CMS, *not* a
