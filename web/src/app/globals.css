@@ -322,7 +322,11 @@ p { margin: 0 0 1rem; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(20, 24, 61, 0.92) 0%, rgba(29, 33, 71, 0.72) 42%, rgba(29, 33, 71, 0.25) 100%);
+    linear-gradient(105deg, rgba(20, 24, 61, 0.92) 0%, rgba(29, 33, 71, 0.66) 46%, rgba(29, 33, 71, 0.4) 100%);
+}
+[dir="rtl"] .hero-overlay {
+  background:
+    linear-gradient(255deg, rgba(20, 24, 61, 0.92) 0%, rgba(29, 33, 71, 0.66) 46%, rgba(29, 33, 71, 0.4) 100%);
 }
 .hero .wrap { position: relative; z-index: 2; }
 .hero-inner {
@@ -338,11 +342,11 @@ p { margin: 0 0 1rem; }
 .hero .lead { color: rgba(255, 255, 255, 0.86); max-width: 620px; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
 .glass-card {
-  background: rgba(255, 255, 255, 0.09);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(20, 24, 61, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-lg);
   padding: 30px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 .glass-card .gc-ic {
   width: 52px;

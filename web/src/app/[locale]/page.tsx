@@ -20,7 +20,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       {/* ---------- hero ---------- */}
       <section className="hero">
-        <div className="hero-photo" style={{ backgroundImage: "url('/media/hero-flag.png')" }} />
+        <div className="hero-photo" style={{ backgroundImage: "url('/media/photos/hero-cleanroom.jpg')" }} />
         <div className="hero-overlay" />
         <div className="wrap">
           <div className="hero-inner">

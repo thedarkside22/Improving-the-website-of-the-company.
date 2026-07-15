@@ -68,7 +68,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   style={{
                     width: "100%",
                     height: "100%",
-                    backgroundImage: "url('/media/wwd-test.png')",
+                    backgroundImage: "url('/media/photos/hepa-testing.jpg')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}

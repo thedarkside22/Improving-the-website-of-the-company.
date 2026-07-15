@@ -30,7 +30,7 @@ export const solutions: Solution[] = [
     lead: "We design and construct the controlled environment itself — the impervious shell, the airflow, and the containment that makes a space safe.",
     intro:
       "From turnkey cleanrooms and GMP suites to BSL-3/4 biocontainment laboratories, Masarat takes a controlled environment from concept to a facility that passes inspection. One accountable team owns design, engineering, construction and installation.",
-    photo: "/media/wwd-build.png",
+    photo: "/media/photos/cleanroom-interior.jpg",
     features: [
       "Turnkey cleanrooms & GMP suites",
       "BSL-3 / BSL-4 biocontainment laboratories",
@@ -53,7 +53,7 @@ export const solutions: Solution[] = [
     lead: "We add the technical systems and products that make a controlled environment usable — safely, and to standard.",
     intro:
       "Biological safety cabinets, fume hoods, laboratory equipment, cleanroom furniture and the supporting systems. We help you choose the right equipment for the work — with honest distinctions between what protects the product, the operator, and the environment.",
-    photo: "/media/wwd-equip.png",
+    photo: "/media/photos/biosafety-cabinet.jpg",
     features: [
       "Biological safety cabinets (Class I / II / III)",
       "Clean benches & laminar-flow units",
@@ -76,7 +76,7 @@ export const solutions: Solution[] = [
     lead: "We prove performance and protect it — certifying to standard on day one and keeping it compliant year after year.",
     intro:
       "Commissioning, qualification and validation (CQV), air-quality and cabinet certification, and planned preventive maintenance. The applicable standard, traceable instrument calibration and a clear service report are the deliverables that matter.",
-    photo: "/media/wwd-test.png",
+    photo: "/media/photos/corridor-control.jpg",
     features: [
       "Commissioning, qualification & validation (CQV)",
       "HEPA filter integrity (leak) testing",
