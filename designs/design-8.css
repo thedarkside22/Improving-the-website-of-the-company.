@@ -772,3 +772,15 @@ main section[id]{scroll-margin-top:150px}
 .footer-social svg{width:18px;height:18px;fill:currentColor}
 .footer-contact a{display:inline;padding:0;color:inherit;text-decoration:underline;text-decoration-color:rgba(247,148,30,.7);text-underline-offset:2px}
 .footer-contact a:hover{color:#fff;text-decoration-color:var(--orange)}
+
+/* ---- Trusted-by logo strip (background-image pattern; missing files degrade
+   gracefully to the .tl-name caption with no broken-image icon) ------------ */
+.trusted-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:14px 34px;margin-top:12px}
+.trusted-logos .tl-lead{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tl-item{display:inline-flex;align-items:center;gap:10px}
+.tl-logo{display:inline-block;width:120px;height:38px;background-repeat:no-repeat;
+  background-position:center;background-size:contain;filter:grayscale(1);opacity:.65;
+  transition:opacity .25s var(--ease),filter .25s var(--ease)}
+.tl-item:hover .tl-logo{filter:grayscale(0);opacity:1}
+.tl-name{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}

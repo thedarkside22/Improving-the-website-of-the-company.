@@ -1,0 +1,187 @@
+/* ==========================================================================
+   Design H — "Definitive Precision"  ·  Masarat for Accreditation
+   RTL / Arabic OVERRIDE LAYER — load AFTER design-8.css.
+   design-8.css stays byte-for-byte unchanged; every rule below is scoped to
+   [dir="rtl"] so it can never leak onto the English (LTR) pages.
+   Covers: Arabic type (IBM Plex Sans Arabic, no letter-spacing) + a true
+   mirror of every directional detail (nav, dropdown, mobile menu, arrow
+   icons, eyebrow accent, timeline fill, quick-view drawer, floating buttons,
+   hero/overlay gradients, filter bar, category sub-nav).
+   ========================================================================== */
+
+/* ==========================================================================
+   A.3 — Arabic typography (correctness-critical)
+   ========================================================================== */
+[dir="rtl"] body,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4{
+  font-family:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+}
+
+/* Kill letter-spacing everywhere it breaks Arabic letter-joining. */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .btn,
+[dir="rtl"] .chip,
+[dir="rtl"] .stat-label,
+[dir="rtl"] .nav-links,
+[dir="rtl"] .nav-links > li > a,
+[dir="rtl"] .compliance span,
+[dir="rtl"] .footer-compliance span,
+[dir="rtl"] .filter-btn,
+[dir="rtl"] .tl-lead,
+[dir="rtl"] .tl-name,
+[dir="rtl"] .footer-col h4,
+[dir="rtl"] .group-label,
+[dir="rtl"] .pnum,
+[dir="rtl"] .badge-soon,
+[dir="rtl"] .ongoing-badge,
+[dir="rtl"] .brand-line,
+[dir="rtl"] .cat-subnav a,
+[dir="rtl"] .wa-fab .wa-label{
+  letter-spacing:normal;
+}
+
+/* ==========================================================================
+   A.4 — Directional flips (true mirror, not just flipped text)
+   ========================================================================== */
+
+/* ---- base direction / text alignment ----------------------------------- */
+[dir="rtl"] body{direction:rtl;text-align:right}
+[dir="rtl"] .field .err{text-align:right}
+
+/* ---- header / nav -------------------------------------------------------
+   Flex row already reverses naturally under dir:rtl (logo block stays the
+   first flex child, so it now sits on the right; nav + CTA sit toward the
+   left) — but we pin a few explicit gaps/margins that were written as
+   left-only in the base sheet. */
+[dir="rtl"] .nav-cta{margin-left:0;margin-right:6px}
+[dir="rtl"] .nav-links{direction:rtl}
+[dir="rtl"] .nav-links > li > a{gap:4px}
+/* underline sweep on hover: base animates left:0/right:100%->0 (fills L->R).
+   Mirror so it fills R->L, matching RTL reading direction. */
+[dir="rtl"] .nav-links > li > a::after{left:auto;right:0;left:100%}
+[dir="rtl"] .nav-links > li > a:hover::after,
+[dir="rtl"] .nav-links > li > a[aria-current="page"]::after{left:0;right:0}
+
+/* ---- dropdown ------------------------------------------------------------
+   Centered dropdown just needs its internal content mirrored (icon+label
+   order flips automatically via row-reverse under rtl inheritance from
+   .dropdown a's flex; force it to be explicit for reliability). */
+[dir="rtl"] .dropdown{text-align:right}
+[dir="rtl"] .dropdown a{flex-direction:row-reverse;justify-content:flex-end}
+[dir="rtl"] .has-dropdown > a{flex-direction:row-reverse}
+
+/* ---- mobile menu -----------------------------------------------------
+   Base slides in from the right (translateX(100%) -> 0, panel anchored via
+   inset:0). For RTL the menu should slide in from the LEFT. */
+[dir="rtl"] .mobile-menu{transform:translateX(-100%);text-align:right}
+[dir="rtl"] .mobile-menu.open{transform:none}
+[dir="rtl"] .mobile-top{flex-direction:row-reverse}
+[dir="rtl"] .m-acc-toggle{flex-direction:row-reverse}
+
+/* ---- directional arrow icons (buttons, .link-arrow) ---------------------
+   arrow_forward / arrow_right_alt point right by default (LTR reading
+   direction); in RTL reading flows right-to-left, so the arrow must point
+   LEFT. Flip the glyph horizontally and flip the hover nudge so it still
+   moves *toward* the edge the reader is heading to (now the left). */
+[dir="rtl"] .btn .material-symbols-outlined,
+[dir="rtl"] .link-arrow .material-symbols-outlined{
+  transform:scaleX(-1);
+}
+[dir="rtl"] .btn-primary:hover .material-symbols-outlined,
+[dir="rtl"] .btn-navy:hover .material-symbols-outlined{
+  transform:scaleX(-1) translateX(4px);
+}
+[dir="rtl"] .link-arrow:hover .material-symbols-outlined{
+  transform:scaleX(-1) translateX(4px);
+}
+/* expand_more (dropdown caret) and play_circle/arrow_upward are
+   direction-neutral glyphs — intentionally left unflipped. */
+
+/* ---- eyebrow accent bar --------------------------------------------------
+   .eyebrow is inline-flex; under dir:rtl the flex row already reverses so
+   the accent bar renders after the label text, i.e. visually to the RIGHT
+   of the label (verified) — no extra rule needed for placement, this is
+   just documentation of the inherited behavior. Nothing to override. */
+
+/* ---- 8-phase delivery timeline -------------------------------------------
+   Base: rail + progress fill anchored at left:21px / left:0, phases padded
+   left:60px (numbers/copy sit to the right of the rail). Mirror to the
+   right so the rail sits on the right and the fill still tracks scroll
+   progress from the top, visually "filling toward the reader's start". */
+[dir="rtl"] .timeline-track{left:auto;right:21px}
+[dir="rtl"] .timeline-progress{left:auto;right:0}
+[dir="rtl"] .phase{padding:0 60px 30px 0}
+[dir="rtl"] .phase:last-child{padding-bottom:0}
+[dir="rtl"] .phase .node{left:auto;right:11px}
+[dir="rtl"] .ongoing-badge{margin-left:0;margin-right:8px}
+
+/* ---- Equip quick-view drawer ----------------------------------------------
+   Base: drawer-panel anchored right:0, slides in via translateX(100%)->0
+   (comes from the right). In RTL it must slide in from the LEFT instead. */
+[dir="rtl"] .drawer-panel{
+  right:auto;left:0;
+  transform:translateX(-100%);
+}
+[dir="rtl"] .drawer.open .drawer-panel{transform:none}
+[dir="rtl"] .drawer-close{right:auto;left:18px}
+
+/* ---- floating action buttons: WhatsApp + back-to-top ----------------------
+   Base pins both to the bottom-right. Move to the bottom-LEFT in RTL. */
+[dir="rtl"] .wa-fab{right:auto;left:24px}
+[dir="rtl"] .wa-fab::after{right:auto;left:0}
+[dir="rtl"] .wa-fab:hover .wa-label{padding:0 20px 0 12px}
+[dir="rtl"] .back-to-top{right:auto;left:24px}
+@media (max-width:560px){
+  [dir="rtl"] .wa-fab{right:auto;left:16px}
+  [dir="rtl"] .back-to-top{right:auto;left:16px}
+}
+
+/* ---- hero photo overlay / glow gradients ----------------------------------
+   Base hero-photo is positioned center right/cover with a left-weighted
+   navy gradient (readable text sits on the left in LTR, over the darker
+   side). Mirror both the photo anchor and the gradient direction so text
+   stays over the dark side (now the right, matching RTL text flow). */
+[dir="rtl"] .hero--photo .hero-photo{background-position:center left}
+[dir="rtl"] .hero--photo .hero-overlay{
+  background:linear-gradient(258deg,rgba(20,24,61,.95) 0%,rgba(20,24,61,.78) 42%,rgba(20,24,61,.45) 72%,rgba(20,24,61,.15) 100%);
+}
+[dir="rtl"] .hero-glow{right:auto;left:-120px}
+[dir="rtl"] .hero-rule{
+  background:linear-gradient(to left,var(--orange),var(--navy) 55%,var(--navy-deep));
+}
+/* wwd-card overlay is a top-to-bottom gradient only — no horizontal mirror
+   needed; glass-card's accent border is a left-border in LTR (reads as the
+   "spine" nearest the eyebrow/heading column) — mirror to the right. */
+[dir="rtl"] .glass-card{border-left:1px solid rgba(255,255,255,.4);border-right:4px solid var(--orange)}
+
+/* ---- filter bar + search --------------------------------------------------- */
+[dir="rtl"] .filter-bar{direction:rtl}
+[dir="rtl"] .search input{padding:11px 42px 11px 14px}
+[dir="rtl"] .search .material-symbols-outlined{left:auto;right:14px}
+
+/* ---- project media type-chip + has-vid play icon --------------------------- */
+[dir="rtl"] .project-media .type-chip{left:auto;right:12px}
+[dir="rtl"] .has-vid::after{right:auto;left:12px}
+
+/* ---- category sub-nav (scroll-spy) ----------------------------------------- */
+[dir="rtl"] .cat-subnav .wrap{direction:rtl}
+
+/* ---- pathway cross-links: trailing arrow icon ------------------------------ */
+[dir="rtl"] .pathway-card .go{margin-left:0;margin-right:auto;transform:scaleX(-1)}
+
+/* ---- footer bits ------------------------------------------------------------ */
+[dir="rtl"] .footer-social{direction:rtl}
+[dir="rtl"] .footer-contact .material-symbols-outlined{margin-left:0}
+[dir="rtl"] .footer-bottom{direction:rtl}
+
+/* ---- misc small alignment fixes -------------------------------------------- */
+[dir="rtl"] .breadcrumb{direction:rtl}
+[dir="rtl"] .chain .step{direction:rtl}
+[dir="rtl"] .credential-card dl{direction:rtl}

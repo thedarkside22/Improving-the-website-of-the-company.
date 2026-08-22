@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-> Guidance for Claude Code (and any AI assistant) working in this repository.
+> Guidance for Codex (and any AI assistant) working in this repository.
 > Read this first, every session.
 
 ## What this repository is
@@ -73,10 +73,7 @@ explicit "do this / never do that" guidance. Safety over cleverness.
 
 ## Document map
 
-- **`HANDOVER-FLAGSHIP.md` — ⭐ current priority. The live work is `flagship-site/` (a vinext/React app), deployed for review at masarat-review.iizeyadxxx91.workers.dev. Read this before touching anything.**
-- `HANDOVER.md` — ⚠️ **superseded, kept for reference.** Describes an earlier
-  plan to rebuild Design H (`designs/design-8-*`) in WordPress/Themify. That is
-  not the work in progress. Do not start from it.
+- **`HANDOVER.md` — ⭐ current priority: rebuild the chosen design (Design H = `designs/design-8-*`) in WordPress (Themify Ultra + Builder), locally first. Read this before any build work.**
 - `README.md` — start here, overview of everything
 - `docs/00-START-HERE.md` — the learning path, in order
 - `docs/01-how-the-site-is-built.md` — what we know about the live stack
