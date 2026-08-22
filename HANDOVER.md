@@ -1,3 +1,9 @@
+> ⚠️ **SUPERSEDED (2026-08-04).** This describes an earlier plan: porting
+> Design H onto WordPress/Themify. The work actually in progress is the
+> `flagship-site/` React app — see **`HANDOVER-FLAGSHIP.md`**. Keep this file
+> for the WordPress stack facts in §1, which are still accurate, but do not
+> start a session from it.
+
 # HANDOVER — Build "Design H" in WordPress (Themify) locally
 
 > **For the next session / developer.** This hands over the finished **Design H

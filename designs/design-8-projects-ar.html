@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المشاريع | مسارات للاعتماد</title>
+<meta name="description" content="أُنجزت لأبرز الجهات التنظيمية والمستشفيات والجامعات والقطاع الصناعي في المملكة العربية السعودية — من الاحتواء الحيوي BSL-3 إلى الغرف النظيفة وفق GMP.">
+<!-- Design H — "Definitive Precision" (Arabic/RTL). Front-end-only mockup. Project photos are PLACEHOLDERS; client names per company profile. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-8.css">
+<link rel="stylesheet" href="design-8-rtl.css">
+</head>
+<body>
+<!-- ⚠ Arabic copy is a draft (MSA) — pending native proofread before go-live. -->
+
+<!-- ===================== GLOBAL HEADER (Design H — reused on every page) ===================== -->
+<header class="site-header" id="top" data-wp="Theme header (Themify Ultra) + Appearance → Menus">
+  <div class="nav-inner">
+    <a class="brand" href="design-8-home-ar.html" aria-label="مسارات للاعتماد — الصفحة الرئيسية">
+      <img src="assets/logo.png" alt="مسارات للاعتماد">
+    </a>
+    <nav aria-label="الرئيسية">
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="design-8-build-ar.html">الحلول <span class="material-symbols-outlined">expand_more</span></a>
+          <div class="dropdown" role="menu">
+            <a href="design-8-build-ar.html"><span class="material-symbols-outlined">architecture</span> البناء والهندسة</a>
+            <a href="design-8-equip-ar.html"><span class="material-symbols-outlined">science</span> التجهيز</a>
+            <a href="design-8-test-maintain-ar.html"><span class="material-symbols-outlined">fact_check</span> الاختبار والصيانة</a>
+          </div>
+        </li>
+        <li><a href="design-8-projects-ar.html" aria-current="page">المشاريع</a></li>
+        <li><a href="design-8-about-ar.html">من نحن</a></li>
+        <li><a href="design-8-contact-ar.html">اتصل بنا</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary nav-cta desktop" href="design-8-contact-ar.html">تواصل معنا <span class="material-symbols-outlined">arrow_forward</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-top">
+    <img src="assets/logo.png" alt="مسارات للاعتماد">
+    <button class="mobile-close" data-mobile-close aria-label="إغلاق القائمة"><span class="material-symbols-outlined">close</span></button>
+  </div>
+  <nav aria-label="قائمة الجوال">
+    <button class="m-acc-toggle" aria-expanded="false">الحلول <span class="material-symbols-outlined">expand_more</span></button>
+    <div class="m-acc-panel">
+      <a href="design-8-build-ar.html">البناء والهندسة</a>
+      <a href="design-8-equip-ar.html">التجهيز</a>
+      <a href="design-8-test-maintain-ar.html">الاختبار والصيانة</a>
+    </div>
+    <a href="design-8-projects-ar.html">المشاريع</a>
+    <a href="design-8-about-ar.html">من نحن</a>
+    <a href="design-8-contact-ar.html">اتصل بنا</a>
+  </nav>
+  <a class="btn btn-primary" href="design-8-contact-ar.html">تواصل معنا <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+
+<main>
+  <!-- ===================== SLIM HERO ===================== -->
+  <section class="hero hero--slim" data-wp="Builder page-title row">
+    <div class="tech-grid--dark"></div>
+    <div class="hero-glow"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="reveal">
+          <nav class="breadcrumb" aria-label="مسار التصفح"><a href="design-8-home-ar.html">الرئيسية</a> <span>/</span> <span>المشاريع</span></nav>
+          <span class="eyebrow">مشاريعنا</span>
+          <h1>أُنجزت لصالح المؤسسات التي تضع المعايير</h1>
+          <p class="lead">من الاحتواء الحيوي BSL-3 إلى الغرف النظيفة وفق GMP — لصالح الجهات التنظيمية والمستشفيات والجامعات والقطاع الصناعي الرائد في المملكة العربية السعودية، إلى جانب ورش العمل والتدريب التي ننظّمها لفرقهم.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-rule"></div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section class="section" data-wp="Portfolio module (filterable categories)">
+    <div class="wrap">
+      <div class="filter-bar" data-filter-group data-target="#projectGrid">
+        <div class="filter-btns" role="group" aria-label="تصفية المشاريع">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">الكل</button>
+          <button class="filter-btn" data-filter="cleanroom" aria-pressed="false">الغرف النظيفة</button>
+          <button class="filter-btn" data-filter="bsl" aria-pressed="false">الاحتواء الحيوي (BSL)</button>
+          <button class="filter-btn" data-filter="glp" aria-pressed="false">GLP</button>
+          <button class="filter-btn" data-filter="training" aria-pressed="false">ورش العمل والتدريب</button>
+        </div>
+        <div class="search"><span class="material-symbols-outlined">search</span><input class="js-search" type="search" placeholder="ابحث في المشاريع…" aria-label="ابحث في المشاريع"></div>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+
+        <a class="project-card" data-cat="bsl" data-search="سفدا السلامة الحيوية bsl-3 الرياض جهة تنظيمية sfda" href="design-8-project-sfda-ar.html">
+          <div class="project-media has-vid"><div class="tech-grid--dark"></div><span class="chip chip--bsl type-chip">BSL-3</span><video muted loop playsinline preload="none" src="assets/videos/workshop-sfda.mp4"></video><span class="ph-label">صورة · SFDA</span></div>
+          <div class="project-body"><h3>SFDA — مختبر BSL-3</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> الرياض · الهيئة العامة للغذاء والدواء</div><span class="link-arrow">عرض دراسة الحالة <span class="material-symbols-outlined">arrow_right_alt</span></span></div>
+        </a>
+
+        <a class="project-card" data-cat="cleanroom" data-search="kfshrc غرفة نظيفة مستشفى الرياض gmp" href="design-8-project-kfshrc-ar.html">
+          <div class="project-media has-vid"><div class="tech-grid--dark"></div><span class="chip chip--std type-chip">غرفة نظيفة</span><video muted loop playsinline preload="none" src="assets/videos/project-2.mp4"></video><span class="ph-label">صورة · KFSHRC</span></div>
+          <div class="project-body"><h3>KFSHRC — غرفة نظيفة</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> الرياض · مستشفى ومركز أبحاث الملك فيصل التخصصي</div><span class="link-arrow">عرض دراسة الحالة <span class="material-symbols-outlined">arrow_right_alt</span></span></div>
+        </a>
+
+        <a class="project-card" data-cat="bsl glp" data-search="iau جامعة الإمام عبدالرحمن بن فيصل الدمام bsl-3 glp" href="design-8-project-iau-ar.html">
+          <div class="project-media has-vid"><div class="tech-grid--dark"></div><span class="chip chip--bsl type-chip">BSL-3 · GLP</span><video muted loop playsinline preload="none" src="assets/videos/project-3.mp4"></video><span class="ph-label">صورة · IAU</span></div>
+          <div class="project-body"><h3>IAU — مختبرات BSL-3 وGLP</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> الدمام · جامعة الإمام عبدالرحمن بن فيصل</div><span class="link-arrow">عرض دراسة الحالة <span class="material-symbols-outlined">arrow_right_alt</span></span></div>
+        </a>
+
+        <article class="project-card" data-cat="cleanroom" data-search="abmi الصناعات الطبية الحيوية المتقدمة غرفة نظيفة مصنع">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="chip chip--std type-chip">غرفة نظيفة</span><span class="ph-label">صورة · ABMI</span></div>
+          <div class="project-body"><h3>ABMI — غرفة نظيفة</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> شركة الصناعات الطبية الحيوية المتقدمة · مصنع</div><span class="muted" style="font-size:.85rem;margin-top:auto">التفاصيل قريبًا</span></div>
+        </article>
+
+        <article class="project-card" data-cat="cleanroom" data-search="nami الطباعة ثلاثية الأبعاد بيئة نظيفة غير مصنّفة">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="chip chip--std type-chip">بيئة نظيفة</span><span class="ph-label">صورة · NAMI</span></div>
+          <div class="project-body"><h3>NAMI — بيئة نظيفة (غير مصنّفة)</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> منشأة NAMI للطباعة ثلاثية الأبعاد</div><span class="muted" style="font-size:.85rem;margin-top:auto">التفاصيل قريبًا</span></div>
+        </article>
+
+        <article class="project-card" data-cat="cleanroom" data-search="care medical صيدلية وريدي علاج كيميائي تعقيم الرياض">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="chip chip--std type-chip">تعقيم</span><span class="ph-label">صورة · Care Medical</span></div>
+          <div class="project-body"><h3>Care Medical — غرفة نظيفة للأدوية الوريدية والعلاج الكيميائي</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> الرياض · تحضير معقّم</div><span class="muted" style="font-size:.85rem;margin-top:auto">التفاصيل قريبًا</span></div>
+        </article>
+
+        <article class="project-card" data-cat="bsl" data-search="kfuh مستشفى جامعة الملك فهد مختبر السل الخبر احتواء سلامة حيوية">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="chip chip--bsl type-chip">BSL-3</span><span class="ph-label">صورة · KFUH</span></div>
+          <div class="project-body"><h3>KFUH — اعتماد مختبر السل</h3><div class="project-meta"><span class="material-symbols-outlined">location_on</span> الخبر · مستشفى جامعة الملك فهد</div><span class="muted" style="font-size:.85rem;margin-top:auto">التفاصيل قريبًا</span></div>
+        </article>
+
+        <article class="project-card placeholder-card" data-cat="cleanroom" data-search="دراسة حالة قادمة عنصر نائب">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="ph-label">دراسة حالة قادمة</span></div>
+          <div class="project-body"><h3>دراسة حالة قادمة</h3><div class="project-meta"><span class="material-symbols-outlined">schedule</span> عنصر نائب — سيُضاف لاحقًا</div></div>
+        </article>
+        <article class="project-card placeholder-card" data-cat="bsl" data-search="دراسة حالة قادمة عنصر نائب">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="ph-label">دراسة حالة قادمة</span></div>
+          <div class="project-body"><h3>دراسة حالة قادمة</h3><div class="project-meta"><span class="material-symbols-outlined">schedule</span> عنصر نائب — سيُضاف لاحقًا</div></div>
+        </article>
+        <article class="project-card placeholder-card" data-cat="training" data-search="ورشة عمل تدريب قادم عنصر نائب">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="chip chip--std type-chip">تدريب</span><span class="ph-label">ورشة عمل / تدريب قادم</span></div>
+          <div class="project-body"><h3>ورشة عمل / تدريب قادم</h3><div class="project-meta"><span class="material-symbols-outlined">schedule</span> عنصر نائب — سيُضاف لاحقًا</div></div>
+        </article>
+        <article class="project-card placeholder-card" data-cat="training" data-search="ورشة عمل تدريب قادم عنصر نائب">
+          <div class="project-media"><div class="tech-grid--dark"></div><span class="chip chip--std type-chip">تدريب</span><span class="ph-label">ورشة عمل / تدريب قادم</span></div>
+          <div class="project-body"><h3>ورشة عمل / تدريب قادم</h3><div class="project-meta"><span class="material-symbols-outlined">schedule</span> عنصر نائب — سيُضاف لاحقًا</div></div>
+        </article>
+
+      </div>
+      <p class="muted center" style="margin-top:28px;font-size:.88rem">أسماء العملاء وفق الملف التعريفي للشركة — <em>يُرجى التأكد من الأسماء المسموح بنشرها علنًا</em>.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-band" data-wp="Full-width Call-to-action widget">
+    <div class="tech-grid--dark"></div>
+    <div class="wrap">
+      <h2>هل ترغب في بدء مشروع مشابه؟</h2>
+      <p>أخبرنا بمتطلباتك وسيرد عليك مهندسونا خلال يوم عمل واحد بخطة واضحة ومتوافقة مع المعايير.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="design-8-contact-ar.html">تواصل معنا <span class="material-symbols-outlined">arrow_forward</span></a>
+        <a class="btn btn-ghost" href="design-8-build-ar.html">استكشف حلولنا</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== GLOBAL FOOTER (Design H) ===================== -->
+<footer class="site-footer" data-wp="Theme footer widget areas">
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="مسارات للاعتماد">
+        <p>شركة سعودية متخصصة في حلول الغرف النظيفة (الغرف النظيفة وGMP) والمختبرات عالية الخطورة (BSL-3 وBSL-4) — منذ عام 2016.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/m4acc-company/?viewAsMember=true" target="_blank" rel="noopener" aria-label="مسارات على LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://x.com/masarat4acc" target="_blank" rel="noopener" aria-label="مسارات على X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+          <a href="https://www.youtube.com/@MasaratforAccreditation" target="_blank" rel="noopener" aria-label="مسارات على YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>الحلول</h4>
+        <a href="design-8-build-ar.html">البناء والهندسة</a>
+        <a href="design-8-equip-ar.html">التجهيز</a>
+        <a href="design-8-test-maintain-ar.html">الاختبار والصيانة</a>
+        <a href="design-8-projects-ar.html">المشاريع</a>
+      </div>
+      <div class="footer-col">
+        <h4>الشركة</h4>
+        <a href="design-8-about-ar.html">من نحن والاعتمادات</a>
+        <a href="design-8-projects-ar.html">المشاريع</a>
+        <a href="design-8-contact-ar.html">اتصل بنا</a>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>اتصل بنا</h4>
+        <div><span class="material-symbols-outlined">call</span> +966 1148 70 043</div>
+        <div><span class="material-symbols-outlined">mail</span> info@m4acc.com</div>
+        <div><span class="material-symbols-outlined">location_on</span> <a class="footer-maplink" href="https://www.google.com/maps/place/Masarat+for+Accreditation/@27.0113231,28.4687945,5z/data=!4m6!3m5!1s0x3e2ee49e8fa53965:0x27ee96436a3a5405!8m2!3d24.718324!4d46.6710433!16s%2Fg%2F11c6tm6q7m?entry=tts" target="_blank" rel="noopener">6776 Al Ulaya، الورود، الرياض 12215</a></div>
+        <div><span class="material-symbols-outlined">schedule</span> الأحد–الخميس، 08:00–17:00 (بتوقيت السعودية)</div>
+      </div>
+    </div>
+    <div class="footer-compliance">
+      <span>SFDA</span><span>CBAHI</span><span>WHO</span><span>CAP</span><span>CDC</span><span>GMP</span><span>ISO 14644</span><span>NSF</span>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="js-year">2026</span> مسارات للاعتماد. جميع الحقوق محفوظة.</span>
+      <span class="partner-line">هندسة الغرف النظيفة والسلامة الحيوية، وفق المعايير الدولية.</span>
+      <a class="ar-toggle" href="design-8-projects.html">English · EN</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى"><span class="material-symbols-outlined">arrow_upward</span></button>
+<script src="design-8.js" defer></script>
+</body>
+</html>

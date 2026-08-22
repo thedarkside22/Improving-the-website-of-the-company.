@@ -1,0 +1,15 @@
+# The flagship site is its own git repository (see HANDOVER-FLAGSHIP.md).
+# It is versioned separately — never as a gitlink of this repo.
+/flagship-site/
+
+# Local Claude Code state. launch.json IS tracked; per-machine state is not.
+/.claude/settings.local.json
+/.claude/scheduled_tasks.lock
+
+# Video masters too large for GitHub (599 MB and 79 MB). They live on disk
+# and on the YouTube channel; the small per-project clips ARE tracked.
+/designs/assets/videos/KFUPM_Workshop.mp4
+/designs/assets/videos/Medlab_expo_masarat_booth.mp4
+
+# Stray npm artifact — there is no package.json at this level.
+/package-lock.json
